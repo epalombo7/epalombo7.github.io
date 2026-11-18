@@ -41,7 +41,7 @@ p{margin:0 0 1rem}
 .hero{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:center;padding:8px 0 8px}
 .photo{width:200px;height:200px;border-radius:50%;overflow:hidden;background:var(--surface)}
 .photo{display:flex;align-items:center;justify-content:center}
-.photo .sig{height:auto;width:78%;max-width:78%;aspect-ratio:398/262;flex:none}
+.photo .sig{height:auto;width:62%;max-width:62%;aspect-ratio:398/262;flex:none}
 .hero .btns{margin-top:1.25rem}
 .hero .btn{font-size:1rem;padding:8px 22px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
