@@ -11,7 +11,7 @@ a:focus-visible{outline:3px solid var(--navy);outline-offset:2px;border-radius:4
 header.site{position:sticky;top:0;z-index:10;background:var(--header);-webkit-backdrop-filter:saturate(180%) blur(16px);backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid var(--line)}
 .bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding-top:16px;padding-bottom:16px}
 .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:19px;color:var(--text);text-decoration:none}
-.sig{height:42px;width:auto;display:block}
+.sig{height:42px;width:auto;aspect-ratio:398/262;display:block;overflow:visible}
 nav{display:flex;flex-wrap:wrap;gap:4px 20px}
 nav a{color:var(--text);text-decoration:none;padding:4px 0;font-size:16px}
 nav a:hover{color:var(--navy)}
@@ -41,7 +41,7 @@ p{margin:0 0 1rem}
 .hero{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:center;padding:8px 0 8px}
 .photo{width:200px;height:200px;border-radius:50%;overflow:hidden;background:var(--surface)}
 .photo{display:flex;align-items:center;justify-content:center}
-.photo .sig{height:auto;width:80%}
+.photo .sig{height:auto;width:78%;max-width:78%;aspect-ratio:398/262;flex:none}
 .hero .btns{margin-top:1.25rem}
 .hero .btn{font-size:1rem;padding:8px 22px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
