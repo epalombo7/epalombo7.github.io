@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Credit Easing and Defaults: 1-minute preview</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.anim{position:relative;aspect-ratio:16/9;max-width:100%;margin:0 auto;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
+.anim .s{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:6% 8% 9%;opacity:0;animation:sl 60s linear 1 both;animation-delay:calc(var(--i)*6s)}
+.anim .s:last-of-type{animation-name:sl-last}
+.anim .k{margin:0 0 .5em;font-size:clamp(.65rem,2.2vw,.8rem);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
+.anim .t{margin:0;font-size:clamp(1.05rem,3.8vw,1.9rem);line-height:1.25;font-weight:600;max-width:15em}
+.anim .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:1em}
+.anim .btn.p{background:var(--navy);color:var(--on-accent);border-color:var(--navy)}
+.anim .sub{margin:.6em 0 0;font-size:clamp(.7rem,2.2vw,.9rem);color:var(--muted)}
+.anim svg{position:absolute;right:5%;top:50%;transform:translateY(-50%);width:34%;height:auto;pointer-events:none;color:var(--navy);fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.anim .c{fill:currentColor;stroke:none}
+.anim .m{stroke:var(--muted);color:var(--muted)}
+.anim .fi,.anim .fo,.anim .fall{animation-duration:.9s;animation-fill-mode:both;animation-delay:calc(var(--i)*6s + var(--d,0s))}
+.anim .fi{opacity:0;animation-name:fi}
+.anim .fo{animation-name:fo}
+.anim .fall{transform-box:fill-box;transform-origin:50% 100%;animation-name:fall}
+.anim .bar{position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--navy);transform-origin:left;animation:fill 60s linear 1 both}
+.anim .rp{position:absolute;right:12px;bottom:12px;z-index:2;font:inherit;font-size:.8rem;padding:2px 12px;cursor:pointer;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--navy)}
+@keyframes sl{0%{opacity:0;transform:translateY(8px)}1%,9%{opacity:1;transform:none}10%,100%{opacity:0}}
+@keyframes sl-last{0%{opacity:0;transform:translateY(8px)}1%,100%{opacity:1;transform:none}}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+@keyframes fo{from{opacity:1}to{opacity:0}}
+@keyframes fall{from{opacity:1;transform:none}to{opacity:.3;transform:translateY(4px) rotate(24deg)}}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.anim.off *{animation:none!important}
+@media (prefers-reduced-motion:reduce){.anim{aspect-ratio:auto}.anim .s{position:static;opacity:1;animation:none;padding:18px 20px;border-bottom:1px solid var(--line)}.anim svg,.anim .bar,.anim .rp{display:none}}
+</style>
+</head>
+<body>
+<figure class="anim" id="a" aria-label="One-minute preview of Unconventional Monetary Policy, Leverage and Default Dynamics">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<path id="f" d="M0 20V8L10 0L20 8V20Z"/>
+<g id="b"><path d="M0 8L12 0L24 8Z"/><path d="M3 11V22M12 11V22M21 11V22M0 24H24"/></g>
+</defs></svg>
+<div class="s" style="--i:0"><p class="k">A storm hits</p><p class="t">Hard times arrive. Many firms cannot pay back what they borrowed.</p>
+<svg viewBox="0 0 120 90" aria-hidden="true"><g class="fi" style="--d:.6s"><path d="M30 28a10 10 0 0 1 8-12a14 14 0 0 1 26 2a9 9 0 0 1 2 18H34a8 8 0 0 1-4-8Z"/></g><use href="#f" x="8" y="56"/><use class="fall" href="#f" x="50" y="56" style="--d:3s"/><use class="fall" href="#f" x="92" y="56" style="--d:3.8s"/></svg></div>
+<div class="s" style="--i:1"><p class="k">The question</p><p class="t">Can the central bank help by lending to firms directly?</p>
+<svg viewBox="0 0 120 90" aria-hidden="true"><use href="#b" x="6" y="30" class="fi" style="--d:.5s"/><path class="fi" style="--d:1.5s" d="M40 42H78M70 35l8 7-8 7"/><use class="fi" href="#f" x="88" y="32" style="--d:2.5s"/><text class="c fi" style="--d:3.5s;font-size:22px;font-weight:700" x="54" y="22">?</text></svg></div>
+<div class="s" style="--i:2"><p class="k">The idea</p><p class="t">Firms borrow from banks. If firms go bust, banks lose money and lend less.</p>
+<svg viewBox="0 0 120 90" aria-hidden="true"><use class="fall" href="#f" x="8" y="30" style="--d:2.5s"/><path class="fi" style="--d:.5s" d="M34 42H62"/><use href="#b" x="72" y="26"/><g class="c"><rect x="76" y="60" width="16" height="5"/><rect class="fo" style="--d:3.5s" x="76" y="54" width="16" height="5"/><rect class="fo" style="--d:4s" x="76" y="48" width="16" height="5"/></g></svg></div>
+<div class="s" style="--i:3"><p class="k">How we studied it</p><p class="t">We built a model economy with firms, banks and a central bank.</p>
+<svg viewBox="0 0 120 90" aria-hidden="true"><use class="fi" href="#f" x="8" y="40" style="--d:.5s"/><use class="fi" href="#b" x="48" y="38" style="--d:1.8s"/><g class="fi" style="--d:3.2s"><use href="#b" x="88" y="38" transform="translate(0 0)"/><path d="M86 66H114"/></g></svg></div>
+<div class="s" style="--i:4"><p class="k">What happens first</p><p class="t">Firms go bust. Banks lose money, so they lend much less.</p>
+<svg viewBox="0 0 120 90" aria-hidden="true"><use href="#f" x="8" y="14"/><use class="fall" href="#f" x="8" y="46" style="--d:1.5s"/><use class="fall" href="#f" x="34" y="30" style="--d:2s"/><use href="#b" x="72" y="22"/><g class="c"><rect x="76" y="62" width="16" height="5"/><rect class="fo" style="--d:3s" x="76" y="56" width="16" height="5"/><rect class="fo" style="--d:3.6s" x="76" y="50" width="16" height="5"/><rect class="fo" style="--d:4.2s" x="76" y="44" width="16" height="5"/></g></svg></div>
+<div class="s" style="--i:5"><p class="k">The central bank steps in</p><p class="t">It lends to firms directly, where banks no longer do.</p>
+<svg viewBox="0 0 120 90" aria-hidden="true"><use href="#b" x="6" y="12"/><g class="c"><rect x="10" y="48" width="16" height="5"/></g><use href="#b" x="6" y="56" class="fi" style="--d:.4s"/><path class="fi" style="--d:1.5s" d="M40 70H80M72 63l8 7-8 7"/><use href="#f" x="90" y="60"/></svg></div>
+<div class="s" style="--i:6"><p class="k">Result · Illustration</p><p class="t">It did not soften the downturn. It only replaced private lending with public lending.</p>
+<svg viewBox="0 0 120 90" aria-hidden="true"><path d="M10 80H110" class="m"/><g class="c"><g class="fo" style="--d:2.5s"><rect x="20" y="68" width="22" height="8"/><rect x="20" y="58" width="22" height="8"/><rect x="20" y="48" width="22" height="8"/></g><g class="fi" style="--d:3.5s"><rect x="70" y="68" width="22" height="8"/><rect x="70" y="58" width="22" height="8"/><rect x="70" y="48" width="22" height="8"/></g></g><text class="c" x="20" y="90" style="font-size:7px">banks</text><text class="c fi" style="--d:3.5s;font-size:7px" x="66" y="90">central bank</text><path class="fi" style="--d:3s" d="M46 62H64M58 56l6 6-6 6"/></svg></div>
+<div class="s" style="--i:7"><p class="k">Why</p><p class="t">It does not change whether firms go bust, so losses and borrowing costs stay.</p>
+<svg viewBox="0 0 120 90" aria-hidden="true"><use href="#b" x="6" y="22"/><path class="fi" style="--d:1s" d="M40 40H72M64 33l8 7-8 7"/><use class="fall" href="#f" x="88" y="30" style="--d:2.5s"/><path class="fi" style="--d:3s" d="M86 28l22 22M108 28L86 50"/></svg></div>
+<div class="s" style="--i:8"><p class="k">The lesson</p><p class="t">Fixing the root cause, firms going bust, works better than just swapping lenders.</p>
+<svg viewBox="0 0 120 90" aria-hidden="true"><path class="fi" style="--d:.8s" d="M20 34a40 40 0 0 1 80 0Z"/><path class="fi" style="--d:.8s" d="M60 34V62"/><use href="#f" x="50" y="48" style="--d:1s"/><path class="m" d="M10 76H110"/><text class="c" x="30" y="88" style="font-size:7px">Illustration</text></svg></div>
+<div class="s" style="--i:9"><p class="k">Working paper · 2020</p><p class="t">Unconventional Monetary Policy, Leverage and Default Dynamics</p><p class="sub">Palombo, Queen Mary University of London</p><div class="acts"><a class="btn p" href="https://drive.google.com/file/d/1UQNy9pzYB5au9_Q0PHgze3wGc4WsMN6s/view">Read the paper</a><a class="btn" href="https://drive.google.com/file/d/1O5QHSZm8TiuktZjfXIHD-5qZJGfMQVAF/view">Listen</a></div></div>
+<div class="bar"></div>
+<button class="rp" type="button" onclick="var a=document.getElementById('a');a.classList.add('off');void a.offsetWidth;a.classList.remove('off')">Replay</button>
+</figure>
+</body>
+</html>

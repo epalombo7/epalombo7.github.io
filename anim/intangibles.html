@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uncertainty and Intangible Capital: 1-minute preview</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.anim{position:relative;aspect-ratio:16/9;max-width:100%;margin:0 auto;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
+.anim .s{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:6% 8% 9%;opacity:0;animation:sl 60s linear 1 both;animation-delay:calc(var(--i)*6s)}
+.anim .s:last-of-type{animation-name:sl-last}
+.anim .k{margin:0 0 .5em;font-size:clamp(.65rem,2.2vw,.8rem);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
+.anim .t{margin:0 0 .4em;font-size:clamp(1.05rem,4.2vw,2rem);line-height:1.25;font-weight:600;max-width:15em}
+.anim .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:1em}
+.anim .btn.p{background:var(--navy);color:var(--on-accent);border-color:var(--navy)}
+.anim .v{position:absolute;right:5%;top:12%;width:34%;height:auto;pointer-events:none;overflow:visible}
+.anim .v *{fill:none;stroke:var(--navy);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.anim .v .f{fill:var(--line);stroke:none}
+.anim .v .n{fill:var(--navy);stroke:none}
+.anim .v text{fill:var(--muted);stroke:none;font:600 6px sans-serif}
+.anim .v .m{stroke:var(--muted);stroke-width:1.2;stroke-dasharray:3 3}
+.anim .v .g{stroke:var(--line)}
+.anim .d{position:absolute;width:0;height:0}
+.anim .bar{position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--navy);transform-origin:left;animation:fill 60s linear 1 both}
+.anim .rp{position:absolute;right:12px;bottom:12px;z-index:2;font:inherit;font-size:.8rem;padding:2px 12px;cursor:pointer;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--navy)}
+.a1{animation:fg 5s ease-in-out both;animation-delay:calc(var(--i)*6s + .4s)}
+.a2{animation:dim 5s ease-in-out both;animation-delay:calc(var(--i)*6s + 1.5s)}
+.a3{animation:dr 4s ease-in-out both;animation-delay:calc(var(--i)*6s + .8s);stroke-dasharray:200}
+.a4{animation:pop 1.2s ease-out both;animation-delay:calc(var(--i)*6s + 1s);transform-box:fill-box;transform-origin:center}
+.a5{animation:grow 3s ease-out both;animation-delay:calc(var(--i)*6s + .6s);transform-box:fill-box;transform-origin:center}
+@keyframes sl{0%{opacity:0;transform:translateY(8px)}1.5%,9%{opacity:1;transform:none}10%,100%{opacity:0}}
+@keyframes sl-last{0%{opacity:0;transform:translateY(8px)}1.5%,100%{opacity:1;transform:none}}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes fg{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+@keyframes dim{from{opacity:1}to{opacity:.15}}
+@keyframes dr{from{stroke-dashoffset:200}to{stroke-dashoffset:0}}
+@keyframes pop{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scale(.3)}to{transform:none}}
+.anim.off *{animation:none!important}
+@media (prefers-reduced-motion:reduce){.anim{aspect-ratio:auto}.anim .s{position:static;opacity:1;animation:none;padding:18px 20px;border-bottom:1px solid var(--line)}.anim .bar,.anim .rp,.anim .d{display:none}.anim .v{position:static;width:40%;margin-top:.6em}.anim .v *{animation:none!important}}
+</style>
+</head>
+<body>
+<figure class="anim" id="a" aria-label="One-minute preview of Uncertainty, Intangible Capital and Productivity Dynamics">
+<svg class="d" aria-hidden="true"><defs>
+<g id="cl"><path class="f" d="M20 44a12 12 0 0 1 4-23 16 16 0 0 1 30-3 14 14 0 0 1 22 8 11 11 0 0 1-2 18z"/></g>
+<g id="bu"><circle cx="0" cy="0" r="7"/><path d="M-3 9h6M-2 12h4"/></g>
+<g id="fi"><path d="M-8 20V0h16v20zM-4 6h2M2 6h2M-4 12h2M2 12h2"/></g>
+</defs></svg>
+<div class="s" style="--i:0"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><use href="#fi" x="30" y="30"/><use class="a1" href="#cl" x="20" y="-6"/><text class="a4" x="62" y="26" style="font-size:22px">?</text></svg><p class="k">Picture this</p><p class="t">Next year looks foggy. Would you still spend on a big new idea?</p></div>
+<div class="s" style="--i:1"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><use class="a1" href="#cl" x="20" y="0"/><use class="a4" href="#bu" x="60" y="52"/></svg><p class="k">The question</p><p class="t">Does a foggy future make firms spend less on new ideas?</p></div>
+<div class="s" style="--i:2"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><use class="a4" href="#bu" x="60" y="26"/><path class="a3" d="M36 12l-5-5M84 12l5-5M30 28h-7M90 28h7"/></svg><p class="k">First, a key word</p><p class="t">Spending on ideas means research and new know-how, not machines.</p></div>
+<div class="s" style="--i:3"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><use class="a4" href="#fi" x="25" y="25"/><use class="a4" href="#fi" x="60" y="25"/><use class="a4" href="#fi" x="95" y="25"/><path class="a3" d="M20 60h80M92 55l8 5-8 5"/></svg><p class="k">How we studied it</p><p class="t">We looked at real US firms, then built a model of firms and growth.</p></div>
+<div class="s" style="--i:4"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><use href="#fi" x="25" y="42"/><use href="#fi" x="60" y="42"/><use href="#fi" x="95" y="42"/><g class="a2"><use href="#bu" x="25" y="26"/><use href="#bu" x="60" y="26"/><use href="#bu" x="95" y="26"/></g><use class="a1" href="#cl" x="20" y="-14"/></svg><p class="k">What we found</p><p class="t">More fog, fewer new ideas. In the 2008 crisis, fog explains about half the drop.</p></div>
+<div class="s" style="--i:5"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><g transform="translate(-4 2) scale(.6)"><use class="a5" href="#cl"/></g><g transform="translate(70 30) scale(.3)"><use href="#cl"/></g><text x="6" y="58">feared</text><text x="86" y="58">real</text></svg><p class="k">What we found</p><p class="t">Firms feared a much bigger fog than the one that came.</p></div>
+<div class="s" style="--i:6"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><path class="g" d="M6 62H116M6 62V6"/><path class="m" d="M6 24C26 24 34 52 52 46S84 14 116 12"/><path class="a3" d="M6 24C26 24 34 52 52 46S84 46 116 42"/><text x="8" y="10">Illustration</text><text x="84" y="58">fear &gt; reality</text></svg><p class="k">What we found</p><p class="t">Recovery was slow. In our model, output stays about 1% lower for good.</p></div>
+<div class="s" style="--i:7"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><use href="#fi" x="60" y="40"/><use class="a1" href="#cl" x="20" y="-14"/><path class="a4" d="M54 22v14M66 22v14"/></svg><p class="k">Why</p><p class="t">Big plans are hard to undo, so firms wait until the fog clears.</p></div>
+<div class="s" style="--i:8"><p class="k">The lessons</p><p class="t">A short worry can leave a long mark.</p><p class="t">What firms expect matters, not just what happens.</p></div>
+<div class="s" style="--i:9"><p class="k">Working paper · 2020</p><p class="t">Uncertainty, Intangible Capital and Productivity Dynamics</p><div class="acts"><a class="btn p" href="https://drive.google.com/file/d/1QJbSVegn2MKRMbyvImba9ObAGUld5Qqw/view">Read the paper</a><a class="btn" href="https://drive.google.com/file/d/1_vaczSAVhkZYystFh3Pgm4KeiQs5zRrA/view">Listen</a></div></div>
+<div class="bar"></div>
+<button class="rp" type="button" onclick="var a=document.getElementById('a');a.classList.add('off');void a.offsetWidth;a.classList.remove('off')">Replay</button>
+</figure>
+</body>
+</html>

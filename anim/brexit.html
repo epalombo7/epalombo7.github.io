@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>News Uncertainty in Brexit UK: 1-minute preview</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.anim{position:relative;aspect-ratio:16/9;max-width:100%;margin:0 auto;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
+.anim .s{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:6% 8% 9%;opacity:0;animation:sl 60s linear 1 both;animation-delay:calc(var(--i)*6s)}
+.anim .s:last-of-type{animation-name:sl-last}
+.anim .k{margin:0 0 .5em;font-size:clamp(.65rem,2.2vw,.8rem);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
+.anim .t{margin:0;font-size:clamp(.95rem,3.8vw,1.85rem);line-height:1.25;font-weight:600;max-width:15em}
+.anim .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:1em}
+.anim .btn.p{background:var(--navy);color:var(--on-accent);border-color:var(--navy)}
+.anim svg{position:absolute;right:5%;top:12%;width:36%;height:auto;pointer-events:none}
+.anim .l{fill:none;stroke:var(--navy);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:200;stroke-dashoffset:200;animation:dr 3s ease-in-out both;animation-delay:calc(var(--i)*6s + 1s)}
+.anim .ref{stroke:var(--line);stroke-dasharray:4 4;animation:none;stroke-dashoffset:0}
+.anim .base{fill:none;stroke:var(--line);stroke-width:2;stroke-linecap:round}
+.anim .b{fill:var(--surface);stroke:var(--navy);stroke-width:3;stroke-linejoin:round}
+.anim .c{fill:var(--line)}
+.anim .n{fill:var(--navy)}
+.anim .tx{fill:var(--muted);font:600 9px system-ui,sans-serif}
+.anim .q{fill:var(--navy);font:700 22px system-ui,sans-serif;text-anchor:middle}
+.anim .fog{animation:bob 3s ease-in-out infinite}
+.anim .pop{transform-box:fill-box;transform-origin:center;opacity:0;animation:pop .6s ease-out both;animation-delay:calc(var(--i)*6s + var(--d,1s))}
+.anim .hand{transform-box:view-box;transform-origin:60px 40px;animation:spin 4s linear infinite}
+.anim .bar{position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--navy);transform-origin:left;animation:fill 60s linear 1 both}
+.anim .rp{position:absolute;right:12px;bottom:12px;z-index:2;font:inherit;font-size:.8rem;padding:2px 12px;cursor:pointer;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--navy)}
+@keyframes sl{0%{opacity:0;transform:translateY(8px)}1.5%,8.5%{opacity:1;transform:none}10%,100%{opacity:0}}
+@keyframes sl-last{0%{opacity:0;transform:translateY(8px)}1.5%,100%{opacity:1;transform:none}}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes dr{to{stroke-dashoffset:0}}
+@keyframes bob{50%{transform:translateY(-4px)}}
+@keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.anim.off *{animation:none!important}
+@media (prefers-reduced-motion:reduce){.anim{aspect-ratio:auto}.anim .s{position:static;opacity:1;animation:none;padding:18px 20px;border-bottom:1px solid var(--line)}.anim svg{position:static;width:140px;margin-top:8px}.anim .l{stroke-dashoffset:0;animation:none}.anim .pop{opacity:1;animation:none}.anim *{animation:none!important}.anim .bar,.anim .rp{display:none}}
+</style>
+</head>
+<body>
+<figure class="anim" id="a" aria-label="One-minute animated preview of News Uncertainty in Brexit UK">
+<div class="s" style="--i:0"><svg viewBox="0 0 120 80" aria-hidden="true"><path class="b" d="M30 40h60v34H30zM24 40l8-14h56l8 14z"/><g class="fog"><ellipse class="c" cx="60" cy="14" rx="26" ry="10"/><text class="q" x="60" y="22">?</text></g></svg><p class="k">The situation</p><p class="t">You run a shop. Big news arrives, but nobody knows what it means.</p></div>
+<div class="s" style="--i:1"><svg viewBox="0 0 120 80" aria-hidden="true"><g class="fog"><ellipse class="c" cx="60" cy="26" rx="40" ry="18"/><text class="q" x="60" y="36" style="font-size:30px">?</text></g><path class="base" d="M10 74h100"/></svg><p class="k">The question</p><p class="t">Does not knowing what comes next slow down the economy?</p></div>
+<div class="s" style="--i:2"><svg viewBox="0 0 120 80" aria-hidden="true"><rect class="b" x="4" y="8" width="22" height="18"/><rect class="b" x="4" y="32" width="22" height="18"/><rect class="b" x="4" y="56" width="22" height="18"/><path class="l" d="M32 41h36" style="--i:2"/><rect class="b pop" x="74" y="22" width="40" height="38" style="--d:2.5s"/><circle class="n pop" cx="94" cy="41" r="8" style="--d:3s"/><text class="tx" x="4" y="5">Firms' answers</text><text class="tx" x="78" y="72">Model</text></svg><p class="k">How we studied it</p><p class="t">We asked UK firms what they expect. We put the answers in a model.</p></div>
+<div class="s" style="--i:3"><svg viewBox="0 0 120 80" aria-hidden="true"><g class="fog"><ellipse class="c" cx="60" cy="12" rx="50" ry="10"/></g><rect class="b" x="8" y="34" width="26" height="30"/><rect class="b" x="47" y="34" width="26" height="30"/><rect class="b" x="86" y="34" width="26" height="30"/><g class="n pop" style="--d:1.5s"><rect x="17" y="44" width="4" height="10"/><rect x="25" y="44" width="4" height="10"/><rect x="56" y="44" width="4" height="10"/><rect x="64" y="44" width="4" height="10"/><rect x="95" y="44" width="4" height="10"/><rect x="103" y="44" width="4" height="10"/></g><text class="tx" x="60" y="76" text-anchor="middle">Firms pause</text></svg><p class="k">What firms do</p><p class="t">Unsure, firms pause big spending, like buying new machines. They wait and see.</p></div>
+<div class="s" style="--i:4"><svg viewBox="0 0 120 80" aria-hidden="true"><path class="base" d="M6 74h108M6 74V6"/><path class="l" d="M10 28H44L56 62L90 30H112"/><text class="tx" x="60" y="5" text-anchor="middle">Illustration</text></svg><p class="k">What many expected</p><p class="t">A sudden crash, then a quick bounce back.</p></div>
+<div class="s" style="--i:5"><svg viewBox="0 0 120 80" aria-hidden="true"><path class="base" d="M6 74h108M6 74V6"/><path class="l ref" d="M10 28H44L56 62L90 30H112"/><path class="l" d="M10 28C40 30 70 38 112 60"/><text class="tx" x="60" y="5" text-anchor="middle">Illustration</text></svg><p class="k">What happened</p><p class="t">No crash after the vote. The UK economy slid down slowly instead.</p></div>
+<div class="s" style="--i:6"><svg viewBox="0 0 120 80" aria-hidden="true"><circle class="b" cx="60" cy="40" r="26"/><path class="l hand" d="M60 40V22" style="--i:6;stroke-dashoffset:0;animation:spin 4s linear infinite"/><g class="fog"><ellipse class="c" cx="98" cy="12" rx="18" ry="8"/></g></svg><p class="k">Why</p><p class="t">The worry was about the far future, and we expected it to last.</p></div>
+<div class="s" style="--i:7"><svg viewBox="0 0 120 80" aria-hidden="true"><path class="base" d="M6 74h108"/><path class="l" d="M8 30C40 32 70 36 80 44" style="--i:7"/><g class="fog"><ellipse class="c" cx="100" cy="30" rx="16" ry="9"/><text class="q" x="100" y="38" style="font-size:16px">?</text></g></svg><p class="k">The lesson</p><p class="t">Worry about the far future can hurt slowly, not suddenly.</p></div>
+<div class="s" style="--i:8"><svg viewBox="0 0 120 80" aria-hidden="true"><circle class="b" cx="60" cy="40" r="26"/><path class="l hand" d="M60 40V22" style="stroke-dashoffset:0;animation:spin 4s linear infinite"/><text class="q" x="60" y="76">?</text></svg><p class="k">The lesson</p><p class="t">How long we expect not-knowing to last changes how much it hurts.</p></div>
+<div class="s" style="--i:9"><p class="k">News Uncertainty in Brexit UK</p><p class="t">with Renato Faccini · AER: Insights 2021</p><div class="acts"><a class="btn p" href="https://drive.google.com/file/d/1UtyUfUhK_clt_i_WdSCWk9PhPfMMTQG1/view">Read the paper</a><a class="btn" href="https://drive.google.com/file/d/1G2nr379Pfmsv_4ATu8-HSJr3QPHktVYL/view">Listen</a></div></div>
+<div class="bar"></div>
+<button class="rp" type="button" onclick="var a=document.getElementById('a');a.classList.add('off');void a.offsetWidth;a.classList.remove('off')">Replay</button>
+</figure>
+</body>
+</html>
