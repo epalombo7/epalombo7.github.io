@@ -6,57 +6,164 @@
 <title>Uncertainty and Intangible Capital: 1-minute preview</title>
 <link rel="stylesheet" href="../style.css">
 <style>
-.anim{position:relative;aspect-ratio:16/9;max-width:100%;margin:0 auto;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
+.anim{--ink:#181e29;--slate:#2a3547;--slate2:#364459;--storm:#4d5a73;--teal:#5fb0a6;--sand:#dcbc92;--glow:#f5cf7a;--bp:#1e3d49;position:relative;aspect-ratio:16/9;max-width:100%;margin:0 auto;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
 .anim .s{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:6% 8% 9%;opacity:0;animation:sl 60s linear 1 both;animation-delay:calc(var(--i)*6s)}
-.anim .s:last-of-type{animation-name:sl-last}
+.anim .s.last{animation-name:sl-last}
 .anim .k{margin:0 0 .5em;font-size:clamp(.65rem,2.2vw,.8rem);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
 .anim .t{margin:0 0 .4em;font-size:clamp(1.05rem,4.2vw,2rem);line-height:1.25;font-weight:600;max-width:15em}
 .anim .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:1em}
 .anim .btn.p{background:var(--navy);color:var(--on-accent);border-color:var(--navy)}
-.anim .v{position:absolute;right:5%;top:12%;width:34%;height:auto;pointer-events:none;overflow:visible}
-.anim .v *{fill:none;stroke:var(--navy);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-.anim .v .f{fill:var(--line);stroke:none}
-.anim .v .n{fill:var(--navy);stroke:none}
-.anim .v text{fill:var(--muted);stroke:none;font:600 6px sans-serif}
-.anim .v .m{stroke:var(--muted);stroke-width:1.2;stroke-dasharray:3 3}
-.anim .v .g{stroke:var(--line)}
+.anim .sig{display:block;height:clamp(30px,7vw,48px);width:auto;margin:0 0 .5em;align-self:flex-start}
+.anim .v{position:absolute;right:4%;top:11%;width:39%;height:auto;pointer-events:none;overflow:visible;fill:none;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.anim .v text{fill:var(--muted);font:600 7px sans-serif}
+.anim .c1{fill:var(--navy)}.anim .c2{fill:var(--teal)}.anim .c3{fill:var(--sand)}.anim .c4{fill:var(--slate)}.anim .c5{fill:var(--slate2)}.anim .c6{fill:var(--glow)}.anim .c7{fill:var(--text)}.anim .c8{fill:var(--bp)}.anim .c9{fill:var(--storm)}
+.anim .e1{stroke:var(--navy)}.anim .e2{stroke:var(--teal)}.anim .e3{stroke:var(--sand)}.anim .e4{stroke:var(--slate2)}.anim .e5{stroke:var(--storm)}.anim .e6{stroke:var(--glow)}.anim .e7{stroke:var(--muted)}.anim .e8{stroke:var(--ink)}
 .anim .d{position:absolute;width:0;height:0}
 .anim .bar{position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--navy);transform-origin:left;animation:fill 60s linear 1 both}
 .anim .rp{position:absolute;right:12px;bottom:12px;z-index:2;font:inherit;font-size:.8rem;padding:2px 12px;cursor:pointer;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--navy)}
-.a1{animation:fg 5s ease-in-out both;animation-delay:calc(var(--i)*6s + .4s)}
-.a2{animation:dim 5s ease-in-out both;animation-delay:calc(var(--i)*6s + 1.5s)}
-.a3{animation:dr 4s ease-in-out both;animation-delay:calc(var(--i)*6s + .8s);stroke-dasharray:200}
-.a4{animation:pop 1.2s ease-out both;animation-delay:calc(var(--i)*6s + 1s);transform-box:fill-box;transform-origin:center}
-.a5{animation:grow 3s ease-out both;animation-delay:calc(var(--i)*6s + .6s);transform-box:fill-box;transform-origin:center}
+.po,.pl,.sp,.sq,.sr{transform-box:fill-box;transform-origin:center}
+.r{animation-name:rise;animation-duration:.9s;animation-timing-function:ease-out}
+.po{animation-name:pop;animation-duration:.9s;animation-timing-function:cubic-bezier(.3,1.5,.5,1)}
+.fi{animation-name:fin;animation-duration:1s}
+.dw{stroke-dasharray:1;animation-name:draw;animation-duration:var(--t,1.8s);animation-timing-function:ease-in-out}
+.gw{animation:gw 2.4s ease-in-out infinite alternate}
+.fg{fill-opacity:.16;animation-name:fin,dr;animation-duration:1.6s,6s;animation-timing-function:ease-out,ease-in-out;animation-iteration-count:1,infinite;animation-direction:normal,alternate;animation-delay:calc(var(--i)*6s + var(--d,0s)),calc(var(--i)*6s + var(--d,0s))}
+.fl{animation:fl 2.2s ease-in-out infinite alternate}
+.bb{animation:bb 2.4s linear infinite}
+.pl{animation:pl 3s ease-out infinite}
+.sp{animation:spn 5s cubic-bezier(.15,.7,.25,1) 1}
+.sq{animation:rot 9s linear infinite}
+.sr{animation:rot 9s linear infinite reverse}
+.hs{transform-box:fill-box;transform-origin:50% 100%;animation:hs 1.8s ease-in-out infinite alternate}
+.dm{animation:dim 3s ease-in-out 1}
+.dt{animation:mv var(--t,2.4s) linear infinite}
+.rn{animation:rn 1.1s linear infinite}
+.sw{animation-name:fin,sweep;animation-duration:1s,5s;animation-timing-function:ease-out,ease-in-out;animation-delay:calc(var(--i)*6s + var(--d,0s)),calc(var(--i)*6s + var(--d,0s))}
+.dp{animation:dp 1s ease-in 1}
+.r,.po,.dw,.gw,.fl,.bb,.pl,.sp,.sq,.sr,.hs,.dm,.dt,.rn,.fi,.dp{animation-delay:calc(var(--i)*6s + var(--d,0s));animation-fill-mode:both}
+.fg,.sw{animation-fill-mode:both}
+.sw{animation-iteration-count:1;animation-direction:normal}
 @keyframes sl{0%{opacity:0;transform:translateY(8px)}1.5%,9%{opacity:1;transform:none}10%,100%{opacity:0}}
 @keyframes sl-last{0%{opacity:0;transform:translateY(8px)}1.5%,100%{opacity:1;transform:none}}
 @keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@keyframes fg{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
-@keyframes dim{from{opacity:1}to{opacity:.15}}
-@keyframes dr{from{stroke-dashoffset:200}to{stroke-dashoffset:0}}
-@keyframes pop{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
-@keyframes grow{from{transform:scale(.3)}to{transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+@keyframes fin{from{opacity:0}to{opacity:1}}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes gw{from{opacity:.5}to{opacity:1}}
+@keyframes dr{from{transform:translateX(-9px)}to{transform:translateX(9px)}}
+@keyframes fl{from{transform:translateY(-3px)}to{transform:translateY(3px)}}
+@keyframes bb{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-16px);opacity:0}}
+@keyframes pl{0%{transform:scale(.4);opacity:0}15%{opacity:.7}100%{transform:scale(1.8);opacity:0}}
+@keyframes spn{to{transform:rotate(540deg)}}
+@keyframes rot{to{transform:rotate(360deg)}}
+@keyframes hs{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
+@keyframes dim{from{opacity:1}to{opacity:.18}}
+@keyframes mv{from{offset-distance:0%}to{offset-distance:100%}}
+@keyframes rn{from{transform:translateY(0);opacity:.9}to{transform:translateY(9px);opacity:0}}
+@keyframes sweep{from{transform:translateX(-34px)}to{transform:translateX(30px)}}
+@keyframes dp{0%{transform:translateY(-46px);opacity:1}88%{transform:none;opacity:1}100%{transform:none;opacity:0}}
 .anim.off *{animation:none!important}
-@media (prefers-reduced-motion:reduce){.anim{aspect-ratio:auto}.anim .s{position:static;opacity:1;animation:none;padding:18px 20px;border-bottom:1px solid var(--line)}.anim .bar,.anim .rp,.anim .d{display:none}.anim .v{position:static;width:40%;margin-top:.6em}.anim .v *{animation:none!important}}
+@media (prefers-reduced-motion:reduce){.anim{aspect-ratio:auto}.anim .s{position:static;opacity:1;animation:none;padding:18px 20px;border-bottom:1px solid var(--line)}.anim .bar,.anim .rp,.anim .d{display:none}.anim .v{position:static;width:min(100%,360px);margin-top:.6em}.anim .v *{animation:none!important}}
 svg{overflow:visible}</style>
 </head>
 <body>
 <figure class="anim" id="a" aria-label="One-minute preview of Uncertainty, Intangible Capital and Productivity Dynamics">
 <svg class="d" aria-hidden="true"><defs>
-<g id="cl"><path class="f" d="M20 44a12 12 0 0 1 4-23 16 16 0 0 1 30-3 14 14 0 0 1 22 8 11 11 0 0 1-2 18z"/></g>
-<g id="bu"><circle cx="0" cy="0" r="7"/><path d="M-3 9h6M-2 12h4"/></g>
-<g id="fi"><path d="M-8 20V0h16v20zM-4 6h2M2 6h2M-4 12h2M2 12h2"/></g>
+<clipPath id="pc"><rect width="160" height="100" rx="8"/></clipPath>
+<g id="pn"><rect width="160" height="100" rx="8" style="fill:var(--ink);stroke:var(--line);stroke-width:1"/></g>
+<g id="cl"><ellipse cx="30" cy="20" rx="26" ry="9"/><ellipse cx="50" cy="14" rx="18" ry="10"/><ellipse cx="14" cy="16" rx="14" ry="8"/><ellipse cx="42" cy="24" rx="30" ry="7"/></g>
+<g id="cb"><ellipse cx="50" cy="30" rx="48" ry="10"/><ellipse cx="30" cy="20" rx="24" ry="13"/><ellipse cx="62" cy="15" rx="26" ry="15"/><ellipse cx="84" cy="25" rx="16" ry="9"/><ellipse cx="14" cy="27" rx="13" ry="8"/></g>
+<g id="cs"><ellipse cx="18" cy="12" rx="17" ry="5"/><ellipse cx="12" cy="8" rx="8" ry="6"/><ellipse cx="23" cy="6" rx="8" ry="6"/></g>
+<g id="bu"><circle r="11"/><path d="M-5 9h10v6h-10z" style="fill:var(--muted);stroke:none"/><path d="M-3 18h6" style="stroke:var(--muted);stroke-width:2"/><path d="M-3 4v-6l3 3 3-3v6" style="fill:none;stroke:var(--ink);stroke-width:1.2"/></g>
+<g id="ge"><circle r="9.5" style="fill:none;stroke-width:4;stroke-dasharray:2.5 2.475;stroke-linecap:butt"/><circle r="8" style="stroke:none"/><circle r="3" style="fill:var(--ink);stroke:none"/></g>
+<g id="fk"><path d="M-13 -1h26l3 4a2 2 0 0 1-2.2 4h-27.6a2 2 0 0 1-2.2-4z" style="stroke:none;fill-opacity:.85"/><path d="M-5 -26h10v10l11 19a2.5 2.5 0 0 1-2.2 4h-27.6a2.5 2.5 0 0 1-2.2-4l11-19z" style="fill:none;stroke:var(--muted);stroke-width:1.3"/></g>
+<g id="sb"><path d="M10 52h18v36H10zM30 44h14v44H30zM46 58h20v30H46zM70 40h16v48H70zM90 54h18v34H90zM110 46h14v42h-14zM128 56h20v32h-20z"/></g>
+<g id="sf"><path d="M4 66h20v22H4zM26 60h16v28H26zM46 70h22v18H46zM72 62h18v26H72zM94 68h20v20H94zM116 60h16v28h-16zM136 66h20v22h-20z"/></g>
+<g id="w1"><path d="M9 72h2.5v3H9zM15 72h2.5v3H15zM9 79h2.5v3H9zM31 66h2.5v3H31zM36 66h2.5v3H36zM31 74h2.5v3H31zM52 76h2.5v3H52zM60 76h2.5v3H60zM78 68h2.5v3H78zM84 68h2.5v3H84zM78 76h2.5v3H78z"/></g>
+<g id="w2"><path d="M100 74h2.5v3H100zM108 74h2.5v3H108zM121 66h2.5v3H121zM126 74h2.5v3H126zM141 72h2.5v3H141zM148 72h2.5v3H148zM141 80h2.5v3H141zM15 79h2.5v3H15zM36 74h2.5v3H36z"/></g>
 </defs></svg>
-<div class="s" style="--i:0"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><use href="#fi" x="30" y="30"/><use class="a1" href="#cl" x="20" y="-6"/><text class="a4" x="62" y="26" style="font-size:22px">?</text></svg><p class="k">Picture this</p><p class="t">Next year looks foggy. Would you still spend on a big new idea?</p></div>
-<div class="s" style="--i:1"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><use class="a1" href="#cl" x="20" y="0"/><use class="a4" href="#bu" x="60" y="52"/></svg><p class="k">The question</p><p class="t">Does a foggy future make firms spend less on new ideas?</p></div>
-<div class="s" style="--i:2"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><use class="a4" href="#bu" x="60" y="26"/><path class="a3" d="M36 12l-5-5M84 12l5-5M30 28h-7M90 28h7"/></svg><p class="k">First, a key word</p><p class="t">Spending on ideas means research and new know-how, not machines.</p></div>
-<div class="s" style="--i:3"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><use class="a4" href="#fi" x="25" y="25"/><use class="a4" href="#fi" x="60" y="25"/><use class="a4" href="#fi" x="95" y="25"/><path class="a3" d="M20 60h80M92 55l8 5-8 5"/></svg><p class="k">How we studied it</p><p class="t">We looked at real US firms, then built a model of firms and growth.</p></div>
-<div class="s" style="--i:4"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><use href="#fi" x="25" y="42"/><use href="#fi" x="60" y="42"/><use href="#fi" x="95" y="42"/><g class="a2"><use href="#bu" x="25" y="26"/><use href="#bu" x="60" y="26"/><use href="#bu" x="95" y="26"/></g><use class="a1" href="#cl" x="20" y="-14"/></svg><p class="k">What we found</p><p class="t">More fog, fewer new ideas. In the 2008 crisis, fog explains about half the drop.</p></div>
-<div class="s" style="--i:5"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><g transform="translate(-4 2) scale(.6)"><use class="a5" href="#cl"/></g><g transform="translate(70 30) scale(.3)"><use href="#cl"/></g><text x="6" y="58">feared</text><text x="86" y="58">real</text></svg><p class="k">What we found</p><p class="t">Firms feared a much bigger fog than the one that came.</p></div>
-<div class="s" style="--i:6"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><path class="g" d="M6 62H116M6 62V6"/><path class="m" d="M6 24C26 24 34 52 52 46S84 14 116 12"/><path class="a3" d="M6 24C26 24 34 52 52 46S84 46 116 42"/><text x="8" y="10">Illustration</text><text x="84" y="58">fear &gt; reality</text></svg><p class="k">What we found</p><p class="t">Recovery was slow. In our model, output stays about 1% lower for good.</p></div>
-<div class="s" style="--i:7"><svg class="v" viewBox="0 0 120 70" aria-hidden="true"><use href="#fi" x="60" y="40"/><use class="a1" href="#cl" x="20" y="-14"/><path class="a4" d="M54 22v14M66 22v14"/></svg><p class="k">Why</p><p class="t">Big plans are hard to undo, so firms wait until the fog clears.</p></div>
-<div class="s" style="--i:8"><p class="k">The lessons</p><p class="t">A short worry can leave a long mark.</p><p class="t">What firms expect matters, not just what happens.</p></div>
-<div class="s" style="--i:9"><p class="k">Working paper · 2020</p><p class="t">Uncertainty, Intangible Capital and Productivity Dynamics</p><div class="acts"><a class="btn p" href="https://drive.google.com/file/d/1QJbSVegn2MKRMbyvImba9ObAGUld5Qqw/view">Read the paper</a><a class="btn" href="https://drive.google.com/file/d/1_vaczSAVhkZYystFh3Pgm4KeiQs5zRrA/view">Listen</a></div></div>
+
+<div class="s" style="--i:0"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
+<circle class="c6 gw" cx="128" cy="22" r="19" style="fill-opacity:.16"/><circle class="c3 r" cx="128" cy="22" r="8"/>
+<use class="c4 r" href="#sb"/><use class="c5 r" style="--d:.25s" href="#sf"/><path class="c4" d="M0 88h160v12H0z"/>
+<use class="c6 gw" style="--d:.8s" href="#w1"/><use class="c6 gw" style="--d:1.6s;animation-duration:3.1s" href="#w2"/>
+<use class="fg c7" style="--d:.9s" href="#cb" x="-12" y="36"/><use class="fg c3" style="--d:1.4s;animation-duration:1.6s,7.5s" href="#cb" x="56" y="48"/><use class="fg c7" style="--d:1.9s" href="#cl" x="84" y="30"/>
+<g class="po" style="--d:1.4s"><text class="fl" x="76" y="40" text-anchor="middle" style="font:700 30px sans-serif;fill:var(--navy)">?</text></g>
+<g class="po" style="--d:2s"><text class="fl" x="100" y="28" text-anchor="middle" style="font:700 16px sans-serif;fill:var(--teal);animation-delay:-1s">?</text></g></g></svg><p class="k">Picture this</p><p class="t">Next year looks foggy. Would you still spend on a big new idea?</p></div>
+
+<div class="s" style="--i:1"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
+<circle class="c6 pl" style="--d:.6s" cx="60" cy="42" r="18"/><circle class="c6 pl" style="--d:1.8s" cx="60" cy="42" r="18"/>
+<g class="r" style="--d:.2s"><g class="dm" style="--d:2s"><path class="dw e6" style="--d:.8s;--t:1.2s" pathLength="1" d="M60 12V4M79.8 20.2l5.7-5.7M88 40h8M32 40h-8M40.2 20.2l-5.7-5.7"/><g transform="translate(60 40) scale(1.9)"><use class="c6" href="#bu"/></g></g></g>
+<use class="fg c7 sw" style="--d:1.4s;fill-opacity:.3" href="#cb" x="10" y="26"/>
+<g class="r" style="--d:.5s"><path class="c4" d="M96 82h36v4H96z"/><g class="dm" style="--d:3.4s"><path class="c3 e8" d="M104 55h20a3 3 0 0 1 3 3v0a3 3 0 0 1-3 3h-20a3 3 0 0 1-3-3v0a3 3 0 0 1 3-3z" style="stroke-width:.8"/></g><g class="dm" style="--d:2.8s"><path class="c3 e8" d="M104 62h20a3 3 0 0 1 3 3v0a3 3 0 0 1-3 3h-20a3 3 0 0 1-3-3v0a3 3 0 0 1 3-3z" style="stroke-width:.8"/></g><g class="dm" style="--d:2.2s"><path class="c3 e8" d="M104 69h20a3 3 0 0 1 3 3v0a3 3 0 0 1-3 3h-20a3 3 0 0 1-3-3v0a3 3 0 0 1 3-3z" style="stroke-width:.8"/></g><path class="c3 e8" d="M104 76h20a3 3 0 0 1 3 3v0a3 3 0 0 1-3 3h-20a3 3 0 0 1-3-3v0a3 3 0 0 1 3-3z" style="stroke-width:.8"/></g></g></svg><p class="k">The question</p><p class="t">Does a foggy future make firms spend less on new ideas?</p></div>
+
+<div class="s" style="--i:2"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
+<g class="r"><rect class="c8 e2" x="10" y="10" width="66" height="50" rx="3" style="stroke-width:1"/><path class="e2" style="stroke-width:.5;stroke-opacity:.3" d="M10 22h66M10 34h66M10 46h66M26 10v50M42 10v50M58 10v50"/></g>
+<path class="dw e3" style="--d:.5s;--t:1.6s" pathLength="1" d="M40 34a10 10 0 1 0-20 0a10 10 0 1 0 20 0M40 34h22M62 28h10v12H62z"/>
+<path class="dw e3" style="--d:2s;--t:1.4s;stroke-width:1" pathLength="1" d="M16 52h22M44 52h12M20 17h14"/>
+<circle class="c6 pl" style="--d:1s" cx="116" cy="24" r="16"/><g class="r" style="--d:.9s"><g transform="translate(116 24)"><use class="c6 gw" href="#bu"/></g></g>
+<path class="c4" d="M0 78h160v22H0z"/><path class="e3" style="stroke-width:1;stroke-opacity:.5" d="M0 78h160"/>
+<g class="r" style="--d:.6s"><g transform="translate(100 71)"><use class="c2" href="#fk"/></g></g>
+<g class="r" style="--d:1s"><g transform="translate(134 72.4) scale(.8)"><use class="c1" href="#fk"/></g></g>
+<g class="c7"><circle class="bb" style="--d:1.2s" cx="97" cy="71" r="1.3"/><circle class="bb" style="--d:1.9s" cx="103" cy="73" r="1"/><circle class="bb" style="--d:2.4s" cx="100" cy="72" r="1.5"/><circle class="bb" style="--d:1.6s" cx="132" cy="74" r="1.2"/><circle class="bb" style="--d:2.6s" cx="136" cy="75" r="1"/></g></g></svg><p class="k">First, a key word</p><p class="t">Spending on ideas means research and new know-how, not machines.</p></div>
+
+<div class="s" style="--i:3"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
+<g class="r"><path class="c5" d="M8 48h14v28H8zM24 38h16v38H24zM42 44h14v32H42z"/><path class="c4" d="M4 76h56v3H4z"/></g>
+<path class="c6 gw" style="--d:.6s" d="M11 52h2.5v3H11zM16 52h2.5v3H16zM11 59h2.5v3H11zM16 59h2.5v3H16zM28 42h2.5v3H28zM34 42h2.5v3H34zM28 49h2.5v3H28zM34 49h2.5v3H34zM28 56h2.5v3H28zM34 56h2.5v3H34zM45 48h2.5v3H45zM51 48h2.5v3H51zM45 55h2.5v3H45zM51 55h2.5v3H51z"/>
+<g class="c3"><circle class="bb" style="--d:1s" cx="15" cy="46" r="1.6"/><circle class="bb" style="--d:1.5s" cx="32" cy="36" r="1.6"/><circle class="bb" style="--d:2s" cx="49" cy="42" r="1.6"/></g>
+<path class="dw e7" style="--d:1.2s;--t:1s;stroke-width:1.2" pathLength="1" d="M64 52H92"/><path class="fi e7" style="--d:2s;stroke-width:1.2" d="M89 47l6 5-6 5"/>
+<circle class="c6 dt" style="--d:1.6s;offset-path:path('M64 52H92')" r="2.2"/>
+<g class="po" style="--d:1s"><rect class="c5 e2" x="98" y="26" width="54" height="52" rx="5" style="stroke-width:1.2"/></g>
+<path class="dw e2" style="--d:1.8s;--t:1s;stroke-width:1" pathLength="1" d="M108 31L124 31L142 33"/>
+<g class="c3"><circle class="po" style="--d:2.2s" cx="108" cy="31" r="2.2"/><circle class="po" style="--d:2.4s" cx="124" cy="31" r="2.2"/><circle class="po" style="--d:2.6s" cx="142" cy="33" r="2.2"/></g>
+<use class="c1 e1 sq" style="--d:1.2s" href="#ge" x="115" y="48"/><use class="c2 e2 sr" style="--d:1.4s;animation-delay:-.5s" href="#ge" x="137" y="58"/></g></svg><p class="k">How we studied it</p><p class="t">We looked at real US firms, then built a model of firms and growth.</p></div>
+
+<div class="s" style="--i:4"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
+<g class="r"><path class="c4" d="M0 88h160v12H0z"/><path class="c5" d="M14 50h34v38H14zM62 40h34v48H62zM110 46h34v42h-34z"/></g>
+<path class="e6 gw" style="stroke-width:3.5;stroke-linecap:butt;stroke-dasharray:3 4;--d:.9s" d="M19 60h28M19 68h28M19 76h28M67 50h28M67 58h28M67 66h28M67 74h28M115 56h28M115 64h28M115 72h28"/>
+<g class="r" style="--d:.4s"><g class="dm" style="--d:1.2s"><circle class="c6" style="fill-opacity:.15" cx="31" cy="26" r="17"/><g transform="translate(31 26)"><use class="c6" href="#bu"/></g></g></g>
+<g class="r" style="--d:.6s"><g class="dm" style="--d:1.7s"><circle class="c6" style="fill-opacity:.15" cx="79" cy="16" r="17"/><g transform="translate(79 16)"><use class="c6" href="#bu"/></g></g></g>
+<g class="r" style="--d:.8s"><g class="dm" style="--d:2.2s"><circle class="c6" style="fill-opacity:.15" cx="127" cy="22" r="17"/><g transform="translate(127 22)"><use class="c6" href="#bu"/></g></g></g>
+<use class="fg c7" style="--d:1s" href="#cb" x="-8" y="-4"/><use class="fg c3" style="--d:1.6s;animation-duration:1.6s,7s" href="#cb" x="58" y="4"/><use class="fg c7" style="--d:2.2s" href="#cl" x="92" y="-6"/></g></svg><p class="k">What we found</p><p class="t">More fog, fewer new ideas. In the 2008 crisis, fog explains about half the drop.</p></div>
+
+<div class="s" style="--i:5"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
+<path class="e7" style="stroke-width:.8;stroke-dasharray:2 3;stroke-opacity:.5" d="M86 8V80"/>
+<circle class="c6 pl" style="--d:.8s" cx="140" cy="28" r="12"/><circle class="c6 r" style="--d:.5s" cx="140" cy="28" r="8"/>
+<g class="r" style="--d:.7s"><use class="c3" style="fill-opacity:.85" href="#cs" x="112" y="30"/></g>
+<g class="po" style="--d:.2s"><use class="c9" href="#cb" x="2" y="8"/></g>
+<g class="c6 gw" style="--d:1.4s;animation-duration:.9s"><path d="M54 46l-6 12h5l-3 12 10-16h-5l4-8z"/></g>
+<g class="e5" style="stroke-width:1.3"><path class="rn" style="--d:1.2s" d="M14 50v6"/><path class="rn" style="--d:1.5s" d="M26 52v6"/><path class="rn" style="--d:1.3s" d="M38 50v6"/><path class="rn" style="--d:1.8s" d="M66 52v6"/><path class="rn" style="--d:1.6s" d="M78 50v6"/></g>
+<text x="44" y="92" text-anchor="middle">feared</text><text x="124" y="92" text-anchor="middle">real</text></g></svg><p class="k">What we found</p><p class="t">Firms feared a much bigger fog than the one that came.</p></div>
+
+<div class="s" style="--i:6"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
+<path class="e4" style="stroke-width:.6" d="M14 30H150M14 50H150M14 70H150"/>
+<path class="e7" style="stroke-width:1.2" d="M14 10V82H150"/>
+<path class="c3 fi" style="--d:4s;fill-opacity:.2" d="M70 70C92 64 116 64 150 64V24C120 30 92 64 70 70z"/>
+<path class="e7 fi" style="--d:.6s;stroke-width:1.2;stroke-dasharray:3 3" d="M14 34C34 34 44 78 70 70C92 64 120 30 150 24"/>
+<path class="dw e1" style="--d:.6s;--t:3.8s;stroke-width:2.2" pathLength="1" d="M14 34C34 34 44 78 70 70C92 64 116 64 150 64"/>
+<circle class="c1 pl" style="--d:4.2s" cx="150" cy="64" r="6"/>
+<circle class="c7 dt" style="--d:.6s;--t:3.8s;offset-path:path('M14 34C34 34 44 78 70 70C92 64 116 64 150 64');animation-iteration-count:1;animation-fill-mode:both" r="3.2"/>
+<text x="20" y="18">Illustration</text><text x="150" y="94" text-anchor="end">fear &gt; reality</text></g></svg><p class="k">What we found</p><p class="t">Recovery was slow. In our model, output stays about 1% lower for good.</p></div>
+
+<div class="s" style="--i:7"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
+<use class="c3 e3 sp" style="--d:.4s;stroke-opacity:.9" href="#ge" x="30" y="30"/>
+<path class="c4" d="M0 80h160v20H0z"/>
+<g class="r"><path class="c4" d="M82 22h44v58H82z"/></g>
+<path class="c6 gw" style="fill-opacity:.4" d="M86 26h36v54H86z"/>
+<path class="c6 gw" style="fill-opacity:.14;--d:.4s" d="M86 80h36l26 18H62z"/>
+<path class="c5 e4" style="stroke-width:1" d="M86 26l18 5v44l-18 5z"/>
+<g class="hs" style="--d:.6s"><circle class="c3" cx="58" cy="43" r="5.5"/><rect class="c1" x="53" y="50" width="10" height="19" rx="4.5"/><path class="e5" style="stroke-width:3" d="M56 69v11M60 69v11"/><path class="e1" style="stroke-width:3" d="M62 55l9 3"/></g>
+<g class="c7"><circle class="gw" style="--d:1s;animation-duration:1.2s" cx="66" cy="33" r="1.5"/><circle class="gw" style="--d:1.3s;animation-duration:1.2s" cx="71" cy="29" r="1.9"/><circle class="gw" style="--d:1.6s;animation-duration:1.2s" cx="77" cy="25" r="2.3"/></g>
+<use class="fg c7" style="--d:1.2s" href="#cb" x="-22" y="66"/><use class="fg c7" style="--d:1.8s" href="#cb" x="70" y="72"/></g></svg><p class="k">Why</p><p class="t">Big plans are hard to undo, so firms wait until the fog clears.</p></div>
+
+<div class="s" style="--i:8"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
+<g class="c7"><circle class="gw" cx="20" cy="14" r="1.2"/><circle class="gw" style="animation-delay:-1s" cx="52" cy="24" r="1"/><circle class="gw" style="animation-delay:-.5s" cx="118" cy="12" r="1.3"/><circle class="gw" style="animation-delay:-1.5s" cx="142" cy="30" r="1"/></g>
+<ellipse class="c2 r" style="fill-opacity:.14" cx="80" cy="74" rx="66" ry="15"/>
+<ellipse class="e3 pl" style="--d:1.3s;stroke-width:1.2" cx="80" cy="74" rx="16" ry="4"/><ellipse class="e2 pl" style="--d:2.4s;stroke-width:1.2" cx="80" cy="74" rx="16" ry="4"/><ellipse class="e1 pl" style="--d:3.5s;stroke-width:1.2" cx="80" cy="74" rx="16" ry="4"/>
+<circle class="c3 dp" style="--d:.4s" cx="80" cy="72" r="3.2"/></g></svg><p class="k">The lessons</p><p class="t">A short worry can leave a long mark.</p><p class="t">What firms expect matters, not just what happens.</p></div>
+
+<div class="s last" style="--i:9"><img src="../sig.svg" alt="Edoardo Palombo signature" class="sig"><p class="k">Working paper · 2020</p><p class="t">Uncertainty, Intangible Capital and Productivity Dynamics</p><div class="acts"><a class="btn p" href="https://drive.google.com/file/d/1QJbSVegn2MKRMbyvImba9ObAGUld5Qqw/view">Read the paper</a><a class="btn" href="https://drive.google.com/file/d/1_vaczSAVhkZYystFh3Pgm4KeiQs5zRrA/view">Listen</a></div></div>
 <div class="bar"></div>
 <button class="rp" type="button" onclick="var a=document.getElementById('a');a.classList.add('off');void a.offsetWidth;a.classList.remove('off')">Replay</button>
 </figure>
