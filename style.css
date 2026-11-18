@@ -39,7 +39,7 @@ p{margin:0 0 1rem}
 .btn.primary{background:var(--navy);border-color:var(--navy);color:var(--on-accent)}
 .btn.primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
 .hero{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:center;padding:8px 0 8px}
-.photo{width:200px;height:200px;border-radius:50%;overflow:hidden;background:var(--surface)}
+.photo{width:200px;height:200px;border-radius:50%;overflow:hidden;background:var(--navy)}
 .photo{display:flex;align-items:center;justify-content:center}
 .photo .sig{height:auto;width:62%;max-width:62%;aspect-ratio:398/262;flex:none}
 .hero .btns{margin-top:1.25rem}
