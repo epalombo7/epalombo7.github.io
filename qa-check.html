@@ -2,4 +2,4 @@
 <style>body{padding:10px}.g{display:grid;gap:8px}iframe{border:0;display:block}.n{font:12px sans-serif;color:#aaa}</style>
 <div class="g" id="g"></div>
 <script>var p=new URLSearchParams(location.search),v=p.get("v"),w=+p.get("w"),c=+p.get("c");var g=document.getElementById("g");g.style.gridTemplateColumns="repeat("+c+","+w+"px)";
-for(var i=0;i<10;i++){var d=document.createElement("div");d.innerHTML='<div class="n">'+v+' '+i+'</div><iframe aria-hidden="true" tabindex="-1" width="'+w+'" height="'+Math.round(w*9/16)+'" src="anim/'+v+'.html?r='+Math.random()+'#t='+(i*6000+(+p.get('o')||4500))+'"></iframe>';g.appendChild(d)}</script>
+setTimeout(function(){for(var i=0;i<10;i++){var d=document.createElement("div");d.innerHTML='<div class="n">'+v+' '+i+'</div><iframe aria-hidden="true" tabindex="-1" width="'+w+'" height="'+Math.round(w*9/16)+'" src="anim/'+v+'.html?r='+Math.random()+'#t='+(i*6000+(+p.get('o')||4500))+'"></iframe>';g.appendChild(d)}},2500)</script>
