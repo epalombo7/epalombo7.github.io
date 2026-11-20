@@ -101,7 +101,7 @@ body{background:transparent}
 <p class="src">Source: World Bank, Global Economic Prospects, June 2026</p>
 <img class="logo" src="../sig.svg?v=6" alt="EP">
 </figure>
-<script>(function(){var m=location.hash.match(/s=(\d+)/);if(!m)return;var a=document.getElementById("a");a.classList.add("qa");a.querySelectorAll(".s")[+m[1]].classList.add("on")})()</script>
+<script>(function(){var m=location.hash.match(/t=(\d+)/);if(!m)return;var t=+m[1];function seek(){document.getAnimations().forEach(function(x){x.pause();x.currentTime=t})}seek();addEventListener("load",seek)})()</script>
 
 </body>
 </html>
