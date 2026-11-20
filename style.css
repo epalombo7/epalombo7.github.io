@@ -62,3 +62,16 @@ footer.site p{margin:0 0 .25rem}
 h1{font-size:1.8rem}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+.grid.two{grid-template-columns:repeat(2,1fr)}
+.snap .bars{display:flex;align-items:flex-end;gap:14px;height:120px;margin:14px 0 4px;padding-top:18px;border-bottom:1px solid var(--line)}
+.snap .b{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative}
+.snap .f{display:block;width:100%;max-width:56px;background:var(--navy);border-radius:6px 6px 0 0;opacity:.55}
+.snap .b:last-child .f{opacity:1}
+.snap .v{font-size:.85rem;font-weight:700;margin-bottom:4px}
+.snap .y{position:absolute;bottom:-22px;font-size:.78rem;color:var(--muted);white-space:nowrap}
+.snap .cap{font-size:.78rem;color:var(--muted);margin-top:28px!important}
+.snap ul.plain{margin-top:.6rem;font-size:.92rem}
+.video{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid var(--line);margin-bottom:12px}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (max-width:760px){.grid.two{grid-template-columns:1fr}}
