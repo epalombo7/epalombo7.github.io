@@ -98,3 +98,5 @@ main>p,main>section>p,.lead,.hero p:not(.btns){max-width:68ch}
 .dots{display:flex;gap:8px}
 .dot{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:var(--line);cursor:pointer}
 .dot[aria-current=true]{background:var(--navy)}
+.car-links{margin-top:.75rem}
+.car-link[hidden]{display:none}

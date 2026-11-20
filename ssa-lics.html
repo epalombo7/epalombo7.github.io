@@ -11,7 +11,7 @@
 <meta property="og:description" content="Outlooks for Sub-Saharan Africa and low-income countries from the World Bank’s Global Economic Prospects.">
 <meta property="og:type" content="website">
 <link rel="icon" href="favicon.svg?v=5" type="image/svg+xml">
-<link rel="stylesheet" href="style.css?v=13">
+<link rel="stylesheet" href="style.css?v=14">
 </head>
 <body>
 <header class="site">
@@ -25,17 +25,17 @@
 <p class="lead">I write the World Bank’s outlooks for Sub-Saharan Africa and for low-income countries in the Global Economic Prospects report. Here are snapshots of each one, newest first.</p>
 <section>
 <h2>The latest outlook in one minute <span class="muted">June 2026</span></h2>
-<div class="grid two vids">
-<div>
-<h3>Sub-Saharan Africa</h3>
-<div class="video"><iframe src="anim/ssa.html" title="One-minute animated outlook for Sub-Saharan Africa" loading="lazy"></iframe></div>
-<p class="btns"><a class="btn" href="https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Regional-Highlights-SSA.pdf" target="_blank" rel="noopener">Read the SSA outlook</a></p>
+<div class="carousel" role="group" aria-roledescription="carousel" aria-label="One-minute outlook videos" data-items="[{&quot;s&quot;: &quot;anim/ssa.html&quot;, &quot;t&quot;: &quot;Sub-Saharan Africa&quot;, &quot;m&quot;: &quot;June 2026 outlook&quot;, &quot;l&quot;: &quot;https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Regional-Highlights-SSA.pdf&quot;, &quot;lt&quot;: &quot;Read the SSA outlook&quot;}, {&quot;s&quot;: &quot;anim/lics.html&quot;, &quot;t&quot;: &quot;Low-income countries&quot;, &quot;m&quot;: &quot;June 2026 outlook&quot;, &quot;l&quot;: &quot;https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Box-2-1.pdf&quot;, &quot;lt&quot;: &quot;Read the LIC outlook&quot;}]">
+<div class="video"><iframe class="car-frame" src="anim/ssa.html" title="One-minute video: Sub-Saharan Africa"></iframe></div>
+<div class="car-nav">
+<div><h3 class="car-title">Sub-Saharan Africa</h3><p class="meta car-meta">June 2026 outlook · 1 of 2</p></div>
+<div class="car-ctrl">
+<button class="car-btn car-prev" type="button" aria-label="Previous video">&#8249;</button>
+<div class="dots"></div>
+<button class="car-btn car-next" type="button" aria-label="Next video">&#8250;</button>
 </div>
-<div>
-<h3>Low-income countries</h3>
-<div class="video"><iframe src="anim/lics.html" title="One-minute animated outlook for low-income countries" loading="lazy"></iframe></div>
-<p class="btns"><a class="btn" href="https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Box-2-1.pdf" target="_blank" rel="noopener">Read the LIC outlook</a></p>
 </div>
+<p class="btns car-links"><a class="btn car-link" href="https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Regional-Highlights-SSA.pdf" target="_blank" rel="noopener">Read the SSA outlook</a></p>
 </div>
 <p class="btns"><a class="btn" href="https://www.worldbank.org/en/news/video/2025/02/19/global-economic-prospects-january-2025-enabling-low-income-countries-to-thrive" target="_blank" rel="noopener">World Bank video: enabling low-income countries to thrive</a></p>
 </section>
@@ -101,5 +101,6 @@
 <p>All views are my own. · Last updated November 2026</p>
 </div>
 </footer>
+<script src="carousel.js?v=1" defer></script>
 </body>
 </html>
