@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>News Uncertainty in Brexit UK: 2-minute video</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+<link rel="stylesheet" href="../style.css?v=14">
+<style>
+html,body{margin:0;background:transparent}
+.anim{--sand:#d9c3a0;--grey:#8a8a8f;--card:#262624;--serif:"Source Serif 4",Georgia,"Times New Roman",serif;container-type:inline-size;position:relative;aspect-ratio:16/9;max-width:100%;margin:0 auto;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--surface);color:var(--text);box-shadow:var(--shadow);font-size:1.9cqw;line-height:1.35}
+.anim *{box-sizing:border-box}
+.anim .s{position:absolute;inset:0;display:flex;flex-direction:column;padding:4.6cqw 6cqw 7.4cqw;opacity:0;animation:show var(--len) linear 1 both;animation-delay:var(--s)}
+.anim .s.last{animation:show-last 1s linear 1 both;animation-delay:var(--s)}
+.anim .b{animation:bin .7s ease-out 1 both;animation-delay:calc(var(--s) + var(--d,.4s))}
+.anim .k{margin:0 0 .9cqw;font-size:1.35cqw;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+.anim .h{margin:0 0 2.4cqw;font-family:var(--serif);font-weight:600;font-size:3.5cqw;line-height:1.15;letter-spacing:-.005em}
+.anim .h em{font-style:normal;color:var(--navy)}
+.anim .p{margin:0;font-size:1.9cqw;line-height:1.4}
+.anim .p+.p{margin-top:1.6cqw}
+.anim .mu{color:var(--muted)}
+.anim .it{font-family:var(--serif);font-style:italic;font-size:1.9cqw;color:var(--muted);margin:0}
+.anim .cite{font-size:1.35cqw;color:var(--muted)}
+.anim .row{display:grid;grid-template-columns:1fr 1fr;gap:4cqw;align-items:center;flex:1;min-height:0}
+.anim .row.fr{grid-template-columns:auto 1fr}
+.anim .fig{position:relative;background:#fff;border-radius:1cqw;padding:1.2cqw;height:100%;max-height:34cqw;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.anim .fig .im{position:relative;height:100%;min-height:0}
+.anim .fig img{display:block;height:100%;width:auto}
+.anim .fig .gap{position:absolute;border:.28cqw solid var(--navy);border-left:0;border-radius:0 .4cqw .4cqw 0}
+.anim .cap{margin:.9cqw 0 0;font-size:1.25cqw;color:var(--muted);text-align:center}
+.anim .big{font-size:6.4cqw;font-weight:700;line-height:1;color:var(--navy);letter-spacing:-.02em;margin:0 0 .8cqw}
+.anim .big.sm{font-size:4.2cqw}
+.anim .cards{display:grid;grid-template-columns:1fr 1fr;gap:2.4cqw}
+.anim .cards.c3{grid-template-columns:1fr 1fr 1fr}
+.anim .card{background:var(--card);border:1px solid var(--line);border-radius:1.2cqw;padding:2cqw 2.2cqw}
+.anim .card h3{margin:0 0 .8cqw;font-family:var(--serif);font-weight:600;font-size:2.3cqw;line-height:1.15}
+.anim .card .n{display:block;font-weight:700;color:var(--navy);font-size:2.2cqw;margin-bottom:.4cqw}
+.anim .card p{margin:0;font-size:1.65cqw;line-height:1.4;color:var(--muted)}
+.anim .card svg{display:block;width:100%;height:5cqw;margin-top:1.2cqw}
+.anim .ln{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.anim .dr{stroke-dasharray:1;stroke-dashoffset:1;animation:dr 1.6s ease-in-out 1 both;animation-delay:calc(var(--s) + var(--d,.4s))}
+.anim .ctr{text-align:center;align-items:center}
+/* bars */
+.anim .bars{display:grid;grid-template-columns:auto 1fr;gap:1cqw 1.4cqw;align-items:center;font-size:1.6cqw}
+.anim .bars .lb{color:var(--muted);text-align:right;white-space:nowrap}
+.anim .bars .tr{display:flex;align-items:center;gap:1cqw}
+.anim .bars .br{height:2.4cqw;border-radius:.3cqw;background:var(--grey);transform-origin:left;animation:grow 1s ease-out 1 both;animation-delay:calc(var(--s) + var(--d,.4s))}
+.anim .bars .br.c{background:var(--navy)}
+.anim .bars .v{font-weight:700;white-space:nowrap}
+/* timeline */
+.anim .tl{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw;margin:1cqw 0 3cqw;padding-top:2.6cqw}
+.anim .tl:before{content:"";position:absolute;left:0;right:0;top:.9cqw;height:.25cqw;background:var(--line)}
+.anim .tl .ev{position:relative}
+.anim .tl .ev:before{content:"";position:absolute;left:0;top:-2.4cqw;width:1.6cqw;height:1.6cqw;border-radius:50%;background:var(--navy);border:.35cqw solid var(--surface)}
+.anim .tl .dt{font-weight:700;font-size:1.7cqw;margin:0 0 .3cqw}
+.anim .tl p{margin:0;font-size:1.55cqw;color:var(--muted);line-height:1.35}
+.anim .stats{display:grid;grid-template-columns:1fr 1fr;gap:3cqw}
+.anim .stat{display:flex;gap:1.6cqw;align-items:flex-start}
+.anim .stat .big{font-size:4.6cqw;margin:0}
+.anim .stat p{margin:0;font-size:1.6cqw;line-height:1.35;color:var(--muted)}
+/* diagram */
+.anim .dg{width:100%;height:auto;flex:1;min-height:0}
+.anim .dg .bx{fill:var(--card);stroke:var(--line);stroke-width:1.5}
+.anim .dg .bx.c{stroke:var(--navy);stroke-width:2}
+.anim .dg text{fill:var(--text);font:600 15px system-ui,-apple-system,"Segoe UI",sans-serif;text-anchor:middle}
+.anim .dg .sm{fill:var(--muted);font-weight:500;font-size:12.5px}
+.anim .dg .cl{fill:var(--navy)}
+.anim .dg .ar{fill:none;stroke:var(--muted);stroke-width:1.8}
+.anim .dg .ar.c{stroke:var(--navy)}
+.anim .leg{display:flex;flex-wrap:wrap;gap:.6cqw 1.6cqw;margin-top:1cqw;font-size:1.25cqw;color:var(--muted);justify-content:center}
+.anim .leg i{display:inline-block;width:2cqw;height:.5cqw;border-radius:.3cqw;vertical-align:middle;margin-right:.6cqw}
+/* title + end */
+.anim .ttl{font-family:var(--serif);font-weight:600;font-size:5.2cqw;line-height:1.08;margin:0 0 2.2cqw;max-width:62%}
+.anim .rule{width:6cqw;height:.3cqw;background:var(--navy);margin:0 0 1.8cqw;border:0}
+.anim .au{font-size:2.2cqw;font-weight:600;margin:0 0 .5cqw}
+.anim .deco{position:absolute;right:4cqw;top:8cqw;width:36cqw;height:auto;opacity:.5;pointer-events:none}
+.anim .acts{display:flex;gap:1.2cqw;flex-wrap:wrap;margin-top:2.2cqw;align-items:center}
+.anim .acts .btn{font-family:inherit;line-height:1.4;font-size:1.7cqw;padding:.8cqw 2.2cqw}
+.anim .btn.p{background:var(--navy);color:var(--on-accent);border-color:var(--navy)}
+.anim .site{margin-top:2.4cqw;font-size:1.6cqw;color:var(--muted)}
+/* frame */
+.anim .bar{position:absolute;left:0;bottom:0;height:.45cqw;min-height:3px;width:100%;padding:0;background:var(--navy);transform-origin:left;animation:grow 120s linear 1 both;z-index:2}
+.anim .src{position:absolute;left:6cqw;bottom:2.3cqw;margin:0;max-width:72%;font-size:1.2cqw;line-height:1.3;color:var(--muted);z-index:2}
+.anim .logo{position:absolute;right:2.6cqw;bottom:1.6cqw;height:4.6cqw;width:auto;aspect-ratio:387/248;z-index:2;opacity:.95}
+.anim.off,.anim.off *{animation:none!important}
+@keyframes show{0%{opacity:0;transform:translateY(.6cqw)}5%,95%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes show-last{from{opacity:0;transform:translateY(.6cqw)}to{opacity:1;transform:none}}
+@keyframes bin{from{opacity:0;transform:translateY(.8cqw)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes dr{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.anim{aspect-ratio:auto}.anim .s{position:relative;opacity:1;min-height:56.25cqw;border-bottom:1px solid var(--line)}.anim *{animation:none!important}.anim .dr{stroke-dashoffset:0}.anim .bar{display:none}.anim .src,.anim .logo{position:static;display:block;margin:2cqw 6cqw}}
+</style>
+</head>
+<body>
+<figure class="anim" id="a" aria-label="Two-minute video summary of News Uncertainty in Brexit United Kingdom, by Renato Faccini and Edoardo Palombo">
+
+<!-- 1 Title -->
+<div class="s" style="--s:0s;--len:7s;justify-content:center">
+<svg class="deco b" style="--d:.2s" viewBox="0 0 300 160" aria-hidden="true"><path d="M0 40 L60 52 L120 64 L160 74" class="ln" stroke="var(--line)" stroke-width="2"/><path class="ln dr" pathLength="1" style="--d:.8s" stroke="var(--navy)" d="M160 74 C190 84 220 96 250 104 S290 116 300 120"/><path class="ln" stroke="var(--grey)" stroke-dasharray="4 5" stroke-width="2" d="M160 74 L300 100"/><line x1="160" y1="10" x2="160" y2="150" stroke="var(--line)" stroke-dasharray="3 4"/></svg>
+<p class="k b" style="--d:.2s">AER: Insights · 2021</p>
+<p class="ttl b" style="--d:.5s">News Uncertainty in Brexit United Kingdom</p>
+<hr class="rule b" style="--d:1s">
+<p class="au b" style="--d:1.2s">Renato Faccini · Edoardo Palombo</p>
+<p class="cite b" style="--d:1.4s">Danmarks Nationalbank · Queen Mary University of London</p>
+</div>
+
+<!-- 2 Why it matters -->
+<div class="s" style="--s:7s;--len:11s">
+<p class="k">Why it matters</p>
+<p class="h">A sharp recession was expected</p>
+<div class="row">
+<div>
+<p class="p b" style="--d:.6s">Before the vote, policy institutions predicted a sharp recession if Leave won. <span class="cite">(HM Treasury 2016)</span></p>
+<p class="p b" style="--d:3.4s"><strong>Instead,</strong> output, employment and capital slowly fell below their pre-referendum trend.</p>
+</div>
+<div class="b" style="--d:3.4s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="max-height:30cqw"><div class="im"><img src="img/brexit-fig1-output.png" alt="Figure 1: UK real GDP per capita drifts below its pre-referendum trend after 2016"><span class="gap b" style="--d:5s;left:88%;top:18.8%;height:4.4%;width:3%"></span></div></div>
+<p class="cap">UK real GDP per capita (log) and its pre-referendum trend · Figure 1</p>
+</div>
+</div>
+</div>
+
+<!-- 3 The question -->
+<div class="s ctr" style="--s:18s;--len:12s">
+<p class="k">The question</p>
+<p class="h" style="margin-bottom:.8cqw">Does uncertainty matter for <em>the business cycle?</em></p>
+<p class="cite b" style="--d:1.2s;margin-bottom:2cqw">Theory points to two very different paths</p>
+<div class="cards" style="width:84%;text-align:left">
+<div class="card b" style="--d:2.2s"><h3>Uncertainty shock</h3><p>Volatility about today's fundamentals. Firms pause, then catch up: a sharp, short-lived V (Bloom 2009).</p><svg viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="ln dr" pathLength="1" style="--d:2.8s" stroke="var(--grey)" d="M4 8 L60 8 L90 34 L120 10 L196 8"/></svg></div>
+<div class="card b" style="--d:3.6s"><h3 style="color:var(--navy)">News uncertainty</h3><p>Uncertainty about fundamentals years ahead. Brexit changes them only once it happens.</p><svg viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="ln dr" pathLength="1" style="--d:4.2s" stroke="var(--navy)" d="M4 8 L60 8 C100 14 140 24 196 32"/></svg></div>
+</div>
+<p class="it b" style="--d:6.4s;margin-top:2.4cqw">So which kind of uncertainty was Brexit?</p>
+</div>
+
+<!-- 4 Setting -->
+<div class="s" style="--s:30s;--len:10s">
+<p class="k">The setting</p>
+<p class="h">A vote, then years of uncertain negotiations</p>
+<div class="tl">
+<div class="ev b" style="--d:.6s"><p class="dt">June 2016</p><p>The UK votes to leave the European Union</p></div>
+<div class="ev b" style="--d:1.6s"><p class="dt">August 2016</p><p>The Bank of England launches the Decision Maker Panel survey of firms</p></div>
+<div class="ev b" style="--d:2.6s"><p class="dt">March 2019</p><p>First cliff edge, followed by repeated delays</p></div>
+</div>
+<div class="stats">
+<div class="stat b" style="--d:4.2s"><p class="big">18%</p><p>chance firms gave the UK still being in the EU at the end of 2022: 9% a later exit, 9% never</p></div>
+<div class="stat b" style="--d:5.4s"><p class="big">44%</p><p>average probability firms gave a no-deal exit by March 2019</p></div>
+</div>
+<p class="cite b" style="--d:5.4s;margin-top:1.6cqw">Decision Maker Panel, November 2017 to April 2018</p>
+</div>
+
+<!-- 5 Stakes -->
+<div class="s" style="--s:40s;--len:10s">
+<p class="k">The stakes</p>
+<p class="h">Firms expected Brexit to cut their sales</p>
+<div class="row" style="grid-template-columns:1.25fr 1fr">
+<div>
+<div class="bars b" style="--d:.4s">
+<span class="lb">Cut of 10% or more</span><span class="tr"><span class="br c" style="--d:.8s;width:47%"></span><span class="v">17.5</span></span>
+<span class="lb">Cut of less than 10%</span><span class="tr"><span class="br c" style="--d:1.1s;width:74%"></span><span class="v">27.6</span></span>
+<span class="lb">Little difference</span><span class="tr"><span class="br" style="--d:1.4s;width:100%"></span><span class="v">37.2</span></span>
+<span class="lb">Rise of less than 10%</span><span class="tr"><span class="br" style="--d:1.7s;width:33%"></span><span class="v">12.3</span></span>
+<span class="lb">Rise of 10% or more</span><span class="tr"><span class="br" style="--d:2s;width:15%"></span><span class="v">5.4</span></span>
+</div>
+<p class="cap" style="text-align:left;margin-top:1.4cqw">Average probability firms attach to each effect of Brexit on their sales, % · Table 1</p>
+</div>
+<div>
+<p class="big b" style="--d:3.6s">−7.6%</p>
+<p class="p b" style="--d:3.6s">long-run GDP under a no-deal Brexit implied by these beliefs, in line with the government's central estimate</p>
+<p class="big sm b" style="--d:5.4s;margin-top:2cqw">−4.5%</p>
+<p class="p b mu" style="--d:5.4s">under a deal (soft Brexit)</p>
+</div>
+</div>
+</div>
+
+<!-- 6 Research design -->
+<div class="s" style="--s:50s;--len:12s">
+<p class="k">Research design</p>
+<p class="h" style="margin-bottom:1.2cqw">The vote as news about the future</p>
+<svg class="dg" viewBox="0 0 640 230" role="img" aria-label="Model timeline: after the vote the economy enters negotiations; each quarter Brexit happens with probability 5.8 percent, soft 51.5 percent or hard 48.5 percent, or a second referendum reverses it with probability 0.6 percent">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker><marker id="ahc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--navy)"/></marker></defs>
+<g class="b" style="--d:.4s"><rect class="bx" x="6" y="78" width="112" height="56" rx="10"/><text x="62" y="111">Pre-vote</text></g>
+<g class="b" style="--d:1.2s"><path class="ar" d="M120 106 H186" marker-end="url(#ah)"/><text class="sm" x="153" y="96">vote</text></g>
+<g class="b" style="--d:1.8s"><rect class="bx c" x="190" y="72" width="150" height="68" rx="10"/><text x="265" y="103">Negotiations</text><text class="sm" x="265" y="123">uncertain timing</text><path class="ar" d="M245 70 C235 34 295 34 285 70" marker-end="url(#ah)"/><text class="sm" x="265" y="28">drags on</text></g>
+<g class="b" style="--d:3.4s"><path class="ar c" d="M342 92 C380 92 390 44 430 44" marker-end="url(#ahc)"/><path class="ar c" d="M342 92 C380 92 390 112 430 112" marker-end="url(#ahc)"/><text class="sm cl" x="384" y="74" style="fill:var(--navy)">Brexit: 5.8%</text><text class="sm" x="384" y="140">a quarter</text></g>
+<g class="b" style="--d:4.4s"><rect class="bx" x="434" y="18" width="196" height="52" rx="10"/><text x="532" y="42">Soft Brexit</text><text class="sm" x="532" y="60">51.5% of exits</text></g>
+<g class="b" style="--d:5s"><rect class="bx" x="434" y="86" width="196" height="52" rx="10"/><text x="532" y="110">Hard Brexit</text><text class="sm" x="532" y="128">48.5% of exits</text></g>
+<g class="b" style="--d:6.2s"><path class="ar" d="M265 142 V182 H430" marker-end="url(#ah)"/><rect class="bx" x="434" y="158" width="196" height="52" rx="10"/><text x="532" y="182">Remain</text><text class="sm" x="532" y="200">second referendum</text><text class="sm" x="350" y="200">0.6% a quarter</text></g>
+</svg>
+<p class="it b" style="--d:7.6s">Heterogeneous firms with costly, partly irreversible investment. Brexit changes their productivity only once it happens.</p>
+</div>
+
+<!-- 7 Data -->
+<div class="s" style="--s:62s;--len:10s">
+<p class="k">Data</p>
+<p class="h">Firms' own beliefs set the uncertainty</p>
+<div class="cards">
+<div class="card b" style="--d:.8s"><h3 style="color:var(--navy)">Decision Maker Panel, 2017–18</h3><p>Bank of England survey of UK firms with ten or more employees. About 2,500 CFOs and CEOs give probabilities for when Brexit happens and how it affects their sales.</p></div>
+<div class="card b" style="--d:2.2s"><h3 style="color:var(--navy)">ONS national accounts, 2011–18</h3><p>Output and capital per capita and the employment rate, measured against their pre-referendum trend.</p></div>
+</div>
+<p class="it b" style="--d:4.2s;margin-top:2.6cqw">The survey disciplines the model; the macro data test it.</p>
+</div>
+
+<!-- 8 Main result -->
+<div class="s" style="--s:72s;--len:13s">
+<p class="k">Main result</p>
+<p class="h">The news alone explains the slowdown</p>
+<div class="row fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig"><div class="im"><img src="img/brexit-fig2-output.png" alt="Figure 2: model output response falls to about minus 1 percent by 2018, tracking the data"><span class="gap b" style="--d:3.4s;left:93.5%;top:29.6%;height:52.3%;width:3%"></span></div></div>
+<p class="cap">Output, % deviation from trend: model vs data · Figure 2</p>
+</div>
+<div>
+<p class="big b" style="--d:2s">−1%</p>
+<p class="p b" style="--d:2s">output below trend three years after the vote</p>
+<p class="big sm b" style="--d:4.6s;margin-top:2.2cqw">1.8%</p>
+<p class="p b mu" style="--d:4.6s">of annual GDP lost in total by end-2018</p>
+<p class="it b" style="--d:6.6s;margin-top:2cqw">Employment and capital follow the same gradual path.</p>
+</div>
+</div>
+</div>
+
+<!-- 9 What drives it -->
+<div class="s" style="--s:85s;--len:11s">
+<p class="k">What drives it</p>
+<p class="h">Bad news, not just uncertainty, drives the fall</p>
+<div class="bars" style="grid-template-columns:auto 1fr;margin-top:1cqw;font-size:1.75cqw">
+<span class="lb b" style="--d:.8s">Baseline</span><span class="tr b" style="--d:.8s"><span class="br c" style="--d:1.2s;width:70%;height:3.4cqw"></span><span class="v" style="color:var(--navy)">−1.8%</span></span>
+<span class="lb b" style="--d:2.8s">Uncertainty only<br><span class="cite">mean news set to zero</span></span><span class="tr b" style="--d:2.8s"><span class="br" style="--d:3.2s;width:27%;height:3.4cqw"></span><span class="v">−0.7%</span></span>
+<span class="lb b" style="--d:4.8s">Bad news only<br><span class="cite">uncertainty removed</span></span><span class="tr b" style="--d:4.8s"><span class="br" style="--d:5.2s;width:70%;height:3.4cqw;background:repeating-linear-gradient(135deg,var(--navy) 0 .5cqw,transparent .5cqw 1cqw);border:1px solid var(--navy)"></span><span class="v mu">virtually identical</span></span>
+</div>
+<p class="cap" style="text-align:left;margin-top:1.4cqw">Cumulative fall in output by end-2018, model · Figure 3</p>
+<p class="it b" style="--d:7s;margin-top:1.8cqw">Firms expected to shrink either way, so they began cutting capital straight away.</p>
+</div>
+
+<!-- 10 Duration -->
+<div class="s" style="--s:96s;--len:12s">
+<p class="k">Duration</p>
+<p class="h">A shorter expected wait does more damage</p>
+<div class="row fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="max-height:29cqw"><div class="im"><img src="img/brexit-fig3-output.png" alt="Figure 3: output falls further when negotiations are expected to last one year"><span class="gap b" style="--d:3.4s;left:91%;top:51.2%;height:26.3%;width:3%"></span></div></div>
+<div class="leg"><span><i style="background:#1f8a4c"></i>One-year expected duration</span><span><i style="background:#c8c8c8"></i>Baseline</span><span><i style="background:#f5a623"></i>Mean news set to zero</span></div>
+</div>
+<div>
+<p class="big b" style="--d:2s">−3.8%</p>
+<p class="p b" style="--d:2s">cumulative GDP loss to end-2018 if talks were expected to last one year, against −1.8% in the baseline</p>
+<p class="it b" style="--d:5s;margin-top:2cqw">With a quick resolution in sight, more firms freeze investment and wait.</p>
+</div>
+</div>
+</div>
+
+<!-- 11 Implications -->
+<div class="s" style="--s:108s;--len:10s">
+<p class="k">Implications</p>
+<p class="h">What Brexit teaches about uncertainty</p>
+<div class="cards c3">
+<div class="card b" style="--d:.6s"><span class="n">1</span><h3>Future, not present</h3><p>Uncertainty about future fundamentals brings a gradual decline, not a V-shaped recession.</p></div>
+<div class="card b" style="--d:2s"><span class="n">2</span><h3>Expected duration</h3><p>The longer uncertainty is expected to last, the smaller its near-term effect.</p></div>
+<div class="card b" style="--d:3.4s"><span class="n">3</span><h3>Cliff edges</h3><p>Repeated deadlines, each expected to be decisive, do the most damage to investment.</p></div>
+</div>
+</div>
+
+<!-- 12 End -->
+<div class="s last" style="--s:118s;justify-content:center">
+<p class="k">American Economic Review: Insights 3 (2): 149–64</p>
+<p class="ttl" style="font-size:4.4cqw;max-width:80%">News Uncertainty in Brexit United Kingdom</p>
+<p class="au">Renato Faccini and Edoardo Palombo</p>
+<div class="acts"><a class="btn p" href="https://drive.google.com/file/d/1UtyUfUhK_clt_i_WdSCWk9PhPfMMTQG1/view" target="_blank" rel="noopener">Read the paper</a><a class="btn" href="https://drive.google.com/file/d/1G2nr379Pfmsv_4ATu8-HSJr3QPHktVYL/view" target="_blank" rel="noopener">Listen</a><button class="btn" type="button" onclick="var a=document.getElementById('a');a.classList.add('off');void a.offsetWidth;a.classList.remove('off')">Replay</button></div>
+<p class="site">edoardopalombo.com</p>
+</div>
+
+<div class="bar"></div>
+<p class="src">Faccini &amp; Palombo (2021) · News Uncertainty in Brexit United Kingdom · AER: Insights</p>
+<img class="logo" src="../sig.svg?v=6" alt="EP">
+</figure>
+<script>(function(){var m=location.hash.match(/t=(\d+)/);if(!m)return;var t=+m[1];function seek(){document.getAnimations().forEach(function(x){x.pause();x.currentTime=t})}seek();addEventListener("load",seek);if(document.fonts)document.fonts.ready.then(seek)})()</script>
+</body>
+</html>
