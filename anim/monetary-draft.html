@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unconventional Monetary Policy, Leverage and Default Dynamics: 2-minute video</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+<link rel="stylesheet" href="../style.css?v=14">
+<style>
+html,body{margin:0;background:transparent}
+.anim{--sand:#d9c3a0;--grey:#8a8a8f;--card:#262624;--serif:"Source Serif 4",Georgia,"Times New Roman",serif;container-type:inline-size;position:relative;aspect-ratio:16/9;max-width:100%;margin:0 auto;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--surface);color:var(--text);box-shadow:var(--shadow);font-size:1.9cqw;line-height:1.35}
+.anim *{box-sizing:border-box}
+.anim .s{position:absolute;inset:0;display:flex;flex-direction:column;padding:4.6cqw 6cqw 7.4cqw;opacity:0;animation:show var(--len) linear 1 both;animation-delay:var(--s)}
+.anim .s.last{animation:show-last 1s linear 1 both;animation-delay:var(--s)}
+.anim .b{animation:bin .7s ease-out 1 both;animation-delay:calc(var(--s) + var(--d,.4s))}
+.anim .k{margin:0 0 .9cqw;font-size:1.35cqw;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+.anim .h{margin:0 0 2.4cqw;font-family:var(--serif);font-weight:600;font-size:3.5cqw;line-height:1.15;letter-spacing:-.005em}
+.anim .h em{font-style:normal;color:var(--navy)}
+.anim .p{margin:0;font-size:1.9cqw;line-height:1.4}
+.anim .p+.p{margin-top:1.6cqw}
+.anim .mu{color:var(--muted)}
+.anim .it{font-family:var(--serif);font-style:italic;font-size:1.9cqw;color:var(--muted);margin:0}
+.anim .cite{font-size:1.35cqw;color:var(--muted)}
+.anim .row{display:grid;grid-template-columns:1fr 1fr;gap:4cqw;align-items:center;flex:1;min-height:0}
+.anim .row.fr{grid-template-columns:auto 1fr}
+.anim .fig{position:relative;background:#fff;border-radius:.7cqw;padding:.5cqw;flex:none;width:max-content;max-width:100%}
+.anim .fig .im{position:relative;height:var(--h);width:calc(var(--h) * var(--r))}
+.anim .fig img{display:block;width:100%;height:100%}
+.anim .fig .gap{position:absolute;border:.28cqw solid var(--navy);border-left:0;border-radius:0 .4cqw .4cqw 0}
+.anim .cap{margin:.9cqw 0 0;font-size:1.25cqw;color:var(--muted);text-align:center}
+.anim .big{font-size:6.4cqw;font-weight:700;line-height:1;color:var(--navy);letter-spacing:-.02em;margin:0 0 .8cqw}
+.anim .big.sm{font-size:4.2cqw}
+.anim .cards{display:grid;grid-template-columns:1fr 1fr;gap:2.4cqw}
+.anim .cards.c3{grid-template-columns:1fr 1fr 1fr}
+.anim .card{background:var(--card);border:1px solid var(--line);border-radius:1.2cqw;padding:2cqw 2.2cqw}
+.anim .card h3{margin:0 0 .8cqw;font-family:var(--serif);font-weight:600;font-size:2.3cqw;line-height:1.15}
+.anim .card .n{display:block;font-weight:700;color:var(--navy);font-size:2.2cqw;margin-bottom:.4cqw}
+.anim .card p{margin:0;font-size:1.65cqw;line-height:1.4;color:var(--muted)}
+.anim .card svg{display:block;width:100%;height:5cqw;margin-top:1.2cqw}
+.anim .ln{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.anim .dr{stroke-dasharray:1;stroke-dashoffset:1;animation:dr 1.6s ease-in-out 1 both;animation-delay:calc(var(--s) + var(--d,.4s))}
+.anim .ctr{text-align:center;align-items:center}
+/* bars */
+.anim .bars{display:grid;grid-template-columns:auto 1fr;gap:1cqw 1.4cqw;align-items:center;font-size:1.6cqw}
+.anim .bars .lb{color:var(--muted);text-align:right;white-space:nowrap}
+.anim .bars .tr{display:flex;align-items:center;gap:1cqw}
+.anim .bars .br{height:2.4cqw;border-radius:.3cqw;background:var(--grey);transform-origin:left;animation:grow 1s ease-out 1 both;animation-delay:calc(var(--s) + var(--d,.4s))}
+.anim .bars .br.c{background:var(--navy)}
+.anim .bars .v{font-weight:700;white-space:nowrap}
+/* timeline */
+.anim .tl{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw;margin:1cqw 0 3cqw;padding-top:2.6cqw}
+.anim .tl:before{content:"";position:absolute;left:0;right:0;top:.9cqw;height:.25cqw;background:var(--line)}
+.anim .tl .ev{position:relative}
+.anim .tl .ev:before{content:"";position:absolute;left:0;top:-2.4cqw;width:1.6cqw;height:1.6cqw;border-radius:50%;background:var(--navy);border:.35cqw solid var(--surface)}
+.anim .tl .dt{font-weight:700;font-size:1.7cqw;margin:0 0 .3cqw}
+.anim .tl p{margin:0;font-size:1.55cqw;color:var(--muted);line-height:1.35}
+.anim .stats{display:grid;grid-template-columns:1fr 1fr;gap:3cqw}
+.anim .stat{display:flex;gap:1.6cqw;align-items:flex-start}
+.anim .stat .big{font-size:4.6cqw;margin:0}
+.anim .stat p{margin:0;font-size:1.6cqw;line-height:1.35;color:var(--muted)}
+/* diagram */
+.anim .dg{width:100%;height:auto;flex:1;min-height:0}
+.anim .dg .bx{fill:var(--card);stroke:var(--line);stroke-width:1.5}
+.anim .dg .bx.c{stroke:var(--navy);stroke-width:2}
+.anim .dg text{fill:var(--text);font:600 15px system-ui,-apple-system,"Segoe UI",sans-serif;text-anchor:middle}
+.anim .dg .sm{fill:var(--muted);font-weight:500;font-size:12.5px}
+.anim .dg .cl{fill:var(--navy)}
+.anim .dg .ar{fill:none;stroke:var(--muted);stroke-width:1.8}
+.anim .dg .ar.c{stroke:var(--navy)}
+.anim .leg{display:flex;flex-wrap:wrap;gap:.6cqw 1.6cqw;margin-top:1cqw;font-size:1.25cqw;color:var(--muted);justify-content:center}
+.anim .leg i{display:inline-block;width:2cqw;height:.5cqw;border-radius:.3cqw;vertical-align:middle;margin-right:.6cqw}
+/* title + end */
+.anim .ttl{font-family:var(--serif);font-weight:600;font-size:5.2cqw;line-height:1.08;margin:0 0 2.2cqw;max-width:62%}
+.anim .rule{width:6cqw;height:.3cqw;background:var(--navy);margin:0 0 1.8cqw;border:0}
+.anim .au{font-size:2.2cqw;font-weight:600;margin:0 0 .5cqw}
+.anim .deco{position:absolute;right:4cqw;top:8cqw;width:36cqw;height:auto;opacity:.5;pointer-events:none}
+.anim .acts{display:flex;gap:1.2cqw;flex-wrap:wrap;margin-top:2.2cqw;align-items:center}
+.anim .acts .btn{font-family:inherit;line-height:1.4;font-size:1.7cqw;padding:.8cqw 2.2cqw}
+.anim .btn.p{background:var(--navy);color:var(--on-accent);border-color:var(--navy)}
+.anim .site{margin-top:2.4cqw;font-size:1.6cqw;color:var(--muted)}
+/* frame */
+.anim .bar{position:absolute;left:0;bottom:0;height:.45cqw;min-height:3px;width:100%;padding:0;background:var(--navy);transform-origin:left;animation:grow 120s linear 1 both;z-index:2}
+.anim .src{position:absolute;left:6cqw;bottom:2.3cqw;margin:0;max-width:72%;font-size:1.2cqw;line-height:1.3;color:var(--muted);z-index:2}
+.anim .logo{position:absolute;right:2.6cqw;bottom:1.6cqw;height:4.6cqw;width:auto;aspect-ratio:387/248;z-index:2;opacity:.95}
+.anim.off,.anim.off *{animation:none!important}
+@keyframes show{0%{opacity:0;transform:translateY(.6cqw)}5%,95%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes show-last{from{opacity:0;transform:translateY(.6cqw)}to{opacity:1;transform:none}}
+@keyframes bin{from{opacity:0;transform:translateY(.8cqw)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes dr{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.anim{aspect-ratio:auto}.anim .s{position:relative;opacity:1;min-height:56.25cqw;border-bottom:1px solid var(--line)}.anim *{animation:none!important}.anim .dr{stroke-dashoffset:0}.anim .bar{display:none}.anim .src,.anim .logo{position:static;display:block;margin:2cqw 6cqw}}
+</style>
+</head>
+<body>
+<figure class="anim" id="a" aria-label="Two-minute video summary of Unconventional Monetary Policy, Leverage and Default Dynamics, by Edoardo Palombo">
+
+<!-- 1 Title -->
+<div class="s" style="--s:0s;--len:7s;justify-content:center">
+<svg class="deco b" style="--d:.2s;top:auto;bottom:9cqw;width:30cqw" viewBox="0 0 300 160" aria-hidden="true"><path d="M0 120 L80 118 L120 116" class="ln" stroke="var(--line)" stroke-width="2"/><path class="ln dr" pathLength="1" style="--d:.8s" stroke="var(--navy)" d="M120 116 C140 110 150 30 170 26 S200 90 230 108 S280 116 300 117"/><line x1="160" y1="10" x2="160" y2="150" stroke="var(--line)" stroke-dasharray="3 4"/></svg>
+<p class="k b" style="--d:.2s">QMUL Working Paper · 2020</p>
+<p class="ttl b" style="--d:.5s">Unconventional Monetary Policy, Leverage and Default Dynamics</p>
+<hr class="rule b" style="--d:1s">
+<p class="au b" style="--d:1.2s">Edoardo Palombo</p>
+<p class="cite b" style="--d:1.4s">Queen Mary University of London</p>
+</div>
+
+<!-- 2 Why it matters -->
+<div class="s" style="--s:7s;--len:11s">
+<p class="k">Why it matters</p>
+<p class="h">In 2007, loan defaults soared to record levels</p>
+<div class="row" style="grid-template-columns:.8fr 1.2fr">
+<div>
+<p class="p b" style="--d:.6s">Non-performing loans at US banks rose from a pre-crisis average of about 1% to over 3%.</p>
+<p class="p b" style="--d:3.4s"><strong>Then came</strong> the deepest US recession since 1929: output fell by 5% and investment by 30%.</p>
+</div>
+<div class="b" style="--d:2s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:22cqw;--r:1.8562"><div class="im"><img src="img/monet-fig1.png?v=1" width="1175" height="633" alt="Figure 1: US banks' net loan charge-off rate peaks above 3 percent in 2009-2010, far above its usual level near 1 percent"></div></div>
+<p class="cap">Net loan charge-offs to total loans, US banks, % · Figure 1</p>
+</div>
+</div>
+</div>
+
+<!-- 3 Banks deleveraged -->
+<div class="s" style="--s:18s;--len:11s">
+<p class="k">The banks' response</p>
+<p class="h">Banks cut their leverage hard</p>
+<div class="row" style="grid-template-columns:1.2fr .8fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:25cqw;--r:1.5126"><div class="im"><img src="img/monet-fig2.png?v=1" width="900" height="595" alt="Figure 2: investment banks' leverage ratio rises to about 43 in 2007 and falls to about 22 by 2009, while large and commercial banks' leverage also falls"></div></div>
+<p class="cap">Aggregated leverage ratio (assets over equity), US banks · Figure 2</p>
+</div>
+<div>
+<p class="big b" style="--d:2s">Halved</p>
+<p class="p b" style="--d:2s">investment banks' leverage ratio, on average</p>
+<p class="big sm b" style="--d:4.4s;margin-top:2.2cqw">−1/3</p>
+<p class="p b mu" style="--d:4.4s">commercial banks' leverage ratio</p>
+<p class="cite b" style="--d:4.4s;margin-top:1.4cqw">Kalemli-Ozcan et al. (2012)</p>
+</div>
+</div>
+</div>
+
+<!-- 4 The policy -->
+<div class="s" style="--s:29s;--len:10s">
+<p class="k">The policy</p>
+<p class="h">The Fed turned to credit easing</p>
+<div class="row" style="grid-template-columns:.8fr 1.2fr">
+<div>
+<p class="p b" style="--d:.6s">With interest rates stuck at zero, the Federal Reserve began buying private, asset-backed securities.</p>
+<p class="p b" style="--d:3.4s"><strong>The aim:</strong> raise asset prices, lower credit spreads and keep credit flowing to firms.</p>
+</div>
+<div class="b" style="--d:2s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:25cqw;--r:1.4124"><div class="im"><img src="img/monet-fig3.png?v=1" width="1000" height="708" alt="Figure 3: the Federal Reserve's holdings grow from almost nothing in 2007 to about 4,000 by 2014, led by agency debt and mortgage-backed securities and long-term Treasuries"></div></div>
+<p class="cap">Federal Reserve assets by type, 2007–2016, Cleveland Fed · Figure 3</p>
+</div>
+</div>
+</div>
+
+<!-- 5 The question -->
+<div class="s ctr" style="--s:39s;--len:11s">
+<p class="k">The question</p>
+<p class="h" style="margin-bottom:.8cqw">Can credit easing soften a <em>financial</em> recession?</p>
+<p class="cite b" style="--d:1.2s;margin-bottom:2cqw">To answer, a model must first match how banks behaved</p>
+<div class="cards" style="width:84%;text-align:left">
+<div class="card b" style="--d:2.2s"><h3>Standard models</h3><p>Banks lever up in a crisis (Gertler &amp; Karadi 2011). The data show the opposite.</p><svg viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="ln dr" pathLength="1" style="--d:2.8s" stroke="var(--grey)" d="M4 26 L70 26 C90 26 100 6 130 6 L196 8"/></svg></div>
+<div class="card b" style="--d:3.6s"><h3 style="color:var(--navy)">This paper</h3><p>Loan defaults force banks to deleverage, as they did in 2007–2009.</p><svg viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="ln" stroke="var(--line)" stroke-dasharray="4 5" stroke-width="2" d="M70 12 L196 12"/><path class="ln dr" pathLength="1" style="--d:4.2s" stroke="var(--navy)" d="M4 12 L70 12 C90 12 100 34 130 34 L196 22"/></svg></div>
+</div>
+</div>
+
+<!-- 6 Research design -->
+<div class="s" style="--s:50s;--len:12s">
+<p class="k">Research design</p>
+<p class="h" style="margin-bottom:1.2cqw">How defaults spread through the banks</p>
+<svg class="dg" viewBox="0 0 640 230" role="img" aria-label="Model mechanism: a shock lowers the value of capital, firms default on loans, banks take losses, banks deleverage through the balance sheet and lending channels, credit tightens, and output and investment fall">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker><marker id="ahc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--navy)"/></marker></defs>
+<g class="b" style="--d:.4s"><rect class="bx" x="10" y="14" width="170" height="64" rx="10"/><text x="95" y="42">Financial shock</text><text class="sm" x="95" y="62">capital loses value</text></g>
+<g class="b" style="--d:1.4s"><path class="ar" d="M182 46 H228" marker-end="url(#ah)"/><rect class="bx" x="232" y="14" width="170" height="64" rx="10"/><text x="317" y="42">Firms default</text><text class="sm" x="317" y="62">they can't repay loans</text></g>
+<g class="b" style="--d:2.4s"><path class="ar" d="M404 46 H450" marker-end="url(#ah)"/><rect class="bx" x="454" y="14" width="176" height="64" rx="10"/><text x="542" y="42">Bank losses</text><text class="sm" x="542" y="62">equity must cover them</text></g>
+<g class="b" style="--d:3.6s"><path class="ar" d="M542 80 V136" marker-end="url(#ah)"/><rect class="bx" x="454" y="140" width="176" height="64" rx="10"/><text x="542" y="168">Banks deleverage</text><text class="sm" x="542" y="188">balance sheet, lending</text></g>
+<g class="b" style="--d:4.8s"><path class="ar" d="M452 172 H406" marker-end="url(#ah)"/><rect class="bx" x="232" y="140" width="170" height="64" rx="10"/><text x="317" y="168">Credit tightens</text><text class="sm" x="317" y="188">spreads rise</text></g>
+<g class="b" style="--d:6s"><path class="ar c" d="M230 172 H184" marker-end="url(#ahc)"/><rect class="bx c" x="10" y="140" width="170" height="64" rx="10"/><text x="95" y="168" class="cl">Output, investment</text><text class="sm" x="95" y="188">fall further</text></g>
+</svg>
+<p class="it b" style="--d:7.6s">A general equilibrium model with a banking sector, endogenous loan defaults and a central bank that can buy private assets.</p>
+</div>
+
+<!-- 7 Main result -->
+<div class="s" style="--s:62s;--len:11s">
+<p class="k">Main result</p>
+<p class="h">The model reproduces the crisis in the banks</p>
+<div class="row fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:22cqw;--r:1.9153"><div class="im"><img src="img/monet-f5-def-lev.png?v=1" width="701" height="366" alt="Figure 5: after a financial shock the default rate jumps on impact and the banks' leverage ratio falls by about 75 percent; without defaults neither moves"></div></div>
+<p class="cap">Default rate (p.p.) and bank leverage (%), red: baseline · Figure 5</p>
+</div>
+<div>
+<p class="big b" style="--d:2s">−75%</p>
+<p class="p b" style="--d:2s">fall in the banks' leverage ratio as defaults spike</p>
+<p class="it b" style="--d:4.6s;margin-top:2cqw">Leverage falls in the crisis, as in the data. Without defaults, it doesn't move.</p>
+</div>
+</div>
+</div>
+
+<!-- 8 Amplification -->
+<div class="s" style="--s:73s;--len:10s">
+<p class="k">Amplification</p>
+<p class="h">Defaults make the recession deeper</p>
+<div class="row fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:21cqw;--r:2.0293"><div class="im"><img src="img/monet-f5-y-i.png?v=1" width="692" height="341" alt="Figure 5: output falls about 0.75 percent and investment about 6 percent, both more than in the model without defaults"></div></div>
+<p class="cap">Output and investment, % deviation, red: baseline · Figure 5</p>
+</div>
+<div>
+<p class="big b" style="--d:2s">−0.75%</p>
+<p class="p b" style="--d:2s">output</p>
+<p class="big sm b" style="--d:3.6s;margin-top:2cqw">−6%</p>
+<p class="p b mu" style="--d:3.6s">investment</p>
+<p class="it b" style="--d:5.4s;margin-top:2cqw">About a third deeper than in a model without defaults.</p>
+</div>
+</div>
+</div>
+
+<!-- 9 Credit easing -->
+<div class="s" style="--s:83s;--len:12s">
+<p class="k">Credit easing</p>
+<p class="h">Credit easing does not soften the recession</p>
+<div class="row fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:22cqw;--r:1.9231"><div class="im"><img src="img/monet-f6-y-assets.png?v=1" width="700" height="364" alt="Figure 6: output follows the same path with and without credit easing, while banks' own assets fall sharply under the large intervention"></div></div>
+<p class="cap">Output and bank assets, % deviation, κ: size of central bank purchases · Figure 6</p>
+</div>
+<div>
+<p class="big b" style="--d:2s">1 for 1</p>
+<p class="p b" style="--d:2s">banks cut their own lending as the central bank buys assets</p>
+<p class="it b" style="--d:4.6s;margin-top:2cqw">Credit supply, spreads and output stay the same. Defaults keep rising.</p>
+</div>
+</div>
+</div>
+
+<!-- 10 Credit subsidies -->
+<div class="s" style="--s:95s;--len:12s">
+<p class="k">The alternative</p>
+<p class="h">Credit subsidies cut defaults, and that works</p>
+<div class="row fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:22cqw;--r:1.8149"><div class="im"><img src="img/monet-f7-def-y.png?v=1" width="706" height="389" alt="Figure 7: with credit subsidies the rise in the default rate is much smaller and output falls less"></div></div>
+<p class="cap">Default rate (p.p.) and output (%), θ: size of subsidy · Figure 7</p>
+</div>
+<div>
+<p class="big b" style="--d:2s">40%</p>
+<p class="p b" style="--d:2s">smaller fall in output</p>
+<p class="big sm b" style="--d:3.6s;margin-top:2cqw">30%</p>
+<p class="p b mu" style="--d:3.6s">smaller fall in investment, with a large subsidy</p>
+<p class="it b" style="--d:5.4s;margin-top:2cqw">Fewer defaults mean banks need not deleverage as much.</p>
+</div>
+</div>
+</div>
+
+<!-- 11 Implications -->
+<div class="s" style="--s:107s;--len:11s">
+<p class="k">Implications</p>
+<p class="h">What this means for crisis policy</p>
+<div class="cards c3">
+<div class="card b" style="--d:.6s"><span class="n">1</span><h3>Defaults drive it</h3><p>Rising loan defaults, not falling asset prices alone, push banks to deleverage.</p></div>
+<div class="card b" style="--d:2s"><span class="n">2</span><h3>Easing crowds out</h3><p>Central bank asset purchases replace bank lending rather than add to it.</p></div>
+<div class="card b" style="--d:3.4s"><span class="n">3</span><h3>Target defaults</h3><p>Policies that cut defaults directly, like credit subsidies, can soften the recession.</p></div>
+</div>
+</div>
+
+<!-- 12 End -->
+<div class="s last" style="--s:118s;justify-content:center">
+<p class="k">QMUL Working Paper · 2020</p>
+<p class="ttl" style="font-size:4.4cqw;max-width:80%">Unconventional Monetary Policy, Leverage and Default Dynamics</p>
+<p class="au">Edoardo Palombo</p>
+<div class="acts"><a class="btn p" href="https://drive.google.com/file/d/1UQNy9pzYB5au9_Q0PHgze3wGc4WsMN6s/view" target="_blank" rel="noopener">Read the paper</a><a class="btn" href="https://drive.google.com/file/d/1O5QHSZm8TiuktZjfXIHD-5qZJGfMQVAF/view" target="_blank" rel="noopener">Listen</a><button class="btn" type="button" onclick="var a=document.getElementById('a');a.classList.add('off');void a.offsetWidth;a.classList.remove('off')">Replay</button></div>
+<p class="site">edoardopalombo.com</p>
+</div>
+
+<div class="bar"></div>
+<p class="src">Palombo (2020) · Unconventional Monetary Policy, Leverage and Default Dynamics · QMUL Working Paper</p>
+<img class="logo" src="../sig.svg?v=6" alt="EP">
+</figure>
+<script>(function(){var m=location.hash.match(/t=(\d+)/);if(!m)return;var t=+m[1];function seek(){document.getAnimations().forEach(function(x){x.pause();x.currentTime=t})}seek();addEventListener("load",seek);if(document.fonts)document.fonts.ready.then(seek)})()</script>
+</body>
+</html>
