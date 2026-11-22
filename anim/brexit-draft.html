@@ -25,9 +25,9 @@ html,body{margin:0;background:transparent}
 .anim .cite{font-size:1.35cqw;color:var(--muted)}
 .anim .row{display:grid;grid-template-columns:1fr 1fr;gap:4cqw;align-items:center;flex:1;min-height:0}
 .anim .row.fr{grid-template-columns:auto 1fr}
-.anim .fig{position:relative;background:#fff;border-radius:.7cqw;padding:.5cqw;height:100%;max-height:34cqw;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.anim .fig .im{position:relative;height:100%;min-height:0}
-.anim .fig img{display:block;height:100%;width:auto}
+.anim .fig{position:relative;background:#fff;border-radius:.7cqw;padding:.5cqw;flex:none;width:max-content;max-width:100%}
+.anim .fig .im{position:relative;height:var(--h);width:calc(var(--h) * var(--r))}
+.anim .fig img{display:block;width:100%;height:100%}
 .anim .fig .gap{position:absolute;border:.28cqw solid var(--navy);border-left:0;border-radius:0 .4cqw .4cqw 0}
 .anim .cap{margin:.9cqw 0 0;font-size:1.25cqw;color:var(--muted);text-align:center}
 .anim .big{font-size:6.4cqw;font-weight:700;line-height:1;color:var(--navy);letter-spacing:-.02em;margin:0 0 .8cqw}
@@ -116,7 +116,7 @@ html,body{margin:0;background:transparent}
 <p class="p b" style="--d:3.4s"><strong>Instead,</strong> output, employment and capital slowly fell below their pre-referendum trend.</p>
 </div>
 <div class="b" style="--d:3.4s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
-<div class="fig" style="max-height:32cqw"><div class="im"><img src="img/brexit-fig1-output.png?v=2" alt="Figure 1: UK real GDP per capita drifts below its pre-referendum trend after 2016"><span class="gap b" style="--d:5s;left:94.9%;top:12.1%;height:5.0%;width:3.3%"></span></div></div>
+<div class="fig" style="--h:31cqw;--r:0.8402"><div class="im"><img src="img/brexit-fig1-output.png?v=3" width="468" height="557" alt="Figure 1: UK real GDP per capita drifts below its pre-referendum trend after 2016"><span class="gap b" style="--d:5s;left:94.9%;top:12.1%;height:5.0%;width:3.3%"></span></div></div>
 <p class="cap">UK real GDP per capita (log) and its pre-referendum trend · Figure 1</p>
 </div>
 </div>
@@ -208,7 +208,7 @@ html,body{margin:0;background:transparent}
 <p class="h">The news alone explains the slowdown</p>
 <div class="row fr">
 <div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
-<div class="fig"><div class="im"><img src="img/brexit-fig2-output.png?v=2" alt="Figure 2: model output response falls to about minus 1 percent by 2018, tracking the data"><span class="gap b" style="--d:3.4s;left:97.7%;top:23.9%;height:59.5%;width:3.2%"></span></div></div>
+<div class="fig" style="--h:33cqw;--r:0.8010"><div class="im"><img src="img/brexit-fig2-output.png?v=3" width="475" height="593" alt="Figure 2: model output response falls to about minus 1 percent by 2018, tracking the data"><span class="gap b" style="--d:3.4s;left:97.7%;top:23.9%;height:59.5%;width:3.2%"></span></div></div>
 <p class="cap">Output, % deviation from trend: model vs data · Figure 2</p>
 </div>
 <div>
@@ -240,7 +240,7 @@ html,body{margin:0;background:transparent}
 <p class="h">A shorter expected wait does more damage</p>
 <div class="row fr">
 <div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
-<div class="fig" style="max-height:29cqw"><div class="im"><img src="img/brexit-fig3-output.png?v=2" alt="Figure 3: output falls further when negotiations are expected to last one year"><span class="gap b" style="--d:3.4s;left:98.0%;top:46.9%;height:28.9%;width:3.3%"></span></div></div>
+<div class="fig" style="--h:28cqw;--r:0.8542"><div class="im"><img src="img/brexit-fig3-output.png?v=3" width="463" height="542" alt="Figure 3: output falls further when negotiations are expected to last one year"><span class="gap b" style="--d:3.4s;left:98.0%;top:46.9%;height:28.9%;width:3.3%"></span></div></div>
 <div class="leg"><span><i style="background:#1f8a4c"></i>One-year expected duration</span><span><i style="background:#c8c8c8"></i>Baseline</span><span><i style="background:#f5a623"></i>Mean news set to zero</span></div>
 </div>
 <div>
