@@ -3,108 +3,283 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Credit Easing and Defaults: 1-minute preview</title>
+<title>Unconventional Monetary Policy, Leverage and Default Dynamics: 2-minute video</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
 <link rel="stylesheet" href="../style.css?v=14">
 <style>
-.anim{--teal:#5fb3a8;--sand:#e4cfa3;--slate:#3b4654;--slate2:#232b33;--slate3:#2c3640;--gold:#e8b84a;--gold2:#a8791f;--rose:#d9645a;--cloud:#566271;--cloud2:#3f4955;position:relative;aspect-ratio:16/9;max-width:100%;margin:0 auto;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
-.anim .s{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:6% 8% 9%;opacity:0;animation:sl 60s linear 1 both;animation-delay:calc(var(--i)*6s)}
-.anim .s.last{animation-name:sl-last}
-.anim .k{margin:0 0 .5em;font-size:clamp(.65rem,2.2vw,.8rem);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
-.anim .t{margin:0;font-size:clamp(1.05rem,3.8vw,1.9rem);line-height:1.25;font-weight:600;max-width:12em}
-.anim .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:1em}
+html,body{margin:0;background:transparent}
+.anim{--sand:#d9c3a0;--grey:#8a8a8f;--card:#262624;--serif:"Source Serif 4",Georgia,"Times New Roman",serif;container-type:inline-size;position:relative;aspect-ratio:16/9;max-width:100%;margin:0 auto;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--surface);color:var(--text);box-shadow:var(--shadow);font-size:1.9cqw;line-height:1.35}
+.anim *{box-sizing:border-box}
+.anim .s{position:absolute;inset:0;display:flex;flex-direction:column;padding:4.6cqw 6cqw 7.4cqw;opacity:0;animation:show var(--len) linear 1 both;animation-delay:var(--s)}
+.anim .s.last{animation:show-last 1s linear 1 both;animation-delay:var(--s)}
+.anim .b{animation:bin .7s ease-out 1 both;animation-delay:calc(var(--s) + var(--d,.4s))}
+.anim .k{margin:0 0 .9cqw;font-size:1.35cqw;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+.anim .h{margin:0 0 2.4cqw;font-family:var(--serif);font-weight:600;font-size:3.5cqw;line-height:1.15;letter-spacing:-.005em}
+.anim .h em{font-style:normal;color:var(--navy)}
+.anim .p{margin:0;font-size:1.9cqw;line-height:1.4}
+.anim .p+.p{margin-top:1.6cqw}
+.anim .mu{color:var(--muted)}
+.anim .it{font-family:var(--serif);font-style:italic;font-size:1.9cqw;color:var(--muted);margin:0}
+.anim .cite{font-size:1.35cqw;color:var(--muted)}
+.anim .row{display:grid;grid-template-columns:1fr 1fr;gap:4cqw;align-items:center;flex:1;min-height:0}
+.anim .row.fr{grid-template-columns:auto 1fr}
+.anim .fig{position:relative;background:#fff;border-radius:.7cqw;padding:.5cqw;flex:none;width:max-content;max-width:100%}
+.anim .fig .im{position:relative;height:var(--h);width:calc(var(--h) * var(--r))}
+.anim .fig img{display:block;width:100%;height:100%}
+.anim .fig .gap{position:absolute;border:.28cqw solid var(--navy);border-left:0;border-radius:0 .4cqw .4cqw 0}
+.anim .cap{margin:.9cqw 0 0;font-size:1.25cqw;color:var(--muted);text-align:center}
+.anim .big{font-size:6.4cqw;font-weight:700;line-height:1;color:var(--navy);letter-spacing:-.02em;margin:0 0 .8cqw}
+.anim .big.sm{font-size:4.2cqw}
+.anim .cards{display:grid;grid-template-columns:1fr 1fr;gap:2.4cqw}
+.anim .cards.c3{grid-template-columns:1fr 1fr 1fr}
+.anim .card{background:var(--card);border:1px solid var(--line);border-radius:1.2cqw;padding:2cqw 2.2cqw}
+.anim .card h3{margin:0 0 .8cqw;font-family:var(--serif);font-weight:600;font-size:2.3cqw;line-height:1.15}
+.anim .card .n{display:block;font-weight:700;color:var(--navy);font-size:2.2cqw;margin-bottom:.4cqw}
+.anim .card p{margin:0;font-size:1.65cqw;line-height:1.4;color:var(--muted)}
+.anim .card svg{display:block;width:100%;height:5cqw;margin-top:1.2cqw}
+.anim .ln{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.anim .dr{stroke-dasharray:1;stroke-dashoffset:1;animation:dr 1.6s ease-in-out 1 both;animation-delay:calc(var(--s) + var(--d,.4s))}
+.anim .ctr{text-align:center;align-items:center}
+/* bars */
+.anim .bars{display:grid;grid-template-columns:auto 1fr;gap:1cqw 1.4cqw;align-items:center;font-size:1.6cqw}
+.anim .bars .lb{color:var(--muted);text-align:right;white-space:nowrap}
+.anim .bars .tr{display:flex;align-items:center;gap:1cqw}
+.anim .bars .br{height:2.4cqw;border-radius:.3cqw;background:var(--grey);transform-origin:left;animation:grow 1s ease-out 1 both;animation-delay:calc(var(--s) + var(--d,.4s))}
+.anim .bars .br.c{background:var(--navy)}
+.anim .bars .v{font-weight:700;white-space:nowrap}
+/* timeline */
+.anim .tl{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw;margin:1cqw 0 3cqw;padding-top:2.6cqw}
+.anim .tl:before{content:"";position:absolute;left:0;right:0;top:.9cqw;height:.25cqw;background:var(--line)}
+.anim .tl .ev{position:relative}
+.anim .tl .ev:before{content:"";position:absolute;left:0;top:-2.4cqw;width:1.6cqw;height:1.6cqw;border-radius:50%;background:var(--navy);border:.35cqw solid var(--surface)}
+.anim .tl .dt{font-weight:700;font-size:1.7cqw;margin:0 0 .3cqw}
+.anim .tl p{margin:0;font-size:1.55cqw;color:var(--muted);line-height:1.35}
+.anim .stats{display:grid;grid-template-columns:1fr 1fr;gap:3cqw}
+.anim .stat{display:flex;gap:1.6cqw;align-items:flex-start}
+.anim .stat .big{font-size:4.6cqw;margin:0}
+.anim .stat p{margin:0;font-size:1.6cqw;line-height:1.35;color:var(--muted)}
+/* diagram */
+.anim .dg{width:100%;height:auto;flex:1;min-height:0}
+.anim .dg .bx{fill:var(--card);stroke:var(--line);stroke-width:1.5}
+.anim .dg .bx.c{stroke:var(--navy);stroke-width:2}
+.anim .dg text{fill:var(--text);font:600 15px system-ui,-apple-system,"Segoe UI",sans-serif;text-anchor:middle}
+.anim .dg .sm{fill:var(--muted);font-weight:500;font-size:12.5px}
+.anim .dg .cl{fill:var(--navy)}
+.anim .dg .ar{fill:none;stroke:var(--muted);stroke-width:1.8}
+.anim .dg .ar.c{stroke:var(--navy)}
+.anim .leg{display:flex;flex-wrap:wrap;gap:.6cqw 1.6cqw;margin-top:1cqw;font-size:1.25cqw;color:var(--muted);justify-content:center}
+.anim .leg i{display:inline-block;width:2cqw;height:.5cqw;border-radius:.3cqw;vertical-align:middle;margin-right:.6cqw}
+/* title + end */
+.anim .ttl{font-family:var(--serif);font-weight:600;font-size:5.2cqw;line-height:1.08;margin:0 0 2.2cqw;max-width:62%}
+.anim .rule{width:6cqw;height:.3cqw;background:var(--navy);margin:0 0 1.8cqw;border:0}
+.anim .au{font-size:2.2cqw;font-weight:600;margin:0 0 .5cqw}
+.anim .deco{position:absolute;right:4cqw;top:8cqw;width:36cqw;height:auto;opacity:.5;pointer-events:none}
+.anim .acts{display:flex;gap:1.2cqw;flex-wrap:wrap;margin-top:2.2cqw;align-items:center}
+.anim .acts .btn{font-family:inherit;line-height:1.4;font-size:1.7cqw;padding:.8cqw 2.2cqw}
 .anim .btn.p{background:var(--navy);color:var(--on-accent);border-color:var(--navy)}
-.anim .sub{margin:.6em 0 0;font-size:clamp(.7rem,2.2vw,.9rem);color:var(--muted)}
-.anim .sig{height:48px;width:auto;aspect-ratio:387/248;align-self:flex-start;margin:0 0 .7em}
-.anim .s>svg{position:absolute;right:4%;top:50%;transform:translateY(-50%);width:40%;height:auto;pointer-events:none;fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round}
-.anim svg.d{position:absolute;width:0;height:0}
-.pn{fill:var(--slate2)}.gw{fill:var(--slate);opacity:.3}.sk,.gn{fill:var(--slate3)}.gl2{stroke:var(--slate);stroke-width:1}
-.bd{fill:var(--bc,var(--slate))}.rf{fill:var(--rc,var(--teal))}.sd{fill:var(--sand)}.wn{fill:var(--sand);opacity:.9}.gd{fill:var(--gold)}.g2{fill:var(--gold2)}.ac{fill:var(--navy)}.ro{fill:var(--rose)}
-.pi{stroke:var(--slate);stroke-width:6}.pj{stroke:var(--slate2);stroke-width:3.4}.pf{stroke:var(--gold);stroke-width:2.6;stroke-dasharray:.1 7;animation:fl .8s linear infinite}
-.tx{fill:var(--muted);font-size:7px;text-anchor:middle}
-.crk{stroke:var(--rose);stroke-width:1.3;stroke-dasharray:1 2;stroke-dashoffset:1;stroke-linecap:butt}
-.rn{stroke:var(--teal);stroke-width:1.1;opacity:0;animation:rn .9s linear infinite}
-.fi,.pp,.up{opacity:0}
-.fi,.fo,.fall,.pp,.up,.crk,.op{animation-duration:.8s;animation-fill-mode:both;animation-delay:calc(var(--i)*6s + var(--d,0s))}
-.fi{animation-name:fi}.fo{animation-name:fo}.pp{transform-box:fill-box;transform-origin:50% 100%;animation-name:pop;animation-timing-function:cubic-bezier(.2,.9,.3,1.3)}
-.up{animation-name:up}.crk{animation-name:crk;animation-duration:.6s}
-.fall{transform-box:fill-box;transform-origin:50% 100%;animation-name:fall;animation-duration:1s;animation-timing-function:cubic-bezier(.5,0,1,.6)}
-.op{transform-box:fill-box;transform-origin:50% 100%;animation-name:op;animation-timing-function:cubic-bezier(.2,.9,.3,1.3)}
-.dr,.bob,.pl,.bolt,.rn{animation-delay:calc(var(--i)*6s + var(--d,0s))}
-.dr{animation:dr 3.5s ease-in-out infinite alternate}.bob{animation:bob 1.6s ease-in-out infinite alternate}
-.pl{transform-box:fill-box;transform-origin:50% 50%;animation:pl 1.8s ease-in-out infinite alternate}.bolt{animation:bolt 3s linear infinite}
-.pf,.dr,.bob,.pl,.bolt,.rn{animation-delay:calc(var(--i)*6s + var(--d,0s))}
-.anim .bar{position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--navy);transform-origin:left;animation:fill 60s linear 1 both}
-.anim .rp{position:absolute;right:12px;bottom:12px;z-index:2;font:inherit;font-size:.8rem;padding:2px 12px;cursor:pointer;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--navy)}
-@keyframes sl{0%{opacity:0;transform:translateY(8px)}1%,9%{opacity:1;transform:none}10%,100%{opacity:0}}
-@keyframes sl-last{0%{opacity:0;transform:translateY(8px)}1%,100%{opacity:1;transform:none}}
-@keyframes fi{from{opacity:0}to{opacity:1}}
-@keyframes fo{from{opacity:1}to{opacity:0}}
-@keyframes pop{from{opacity:0;transform:scale(.4) translateY(6px)}to{opacity:1;transform:none}}
-@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-@keyframes fall{from{opacity:1;transform:none}to{opacity:.55;transform:translateY(3px) rotate(22deg)}}
-@keyframes op{from{opacity:0;transform:scale(.2,.1)}to{opacity:1;transform:none}}
-@keyframes crk{to{stroke-dashoffset:0}}
-@keyframes fl{to{stroke-dashoffset:-7.1}}
-@keyframes rn{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(var(--dy,40px));opacity:0}}
-@keyframes dr{from{transform:translateX(-4px)}to{transform:translateX(4px)}}
-@keyframes bob{from{transform:translateY(0)}to{transform:translateY(-3px)}}
-@keyframes pl{from{transform:scale(1);opacity:.2}to{transform:scale(1.15);opacity:.4}}
-@keyframes bolt{0%,100%{opacity:0}4%,8%{opacity:1}12%{opacity:0}16%{opacity:.9}20%{opacity:0}}
-@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.anim.off *{animation:none!important}
-@media (prefers-reduced-motion:reduce){.anim{aspect-ratio:auto}.anim .s{position:static;opacity:1;animation:none;padding:18px 20px;border-bottom:1px solid var(--line)}.anim .s>svg,.anim .bar,.anim .rp{display:none}}
-svg{overflow:visible}
-.anim .bar{padding:0;gap:0;height:4px}
-/* polish: text column, source line, logo, QA freeze */
-.anim .s{padding:7% 50% 12% 7%}
-.anim .s.last{padding-right:8%}
-.anim .k{font-size:clamp(.6rem,1.9vw,.78rem)}
-.anim .t{font-size:clamp(.85rem,3.1vw,1.6rem);line-height:1.28;font-weight:600;max-width:none}
-.anim .t+.t{margin-top:.5em}
-.anim .src{position:absolute;left:7%;bottom:calc(4px + 2.4%);margin:0;max-width:72%;font-size:clamp(.5rem,1.45vw,.72rem);line-height:1.3;color:var(--muted);z-index:2}
-.anim .logo{position:absolute;right:2.6%;bottom:calc(4px + 2%);height:9%;width:auto;aspect-ratio:387/248;z-index:2;opacity:.95}
-.anim .acts{align-items:center}.anim .acts .btn{font-family:inherit;line-height:1.4}
-@media (max-width:460px){.anim .acts{gap:6px;flex-wrap:nowrap;margin-top:.7em}.anim .acts .btn{font-size:.74rem;padding:4px 11px;white-space:nowrap}}
-.anim.qa *{animation:none!important}.anim.qa .s{opacity:0}.anim.qa .s.on{opacity:1}.anim.qa .l{stroke-dashoffset:0}.anim.qa .tv{offset-distance:100%}
-@media (prefers-reduced-motion:reduce){.anim .s{padding:18px 20px}.anim .src,.anim .logo{position:static;display:block;margin:10px 20px}}
+.anim .site{margin-top:2.4cqw;font-size:1.6cqw;color:var(--muted)}
+/* frame */
+.anim .bar{position:absolute;left:0;bottom:0;height:.45cqw;min-height:3px;width:100%;padding:0;background:var(--navy);transform-origin:left;animation:grow 120s linear 1 both;z-index:2}
+.anim .src{position:absolute;left:6cqw;bottom:2.3cqw;margin:0;max-width:72%;font-size:1.2cqw;line-height:1.3;color:var(--muted);z-index:2}
+.anim .logo{position:absolute;right:2.6cqw;bottom:1.6cqw;height:4.6cqw;width:auto;aspect-ratio:387/248;z-index:2;opacity:.95}
+.anim.off,.anim.off *{animation:none!important}
+@keyframes show{0%{opacity:0;transform:translateY(.6cqw)}5%,95%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes show-last{from{opacity:0;transform:translateY(.6cqw)}to{opacity:1;transform:none}}
+@keyframes bin{from{opacity:0;transform:translateY(.8cqw)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes dr{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.anim{aspect-ratio:auto}.anim .s{position:relative;opacity:1;min-height:56.25cqw;border-bottom:1px solid var(--line)}.anim *{animation:none!important}.anim .dr{stroke-dashoffset:0}.anim .bar{display:none}.anim .src,.anim .logo{position:static;display:block;margin:2cqw 6cqw}}
 </style>
 </head>
 <body>
-<figure class="anim" id="a" aria-label="One-minute preview of Unconventional Monetary Policy, Leverage and Default Dynamics">
-<svg class="d" aria-hidden="true"><defs>
-<pattern id="gp" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" fill="none" stroke="#2e2e2c" stroke-width=".6"/></pattern>
-<g id="fb"><rect y="6" width="20" height="22" rx="1.5" class="bd"/><rect x="-2" y="3" width="24" height="5" rx="1.5" class="rf"/><g class="wn"><rect x="3" y="12" width="4" height="4"/><rect x="13" y="12" width="4" height="4"/><rect x="3" y="19" width="4" height="4"/><rect x="13" y="19" width="4" height="4"/></g><rect x="8" y="22" width="4" height="6" class="sd"/></g>
-<g id="bk"><path d="M0 10L17 0L34 10Z" class="rf"/><rect x="2" y="10" width="30" height="16" class="bd"/><g class="sd"><rect x="3" y="11" width="3.5" height="15"/><rect x="8" y="11" width="3.5" height="15"/><rect x="22.5" y="11" width="3.5" height="15"/><rect x="27.5" y="11" width="3.5" height="15"/></g><circle cx="17" cy="19" r="5.5" class="g2"/><circle cx="17" cy="19" r="4" fill="var(--slate2)"/><path d="M14 19h6M17 16v6" stroke="var(--sand)" stroke-width=".8"/><circle cx="17" cy="19" r="1.2" class="gd"/><rect x="0" y="26" width="34" height="3" class="rf"/><rect x="-2" y="29" width="38" height="3" class="bd"/><circle cx="17" cy="5.5" r="1.8" class="sd"/></g>
-<g id="cb"><rect x="21.5" width="1" height="4" class="sd"/><path d="M14 11a8 8 0 0 1 16 0Z" class="sd"/><path d="M0 20L22 11L44 20Z" class="rf"/><rect x="1" y="20" width="42" height="3" class="bd"/><g class="sd"><rect x="3" y="23" width="4" height="11"/><rect x="11.5" y="23" width="4" height="11"/><rect x="20" y="23" width="4" height="11"/><rect x="28.5" y="23" width="4" height="11"/><rect x="37" y="23" width="4" height="11"/></g><rect x="-1" y="34" width="46" height="3" class="bd"/><rect x="-3" y="37" width="50" height="3" class="rf"/></g>
-<g id="cl"><path d="M8 20a7 7 0 0 1 1-14a10 10 0 0 1 19-2a8 8 0 0 1 13 6a6 6 0 0 1-2 10Z"/></g>
-<g id="cn"><rect width="12" height="3.4" rx="1.7" class="gd"/><rect y="1.8" width="12" height="1.6" rx=".8" class="g2"/></g>
-<g id="um"><g class="op"><path d="M0 18C0 6 10 0 20 0S40 6 40 18Q35 14 30 18Q25 14 20 18Q15 14 10 18Q5 14 0 18Z" class="ac"/><path d="M20 0V18M20 0Q8 6 10 18M20 0Q32 6 30 18" stroke="var(--bg)" stroke-width=".7" opacity=".45"/></g></g>
-<g id="bg"><rect class="pn" width="160" height="100" rx="9"/><circle cx="118" cy="38" r="36" class="gw"/><path class="sk" d="M6 82V60H16V82ZM18 82V68H26V82ZM28 82V56H40V82ZM42 82V66H51V82ZM53 82V62H64V82ZM66 82V70H74V82ZM76 82V58H86V82ZM88 82V66H97V82ZM99 82V60H111V82ZM113 82V68H121V82ZM123 82V56H134V82ZM136 82V64H145V82ZM147 82V60H157V82Z"/><path class="gn" d="M0 82H160V91a9 9 0 0 1-9 9H9a9 9 0 0 1-9-9Z"/><path class="gl2" d="M0 82H160"/></g>
-</defs></svg>
-<div class="s" style="--i:0"><p class="k">Motivation</p><p class="t">In a downturn, many firms default on their debt.</p>
-<svg viewBox="0 0 160 100" aria-hidden="true"><use href="#bg"/><g transform="translate(16 6) scale(1.5)"><g class="up" style="--d:0.3s"><g class="dr"><use href="#cl" style="fill:var(--cloud)"/></g></g></g><g transform="translate(78 2) scale(1.7)"><g class="up" style="--d:0.6s"><g class="dr"><use href="#cl" style="fill:var(--cloud2)"/></g></g></g><g transform="translate(104 32)"><path class="gd bolt" d="M0 0L-6 11H-1.5L-4 21L6 8H1.5L5 0Z"/></g><path class="rn" style="--d:0s;--dy:40px" d="M22 38l-2 5"/><path class="rn" style="--d:0.3s;--dy:40px" d="M36 38l-2 5"/><path class="rn" style="--d:0.6s;--dy:40px" d="M50 38l-2 5"/><path class="rn" style="--d:0.1s;--dy:40px" d="M64 38l-2 5"/><path class="rn" style="--d:0.5s;--dy:40px" d="M80 38l-2 5"/><path class="rn" style="--d:0.2s;--dy:40px" d="M94 38l-2 5"/><path class="rn" style="--d:0.7s;--dy:40px" d="M108 38l-2 5"/><path class="rn" style="--d:0.4s;--dy:40px" d="M122 38l-2 5"/><path class="rn" style="--d:0.8s;--dy:40px" d="M136 38l-2 5"/><path class="rn" style="--d:0.15s;--dy:40px" d="M146 38l-2 5"/><g transform="translate(20 54)"><g class="up" style="--d:0.8s"><use href="#fb"/></g></g><g transform="translate(52 54)"><g class="up" style="--d:1.1s"><use href="#fb"/></g></g><g transform="translate(90 54)"><g class="up" style="--d:1.4s"><g class="fall" style="--d:3s"><use href="#fb"/><path class="crk" pathLength="1" style="--d:2.3s" d="M9 8l3 6-4 5 4 8"/></g></g></g><g transform="translate(122 54)"><g class="up" style="--d:1.7s"><g class="fall" style="--d:3.8s"><use href="#fb"/><path class="crk" pathLength="1" style="--d:3.1s" d="M9 8l3 6-4 5 4 8"/></g></g></g><g fill="var(--sand)" fill-opacity=".35"><circle class="pp" style="--d:3.8s" cx="104" cy="79" r="3.5"/><circle class="pp" style="--d:3.9s" cx="110" cy="80" r="2.4"/><circle class="pp" style="--d:4.6s" cx="136" cy="79" r="3.2"/></g></svg></div>
-<div class="s" style="--i:1"><p class="k">Research question</p><p class="t">Can central bank lending to firms stabilise the economy?</p>
-<svg viewBox="0 0 160 100" aria-hidden="true"><use href="#bg"/><g opacity=".28"><use href="#bk" x="73" y="50"/></g><g transform="translate(10 42)"><g class="pp" style="--d:0.4s"><use href="#cb" style="--rc:var(--navy)"/></g></g><g transform="translate(124 52) scale(1.1)"><g class="up" style="--d:1.2s"><use href="#fb"/></g></g><g class="fi" style="--d:1.6s"><path class="pi" d="M60 74H118"/><path class="pj" d="M60 74H118"/><path class="pf" d="M60 74H118"/></g><path class="fi" style="--d:1.8s" d="M112 67l8 7-8 7" stroke="var(--sand)" stroke-width="2.2"/><g transform="translate(80 22)"><g class="pp" style="--d:2.6s"><g class="bob"><circle r="12" fill="var(--surface)" stroke="var(--navy)" stroke-width="1.6"/><path d="M-3 11l3 6 3-6Z" fill="var(--surface)" stroke="var(--navy)" stroke-width="1.6"/><path d="M-4 12h8" stroke="var(--surface)" stroke-width="2.4"/><text class="ac" y="6" text-anchor="middle" style="font-size:17px;font-weight:700">?</text></g></g></g></svg></div>
-<div class="s" style="--i:2"><p class="k">Mechanism</p><p class="t">Firm defaults impose losses on banks, which then cut lending.</p>
-<svg viewBox="0 0 160 100" aria-hidden="true"><use href="#bg"/><g transform="translate(14 54)"><g class="up" style="--d:0.4s"><g class="fall" style="--d:2.5s"><use href="#fb"/><path class="crk" pathLength="1" style="--d:1.9s" d="M9 8l3 6-4 5 4 8"/></g></g></g><g class="fi" style="--d:1s"><path class="pi" d="M96 73H42"/><path class="pj" d="M96 73H42"/><g class="fo" style="--d:2.7s"><path class="pf" d="M96 73H42"/></g></g><path class="fi" style="--d:1.2s" d="M50 66l-8 7 8 7" stroke="var(--sand)" stroke-width="2.2"/><g transform="translate(98 45) scale(1.1)"><g class="pp" style="--d:0.6s"><use href="#bk"/></g></g><use href="#cn" x="139" y="78"/><use href="#cn" x="139" y="75"/><use href="#cn" x="139" y="72" class="fo" style="--d:4.1s"/><use href="#cn" x="139" y="69" class="fo" style="--d:3.4s"/><rect x="136" y="81" width="18" height="2" rx="1" class="bd"/></svg></div>
-<div class="s" style="--i:3"><p class="k">Approach</p><p class="t">We build a macroeconomic model with firms, banks and a central bank.</p>
-<svg viewBox="0 0 160 100" aria-hidden="true"><use href="#bg"/><rect width="160" height="100" rx="9" fill="url(#gp)" opacity=".7"/><g transform="translate(8 54)"><g class="up" style="--d:0.4s"><use href="#fb"/></g></g><g transform="translate(58 50)"><g class="pp" style="--d:1.2s"><use href="#bk"/></g></g><g transform="translate(108 42)"><g class="pp" style="--d:2s"><use href="#cb" style="--rc:var(--navy)"/></g></g><g class="fi" style="--d:1.6s"><path class="pi" d="M30 74H56"/><path class="pj" d="M30 74H56"/><path class="pf" d="M30 74H56"/></g><g class="fi" style="--d:2.4s"><path class="pi" d="M94 74H106"/><path class="pj" d="M94 74H106"/><path class="pf" d="M94 74H106"/></g><g class="fi" style="--d:3s"><path d="M130 36C130 6 18 6 18 48" stroke="var(--navy)" stroke-width="1.6" stroke-dasharray="3 4"/><path d="M13 42l5 7 5-7" stroke="var(--navy)" stroke-width="1.8"/></g></svg></div>
-<div class="s" style="--i:4"><p class="k">Transmission</p><p class="t">Defaults rise, and bank losses cause a sharp contraction in credit.</p>
-<svg viewBox="0 0 160 100" aria-hidden="true"><use href="#bg"/><g transform="translate(6 4) scale(1.2)"><g class="up" style="--d:0.2s"><g class="dr"><use href="#cl" style="fill:var(--cloud)"/></g></g></g><path class="rn" style="--d:0s;--dy:46px" d="M14 30l-2 5"/><path class="rn" style="--d:0.3s;--dy:46px" d="M26 30l-2 5"/><path class="rn" style="--d:0.6s;--dy:46px" d="M38 30l-2 5"/><path class="rn" style="--d:0.15s;--dy:46px" d="M50 30l-2 5"/><path class="rn" style="--d:0.45s;--dy:46px" d="M60 30l-2 5"/><g transform="translate(10 54)"><g class="up" style="--d:0.4s"><g class="fall" style="--d:1.5s"><use href="#fb"/><path class="crk" pathLength="1" style="--d:0.9s" d="M9 8l3 6-4 5 4 8"/></g></g></g><g transform="translate(36 54)"><g class="up" style="--d:0.6s"><g class="fall" style="--d:2.2s"><use href="#fb"/><path class="crk" pathLength="1" style="--d:1.6s" d="M9 8l3 6-4 5 4 8"/></g></g></g><g transform="translate(62 54)"><g class="up" style="--d:0.8s"><g class="fall" style="--d:2.9s"><use href="#fb"/><path class="crk" pathLength="1" style="--d:2.3s" d="M9 8l3 6-4 5 4 8"/></g></g></g><g class="fi" style="--d:1.2s"><path class="pi" d="M88 74H98"/><path class="pj" d="M88 74H98"/><g class="fo" style="--d:3s"><path class="pf" d="M88 74H98"/></g></g><g transform="translate(98 46) scale(1.1)"><g class="pp" style="--d:1s"><use href="#bk"/></g></g><use href="#cn" x="139" y="78"/><use href="#cn" x="139" y="75" class="fo" style="--d:4.2s"/><use href="#cn" x="139" y="72" class="fo" style="--d:3.6s"/><use href="#cn" x="139" y="69" class="fo" style="--d:3s"/><rect x="136" y="81" width="18" height="2" rx="1" class="bd"/><path class="fi" style="--d:4.4s" d="M146 24v16M140 34l6 7 6-7" stroke="var(--rose)" stroke-width="2.4"/></svg></div>
-<div class="s" style="--i:5"><p class="k">Policy</p><p class="t">The central bank lends directly to firms, in place of bank credit.</p>
-<svg viewBox="0 0 160 100" aria-hidden="true"><use href="#bg"/><g opacity=".3"><use href="#bk" x="72" y="48" style="--rc:var(--slate)"/></g><g transform="translate(8 36) scale(1.15)"><g class="pp" style="--d:0.3s"><use href="#cb" style="--rc:var(--navy)"/></g></g><g class="pl" style="--d:1.5s"><circle cx="129" cy="66" r="17" fill="var(--teal)"/></g><g class="fi" style="--d:1s"><path class="pi" d="M62 74H118"/><path class="pj" d="M62 74H118"/><path class="pf" d="M62 74H118"/></g><path class="fi" style="--d:1.4s" d="M112 67l8 7-8 7" stroke="var(--sand)" stroke-width="2.2"/><g transform="translate(120 52) scale(1.1)"><g class="up" style="--d:1.6s"><use href="#fb"/></g></g><g class="bob"><use href="#cn" x="26" y="26" class="pp" style="--d:2s"/></g><g class="bob" style="--d:.5s"><use href="#cn" x="40" y="20" class="pp" style="--d:2.4s"/></g></svg></div>
-<div class="s" style="--i:6"><p class="k">Result · Illustrative</p><p class="t">The policy does not soften the downturn: public credit replaces private lending.</p>
-<svg viewBox="0 0 160 100" aria-hidden="true"><rect class="pn" width="160" height="100" rx="9"/><path d="M14 14V80H146" stroke="var(--muted)" stroke-width="1.2" opacity=".6"/><g stroke="var(--teal)" stroke-width="1" stroke-dasharray="2 2" opacity=".4"><rect x="34" y="68" width="28" height="10" rx="2"/><rect x="34" y="56" width="28" height="10" rx="2"/><rect x="34" y="44" width="28" height="10" rx="2"/></g><g class="fi" style="--d:.3s"><g class="fo" style="--d:3.3s"><rect x="34" y="68" width="28" height="10" rx="2" fill="var(--teal)"/></g></g><g class="fi" style="--d:.5s"><g class="fo" style="--d:2.9s"><rect x="34" y="56" width="28" height="10" rx="2" fill="var(--teal)"/></g></g><g class="fi" style="--d:.7s"><g class="fo" style="--d:2.5s"><rect x="34" y="44" width="28" height="10" rx="2" fill="var(--teal)"/></g></g><g stroke="var(--navy)" stroke-width="1" stroke-dasharray="2 2" opacity=".4"><rect x="98" y="68" width="28" height="10" rx="2"/><rect x="98" y="56" width="28" height="10" rx="2"/><rect x="98" y="44" width="28" height="10" rx="2"/></g><rect class="fi ac" style="--d:3.5s" x="98" y="68" width="28" height="10" rx="2"/><rect class="fi ac" style="--d:3.9s" x="98" y="56" width="28" height="10" rx="2"/><rect class="fi ac" style="--d:4.3s" x="98" y="44" width="28" height="10" rx="2"/><path class="fi" style="--d:3s" d="M70 61H90M83 54l7 7-7 7" stroke="var(--sand)" stroke-width="2.4"/><path class="fi" style="--d:4.8s" d="M24 38H134" stroke="var(--sand)" stroke-width="1" stroke-dasharray="3 3"/><text class="tx" x="48" y="92">banks</text><text class="tx fi" style="--d:3.5s" x="112" y="92">central bank</text></svg></div>
-<div class="s" style="--i:7"><p class="k">Explanation</p><p class="t">Default risk is unchanged, so losses and credit spreads persist.</p>
-<svg viewBox="0 0 160 100" aria-hidden="true"><use href="#bg"/><g transform="translate(6 46) scale(0.9)"><g class="pp" style="--d:0.3s"><use href="#cb" style="--rc:var(--navy)"/></g></g><g class="fi" style="--d:1s"><path class="pi" d="M48 74H100"/><path class="pj" d="M48 74H100"/><path class="pf" d="M48 74H100"/></g><g transform="translate(94 4) scale(1.2)"><g class="up" style="--d:1.4s"><g class="dr"><use href="#cl" style="fill:var(--cloud)"/></g></g></g><path class="rn" style="--d:0s;--dy:40px" d="M108 28l-2 5"/><path class="rn" style="--d:0.3s;--dy:40px" d="M118 28l-2 5"/><path class="rn" style="--d:0.6s;--dy:40px" d="M128 28l-2 5"/><path class="rn" style="--d:0.15s;--dy:40px" d="M138 28l-2 5"/><g transform="translate(110 48.5) scale(1.2)"><g class="up" style="--d:1.6s"><g class="fall" style="--d:2.6s"><use href="#fb"/><path class="crk" pathLength="1" style="--d:2.0s" d="M9 8l3 6-4 5 4 8"/></g></g></g><path class="fi" style="--d:3.3s" d="M100 34l24 24M124 34l-24 24" stroke="var(--rose)" stroke-width="3"/><use href="#cn" x="100" y="78" class="pp" style="--d:3.6s"/><use href="#cn" x="106" y="75" class="pp" style="--d:3.8s"/></svg></div>
-<div class="s" style="--i:8"><p class="k">Implication</p><p class="t">Addressing default risk itself works better than substituting one lender for another.</p>
-<svg viewBox="0 0 160 100" aria-hidden="true"><use href="#bg"/><g transform="translate(8 2) scale(1.4)"><g class="up" style="--d:0.2s"><g class="dr"><use href="#cl" style="fill:var(--cloud)"/></g></g></g><g transform="translate(88 0) scale(1.5)"><g class="up" style="--d:0.4s"><g class="dr"><use href="#cl" style="fill:var(--cloud2)"/></g></g></g><path class="rn" style="--d:0s;--dy:52px" d="M18 30l-2 5"/><path class="rn" style="--d:0.3s;--dy:52px" d="M28 30l-2 5"/><path class="rn" style="--d:0.6s;--dy:52px" d="M38 30l-2 5"/><path class="rn" style="--d:0.15s;--dy:52px" d="M114 30l-2 5"/><path class="rn" style="--d:0.45s;--dy:52px" d="M126 30l-2 5"/><path class="rn" style="--d:0.2s;--dy:52px" d="M138 30l-2 5"/><path class="rn" style="--d:0.1s;--dy:14px" d="M60 26l-2 5"/><path class="rn" style="--d:0.4s;--dy:14px" d="M72 26l-2 5"/><path class="rn" style="--d:0.2s;--dy:14px" d="M82 26l-2 5"/><path class="rn" style="--d:0.6s;--dy:14px" d="M92 26l-2 5"/><g transform="translate(54 22) scale(1.3)"><use href="#um" style="--d:1.2s"/></g><path d="M80 42V62" stroke="var(--sand)" stroke-width="2"/><g class="pl" style="--d:1.5s"><circle cx="80" cy="68" r="20" fill="var(--teal)"/></g><g transform="translate(68 48.5) scale(1.2)"><g class="up" style="--d:0.5s"><use href="#fb"/></g></g><path d="M12 90H148" stroke="var(--muted)" stroke-width="1" opacity=".5"/><text class="tx" x="30" y="97" style="text-anchor:start;font-size:6px">Illustrative</text></svg></div>
-<div class="s last" style="--i:9"><p class="k">QMUL Working Paper · 2020</p><p class="t">Unconventional Monetary Policy, Leverage and Default Dynamics</p><p class="sub">Palombo, Queen Mary University of London</p><div class="acts"><a class="btn p" href="https://drive.google.com/file/d/1UQNy9pzYB5au9_Q0PHgze3wGc4WsMN6s/view">Read the paper</a><a class="btn" href="https://drive.google.com/file/d/1O5QHSZm8TiuktZjfXIHD-5qZJGfMQVAF/view">Listen</a><button class="btn" type="button" onclick="var a=document.getElementById('a');a.classList.add('off');void a.offsetWidth;a.classList.remove('off')">Replay</button></div></div>
+<figure class="anim" id="a" aria-label="Two-minute video summary of Unconventional Monetary Policy, Leverage and Default Dynamics, by Edoardo Palombo">
+
+<!-- 1 Title -->
+<div class="s" style="--s:0s;--len:7s;justify-content:center">
+<svg class="deco b" style="--d:.2s;top:auto;bottom:9cqw;width:30cqw" viewBox="0 0 300 160" aria-hidden="true"><path d="M0 120 L80 118 L120 116" class="ln" stroke="var(--line)" stroke-width="2"/><path class="ln dr" pathLength="1" style="--d:.8s" stroke="var(--navy)" d="M120 116 C140 110 150 30 170 26 S200 90 230 108 S280 116 300 117"/><line x1="160" y1="10" x2="160" y2="150" stroke="var(--line)" stroke-dasharray="3 4"/></svg>
+<p class="k b" style="--d:.2s">QMUL Working Paper · 2020</p>
+<p class="ttl b" style="--d:.5s">Unconventional Monetary Policy, Leverage and Default Dynamics</p>
+<hr class="rule b" style="--d:1s">
+<p class="au b" style="--d:1.2s">Edoardo Palombo</p>
+<p class="cite b" style="--d:1.4s">Queen Mary University of London</p>
+</div>
+
+<!-- 2 Why it matters -->
+<div class="s" style="--s:7s;--len:11s">
+<p class="k">Why it matters</p>
+<p class="h">In 2007, loan defaults soared to record levels</p>
+<div class="row" style="grid-template-columns:.8fr 1.2fr">
+<div>
+<p class="p b" style="--d:.6s">Non-performing loans at US banks rose from a pre-crisis average of about 1% to over 3%.</p>
+<p class="p b" style="--d:3.4s"><strong>Then came</strong> the deepest US recession since 1929: output fell by 5% and investment by 30%.</p>
+</div>
+<div class="b" style="--d:2s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:22cqw;--r:1.8562"><div class="im"><img src="img/monet-fig1.png?v=1" width="1175" height="633" alt="Figure 1: US banks' net loan charge-off rate peaks above 3 percent in 2009-2010, far above its usual level near 1 percent"></div></div>
+<p class="cap">Net loan charge-offs to total loans, US banks, % · Figure 1</p>
+</div>
+</div>
+</div>
+
+<!-- 3 Banks deleveraged -->
+<div class="s" style="--s:18s;--len:11s">
+<p class="k">The banks' response</p>
+<p class="h">Banks cut their leverage hard</p>
+<div class="row" style="grid-template-columns:1.2fr .8fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:25cqw;--r:1.5126"><div class="im"><img src="img/monet-fig2.png?v=1" width="900" height="595" alt="Figure 2: investment banks' leverage ratio rises to about 43 in 2007 and falls to about 22 by 2009, while large and commercial banks' leverage also falls"></div></div>
+<p class="cap">Aggregated leverage ratio (assets over equity), US banks · Figure 2</p>
+</div>
+<div>
+<p class="big b" style="--d:2s">Halved</p>
+<p class="p b" style="--d:2s">investment banks' leverage ratio, on average</p>
+<p class="big sm b" style="--d:4.4s;margin-top:2.2cqw">−1/3</p>
+<p class="p b mu" style="--d:4.4s">commercial banks' leverage ratio</p>
+<p class="cite b" style="--d:4.4s;margin-top:1.4cqw">Kalemli-Ozcan et al. (2012)</p>
+</div>
+</div>
+</div>
+
+<!-- 4 The policy -->
+<div class="s" style="--s:29s;--len:10s">
+<p class="k">The policy</p>
+<p class="h">The Fed turned to credit easing</p>
+<div class="row" style="grid-template-columns:.8fr 1.2fr">
+<div>
+<p class="p b" style="--d:.6s">With interest rates stuck at zero, the Federal Reserve began buying private, asset-backed securities.</p>
+<p class="p b" style="--d:3.4s"><strong>The aim:</strong> raise asset prices, lower credit spreads and keep credit flowing to firms.</p>
+</div>
+<div class="b" style="--d:2s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:25cqw;--r:1.4124"><div class="im"><img src="img/monet-fig3.png?v=1" width="1000" height="708" alt="Figure 3: the Federal Reserve's holdings grow from almost nothing in 2007 to about 4,000 by 2014, led by agency debt and mortgage-backed securities and long-term Treasuries"></div></div>
+<p class="cap">Federal Reserve assets by type, 2007–2016, Cleveland Fed · Figure 3</p>
+</div>
+</div>
+</div>
+
+<!-- 5 The question -->
+<div class="s ctr" style="--s:39s;--len:11s">
+<p class="k">The question</p>
+<p class="h" style="margin-bottom:.8cqw">Can credit easing soften a <em>financial</em> recession?</p>
+<p class="cite b" style="--d:1.2s;margin-bottom:2cqw">To answer, a model must first match how banks behaved</p>
+<div class="cards" style="width:84%;text-align:left">
+<div class="card b" style="--d:2.2s"><h3>Standard models</h3><p>Banks lever up in a crisis (Gertler &amp; Karadi 2011). The data show the opposite.</p><svg viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="ln dr" pathLength="1" style="--d:2.8s" stroke="var(--grey)" d="M4 26 L70 26 C90 26 100 6 130 6 L196 8"/></svg></div>
+<div class="card b" style="--d:3.6s"><h3 style="color:var(--navy)">This paper</h3><p>Loan defaults force banks to deleverage, as they did in 2007–2009.</p><svg viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="ln" stroke="var(--line)" stroke-dasharray="4 5" stroke-width="2" d="M70 12 L196 12"/><path class="ln dr" pathLength="1" style="--d:4.2s" stroke="var(--navy)" d="M4 12 L70 12 C90 12 100 34 130 34 L196 22"/></svg></div>
+</div>
+</div>
+
+<!-- 6 Research design -->
+<div class="s" style="--s:50s;--len:12s">
+<p class="k">Research design</p>
+<p class="h" style="margin-bottom:1.2cqw">How defaults spread through the banks</p>
+<svg class="dg" viewBox="0 0 640 230" role="img" aria-label="Model mechanism: a shock lowers the value of capital, firms default on loans, banks take losses, banks deleverage through the balance sheet and lending channels, credit tightens, and output and investment fall">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker><marker id="ahc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--navy)"/></marker></defs>
+<g class="b" style="--d:.4s"><rect class="bx" x="10" y="14" width="170" height="64" rx="10"/><text x="95" y="42">Financial shock</text><text class="sm" x="95" y="62">capital loses value</text></g>
+<g class="b" style="--d:1.4s"><path class="ar" d="M182 46 H228" marker-end="url(#ah)"/><rect class="bx" x="232" y="14" width="170" height="64" rx="10"/><text x="317" y="42">Firms default</text><text class="sm" x="317" y="62">they can't repay loans</text></g>
+<g class="b" style="--d:2.4s"><path class="ar" d="M404 46 H450" marker-end="url(#ah)"/><rect class="bx" x="454" y="14" width="176" height="64" rx="10"/><text x="542" y="42">Bank losses</text><text class="sm" x="542" y="62">equity must cover them</text></g>
+<g class="b" style="--d:3.6s"><path class="ar" d="M542 80 V136" marker-end="url(#ah)"/><rect class="bx" x="454" y="140" width="176" height="64" rx="10"/><text x="542" y="168">Banks deleverage</text><text class="sm" x="542" y="188">balance sheet, lending</text></g>
+<g class="b" style="--d:4.8s"><path class="ar" d="M452 172 H406" marker-end="url(#ah)"/><rect class="bx" x="232" y="140" width="170" height="64" rx="10"/><text x="317" y="168">Credit tightens</text><text class="sm" x="317" y="188">spreads rise</text></g>
+<g class="b" style="--d:6s"><path class="ar c" d="M230 172 H184" marker-end="url(#ahc)"/><rect class="bx c" x="10" y="140" width="170" height="64" rx="10"/><text x="95" y="168" class="cl">Output, investment</text><text class="sm" x="95" y="188">fall further</text></g>
+</svg>
+<p class="it b" style="--d:7.6s">A general equilibrium model with a banking sector, endogenous loan defaults and a central bank that can buy private assets.</p>
+</div>
+
+<!-- 7 Main result -->
+<div class="s" style="--s:62s;--len:11s">
+<p class="k">Main result</p>
+<p class="h">The model reproduces the crisis in the banks</p>
+<div class="row fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:22cqw;--r:1.9153"><div class="im"><img src="img/monet-f5-def-lev.png?v=1" width="701" height="366" alt="Figure 5: after a financial shock the default rate jumps on impact and the banks' leverage ratio falls by about 75 percent; without defaults neither moves"></div></div>
+<p class="cap">Default rate (p.p.) and bank leverage (%), red: baseline · Figure 5</p>
+</div>
+<div>
+<p class="big b" style="--d:2s">−75%</p>
+<p class="p b" style="--d:2s">fall in the banks' leverage ratio as defaults spike</p>
+<p class="it b" style="--d:4.6s;margin-top:2cqw">Leverage falls in the crisis, as in the data. Without defaults, it doesn't move.</p>
+</div>
+</div>
+</div>
+
+<!-- 8 Amplification -->
+<div class="s" style="--s:73s;--len:10s">
+<p class="k">Amplification</p>
+<p class="h">Defaults make the recession deeper</p>
+<div class="row fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:21cqw;--r:2.0293"><div class="im"><img src="img/monet-f5-y-i.png?v=1" width="692" height="341" alt="Figure 5: output falls about 0.75 percent and investment about 6 percent, both more than in the model without defaults"></div></div>
+<p class="cap">Output and investment, % deviation, red: baseline · Figure 5</p>
+</div>
+<div>
+<p class="big b" style="--d:2s">−0.75%</p>
+<p class="p b" style="--d:2s">output</p>
+<p class="big sm b" style="--d:3.6s;margin-top:2cqw">−6%</p>
+<p class="p b mu" style="--d:3.6s">investment</p>
+<p class="it b" style="--d:5.4s;margin-top:2cqw">About a third deeper than in a model without defaults.</p>
+</div>
+</div>
+</div>
+
+<!-- 9 Credit easing -->
+<div class="s" style="--s:83s;--len:12s">
+<p class="k">Credit easing</p>
+<p class="h">Credit easing does not soften the recession</p>
+<div class="row fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:22cqw;--r:1.9231"><div class="im"><img src="img/monet-f6-y-assets.png?v=1" width="700" height="364" alt="Figure 6: output follows the same path with and without credit easing, while banks' own assets fall sharply under the large intervention"></div></div>
+<p class="cap">Output and bank assets, % deviation, κ: size of central bank purchases · Figure 6</p>
+</div>
+<div>
+<p class="big b" style="--d:2s">1 for 1</p>
+<p class="p b" style="--d:2s">banks cut their own lending as the central bank buys assets</p>
+<p class="it b" style="--d:4.6s;margin-top:2cqw">Credit supply, spreads and output stay the same. Defaults keep rising.</p>
+</div>
+</div>
+</div>
+
+<!-- 10 Credit subsidies -->
+<div class="s" style="--s:95s;--len:12s">
+<p class="k">The alternative</p>
+<p class="h">Credit subsidies cut defaults, and that works</p>
+<div class="row fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:22cqw;--r:1.8149"><div class="im"><img src="img/monet-f7-def-y.png?v=1" width="706" height="389" alt="Figure 7: with credit subsidies the rise in the default rate is much smaller and output falls less"></div></div>
+<p class="cap">Default rate (p.p.) and output (%), θ: size of subsidy · Figure 7</p>
+</div>
+<div>
+<p class="big b" style="--d:2s">40%</p>
+<p class="p b" style="--d:2s">smaller fall in output</p>
+<p class="big sm b" style="--d:3.6s;margin-top:2cqw">30%</p>
+<p class="p b mu" style="--d:3.6s">smaller fall in investment, with a large subsidy</p>
+<p class="it b" style="--d:5.4s;margin-top:2cqw">Fewer defaults mean banks need not deleverage as much.</p>
+</div>
+</div>
+</div>
+
+<!-- 11 Implications -->
+<div class="s" style="--s:107s;--len:11s">
+<p class="k">Implications</p>
+<p class="h">What this means for crisis policy</p>
+<div class="cards c3">
+<div class="card b" style="--d:.6s"><span class="n">1</span><h3>Defaults drive it</h3><p>Rising loan defaults, not falling asset prices alone, push banks to deleverage.</p></div>
+<div class="card b" style="--d:2s"><span class="n">2</span><h3>Easing crowds out</h3><p>Central bank asset purchases replace bank lending rather than add to it.</p></div>
+<div class="card b" style="--d:3.4s"><span class="n">3</span><h3>Target defaults</h3><p>Policies that cut defaults directly, like credit subsidies, can soften the recession.</p></div>
+</div>
+</div>
+
+<!-- 12 End -->
+<div class="s last" style="--s:118s;justify-content:center">
+<p class="k">QMUL Working Paper · 2020</p>
+<p class="ttl" style="font-size:4.4cqw;max-width:80%">Unconventional Monetary Policy, Leverage and Default Dynamics</p>
+<p class="au">Edoardo Palombo</p>
+<div class="acts"><a class="btn p" href="https://drive.google.com/file/d/1UQNy9pzYB5au9_Q0PHgze3wGc4WsMN6s/view" target="_blank" rel="noopener">Read the paper</a><a class="btn" href="https://drive.google.com/file/d/1O5QHSZm8TiuktZjfXIHD-5qZJGfMQVAF/view" target="_blank" rel="noopener">Listen</a><button class="btn" type="button" onclick="var a=document.getElementById('a');a.classList.add('off');void a.offsetWidth;a.classList.remove('off')">Replay</button></div>
+<p class="site">edoardopalombo.com</p>
+</div>
+
 <div class="bar"></div>
-<p class="src">Source: Unconventional Monetary Policy, Leverage and Default Dynamics, QMUL Working Paper (2020)</p>
+<p class="src">Palombo (2020) · Unconventional Monetary Policy, Leverage and Default Dynamics · QMUL Working Paper</p>
 <img class="logo" src="../sig.svg?v=6" alt="EP">
 </figure>
-<script>(function(){var m=location.hash.match(/t=(\d+)/);if(!m)return;var t=+m[1];function seek(){document.getAnimations().forEach(function(x){x.pause();x.currentTime=t})}seek();addEventListener("load",seek)})()</script>
-
+<script>(function(){var m=location.hash.match(/t=(\d+)/);if(!m)return;var t=+m[1];function seek(){document.getAnimations().forEach(function(x){x.pause();x.currentTime=t})}seek();addEventListener("load",seek);if(document.fonts)document.fonts.ready.then(seek)})()</script>
 </body>
 </html>

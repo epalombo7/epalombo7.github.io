@@ -3,186 +3,283 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Uncertainty and Intangible Capital: 1-minute preview</title>
+<title>Uncertainty, Intangible Capital and Productivity Dynamics: 2-minute video</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
 <link rel="stylesheet" href="../style.css?v=14">
 <style>
-.anim{--ink:#181e29;--slate:#2a3547;--slate2:#364459;--storm:#4d5a73;--teal:#5fb0a6;--sand:#dcbc92;--glow:#f5cf7a;--bp:#1e3d49;position:relative;aspect-ratio:16/9;max-width:100%;margin:0 auto;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
-.anim .s{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:6% 8% 9%;opacity:0;animation:sl 60s linear 1 both;animation-delay:calc(var(--i)*6s)}
-.anim .s.last{animation-name:sl-last}
-.anim .k{margin:0 0 .5em;font-size:clamp(.65rem,2.2vw,.8rem);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
-.anim .t{margin:0 0 .4em;font-size:clamp(1.05rem,4.2vw,2rem);line-height:1.25;font-weight:600;max-width:15em}
-.anim .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:1em}
+html,body{margin:0;background:transparent}
+.anim{--sand:#d9c3a0;--grey:#8a8a8f;--card:#262624;--serif:"Source Serif 4",Georgia,"Times New Roman",serif;container-type:inline-size;position:relative;aspect-ratio:16/9;max-width:100%;margin:0 auto;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--surface);color:var(--text);box-shadow:var(--shadow);font-size:1.9cqw;line-height:1.35}
+.anim *{box-sizing:border-box}
+.anim .s{position:absolute;inset:0;display:flex;flex-direction:column;padding:4.6cqw 6cqw 7.4cqw;opacity:0;animation:show var(--len) linear 1 both;animation-delay:var(--s)}
+.anim .s.last{animation:show-last 1s linear 1 both;animation-delay:var(--s)}
+.anim .b{animation:bin .7s ease-out 1 both;animation-delay:calc(var(--s) + var(--d,.4s))}
+.anim .k{margin:0 0 .9cqw;font-size:1.35cqw;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+.anim .h{margin:0 0 2.4cqw;font-family:var(--serif);font-weight:600;font-size:3.5cqw;line-height:1.15;letter-spacing:-.005em}
+.anim .h em{font-style:normal;color:var(--navy)}
+.anim .p{margin:0;font-size:1.9cqw;line-height:1.4}
+.anim .p+.p{margin-top:1.6cqw}
+.anim .mu{color:var(--muted)}
+.anim .it{font-family:var(--serif);font-style:italic;font-size:1.9cqw;color:var(--muted);margin:0}
+.anim .cite{font-size:1.35cqw;color:var(--muted)}
+.anim .row{display:grid;grid-template-columns:1fr 1fr;gap:4cqw;align-items:center;flex:1;min-height:0}
+.anim .row.fr{grid-template-columns:auto 1fr}
+.anim .fig{position:relative;background:#fff;border-radius:.7cqw;padding:.5cqw;flex:none;width:max-content;max-width:100%}
+.anim .fig .im{position:relative;height:var(--h);width:calc(var(--h) * var(--r))}
+.anim .fig img{display:block;width:100%;height:100%}
+.anim .fig .gap{position:absolute;border:.28cqw solid var(--navy);border-left:0;border-radius:0 .4cqw .4cqw 0}
+.anim .cap{margin:.9cqw 0 0;font-size:1.25cqw;color:var(--muted);text-align:center}
+.anim .big{font-size:6.4cqw;font-weight:700;line-height:1;color:var(--navy);letter-spacing:-.02em;margin:0 0 .8cqw}
+.anim .big.sm{font-size:4.2cqw}
+.anim .cards{display:grid;grid-template-columns:1fr 1fr;gap:2.4cqw}
+.anim .cards.c3{grid-template-columns:1fr 1fr 1fr}
+.anim .card{background:var(--card);border:1px solid var(--line);border-radius:1.2cqw;padding:2cqw 2.2cqw}
+.anim .card h3{margin:0 0 .8cqw;font-family:var(--serif);font-weight:600;font-size:2.3cqw;line-height:1.15}
+.anim .card .n{display:block;font-weight:700;color:var(--navy);font-size:2.2cqw;margin-bottom:.4cqw}
+.anim .card p{margin:0;font-size:1.65cqw;line-height:1.4;color:var(--muted)}
+.anim .card svg{display:block;width:100%;height:5cqw;margin-top:1.2cqw}
+.anim .ln{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.anim .dr{stroke-dasharray:1;stroke-dashoffset:1;animation:dr 1.6s ease-in-out 1 both;animation-delay:calc(var(--s) + var(--d,.4s))}
+.anim .ctr{text-align:center;align-items:center}
+/* bars */
+.anim .bars{display:grid;grid-template-columns:auto 1fr;gap:1cqw 1.4cqw;align-items:center;font-size:1.6cqw}
+.anim .bars .lb{color:var(--muted);text-align:right;white-space:nowrap}
+.anim .bars .tr{display:flex;align-items:center;gap:1cqw}
+.anim .bars .br{height:2.4cqw;border-radius:.3cqw;background:var(--grey);transform-origin:left;animation:grow 1s ease-out 1 both;animation-delay:calc(var(--s) + var(--d,.4s))}
+.anim .bars .br.c{background:var(--navy)}
+.anim .bars .v{font-weight:700;white-space:nowrap}
+/* timeline */
+.anim .tl{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw;margin:1cqw 0 3cqw;padding-top:2.6cqw}
+.anim .tl:before{content:"";position:absolute;left:0;right:0;top:.9cqw;height:.25cqw;background:var(--line)}
+.anim .tl .ev{position:relative}
+.anim .tl .ev:before{content:"";position:absolute;left:0;top:-2.4cqw;width:1.6cqw;height:1.6cqw;border-radius:50%;background:var(--navy);border:.35cqw solid var(--surface)}
+.anim .tl .dt{font-weight:700;font-size:1.7cqw;margin:0 0 .3cqw}
+.anim .tl p{margin:0;font-size:1.55cqw;color:var(--muted);line-height:1.35}
+.anim .stats{display:grid;grid-template-columns:1fr 1fr;gap:3cqw}
+.anim .stat{display:flex;gap:1.6cqw;align-items:flex-start}
+.anim .stat .big{font-size:4.6cqw;margin:0}
+.anim .stat p{margin:0;font-size:1.6cqw;line-height:1.35;color:var(--muted)}
+/* diagram */
+.anim .dg{width:100%;height:auto;flex:1;min-height:0}
+.anim .dg .bx{fill:var(--card);stroke:var(--line);stroke-width:1.5}
+.anim .dg .bx.c{stroke:var(--navy);stroke-width:2}
+.anim .dg text{fill:var(--text);font:600 15px system-ui,-apple-system,"Segoe UI",sans-serif;text-anchor:middle}
+.anim .dg .sm{fill:var(--muted);font-weight:500;font-size:12.5px}
+.anim .dg .cl{fill:var(--navy)}
+.anim .dg .ar{fill:none;stroke:var(--muted);stroke-width:1.8}
+.anim .dg .ar.c{stroke:var(--navy)}
+.anim .leg{display:flex;flex-wrap:wrap;gap:.6cqw 1.6cqw;margin-top:1cqw;font-size:1.25cqw;color:var(--muted);justify-content:center}
+.anim .leg i{display:inline-block;width:2cqw;height:.5cqw;border-radius:.3cqw;vertical-align:middle;margin-right:.6cqw}
+/* title + end */
+.anim .ttl{font-family:var(--serif);font-weight:600;font-size:5.2cqw;line-height:1.08;margin:0 0 2.2cqw;max-width:62%}
+.anim .rule{width:6cqw;height:.3cqw;background:var(--navy);margin:0 0 1.8cqw;border:0}
+.anim .au{font-size:2.2cqw;font-weight:600;margin:0 0 .5cqw}
+.anim .deco{position:absolute;right:4cqw;top:8cqw;width:36cqw;height:auto;opacity:.5;pointer-events:none}
+.anim .acts{display:flex;gap:1.2cqw;flex-wrap:wrap;margin-top:2.2cqw;align-items:center}
+.anim .acts .btn{font-family:inherit;line-height:1.4;font-size:1.7cqw;padding:.8cqw 2.2cqw}
 .anim .btn.p{background:var(--navy);color:var(--on-accent);border-color:var(--navy)}
-.anim .sig{display:block;height:clamp(30px,7vw,48px);width:auto;margin:0 0 .5em;align-self:flex-start}
-.anim .v{position:absolute;right:4%;top:11%;width:39%;height:auto;pointer-events:none;overflow:visible;fill:none;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.anim .v text{fill:var(--muted);font:600 7px sans-serif}
-.anim .c1{fill:var(--navy)}.anim .c2{fill:var(--teal)}.anim .c3{fill:var(--sand)}.anim .c4{fill:var(--slate)}.anim .c5{fill:var(--slate2)}.anim .c6{fill:var(--glow)}.anim .c7{fill:var(--text)}.anim .c8{fill:var(--bp)}.anim .c9{fill:var(--storm)}
-.anim .e1{stroke:var(--navy)}.anim .e2{stroke:var(--teal)}.anim .e3{stroke:var(--sand)}.anim .e4{stroke:var(--slate2)}.anim .e5{stroke:var(--storm)}.anim .e6{stroke:var(--glow)}.anim .e7{stroke:var(--muted)}.anim .e8{stroke:var(--ink)}
-.anim .d{position:absolute;width:0;height:0}
-.anim .bar{position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--navy);transform-origin:left;animation:fill 60s linear 1 both}
-.anim .rp{position:absolute;right:12px;bottom:12px;z-index:2;font:inherit;font-size:.8rem;padding:2px 12px;cursor:pointer;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--navy)}
-.po,.pl,.sp,.sq,.sr{transform-box:fill-box;transform-origin:center}
-.r{animation-name:rise;animation-duration:.9s;animation-timing-function:ease-out}
-.po{animation-name:pop;animation-duration:.9s;animation-timing-function:cubic-bezier(.3,1.5,.5,1)}
-.fi{animation-name:fin;animation-duration:1s}
-.dw{stroke-dasharray:1;animation-name:draw;animation-duration:var(--t,1.8s);animation-timing-function:ease-in-out}
-.gw{animation:gw 2.4s ease-in-out infinite alternate}
-.fg{fill-opacity:.16;animation-name:fin,dr;animation-duration:1.6s,6s;animation-timing-function:ease-out,ease-in-out;animation-iteration-count:1,infinite;animation-direction:normal,alternate;animation-delay:calc(var(--i)*6s + var(--d,0s)),calc(var(--i)*6s + var(--d,0s))}
-.fl{animation:fl 2.2s ease-in-out infinite alternate}
-.bb{animation:bb 2.4s linear infinite}
-.pl{animation:pl 3s ease-out infinite}
-.sp{animation:spn 5s cubic-bezier(.15,.7,.25,1) 1}
-.sq{animation:rot 9s linear infinite}
-.sr{animation:rot 9s linear infinite reverse}
-.hs{transform-box:fill-box;transform-origin:50% 100%;animation:hs 1.8s ease-in-out infinite alternate}
-.dm{animation:dim 3s ease-in-out 1}
-.dt{animation:mv var(--t,2.4s) linear infinite}
-.rn{animation:rn 1.1s linear infinite}
-.sw{animation-name:fin,sweep;animation-duration:1s,5s;animation-timing-function:ease-out,ease-in-out;animation-delay:calc(var(--i)*6s + var(--d,0s)),calc(var(--i)*6s + var(--d,0s))}
-.dp{animation:dp 1s ease-in 1}
-.r,.po,.dw,.gw,.fl,.bb,.pl,.sp,.sq,.sr,.hs,.dm,.dt,.rn,.fi,.dp{animation-delay:calc(var(--i)*6s + var(--d,0s));animation-fill-mode:both}
-.fg,.sw{animation-fill-mode:both}
-.sw{animation-iteration-count:1;animation-direction:normal}
-@keyframes sl{0%{opacity:0;transform:translateY(8px)}1.5%,9%{opacity:1;transform:none}10%,100%{opacity:0}}
-@keyframes sl-last{0%{opacity:0;transform:translateY(8px)}1.5%,100%{opacity:1;transform:none}}
-@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@keyframes rise{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
-@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
-@keyframes fin{from{opacity:0}to{opacity:1}}
-@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
-@keyframes gw{from{opacity:.5}to{opacity:1}}
-@keyframes dr{from{transform:translateX(-9px)}to{transform:translateX(9px)}}
-@keyframes fl{from{transform:translateY(-3px)}to{transform:translateY(3px)}}
-@keyframes bb{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-16px);opacity:0}}
-@keyframes pl{0%{transform:scale(.4);opacity:0}15%{opacity:.7}100%{transform:scale(1.8);opacity:0}}
-@keyframes spn{to{transform:rotate(540deg)}}
-@keyframes rot{to{transform:rotate(360deg)}}
-@keyframes hs{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
-@keyframes dim{from{opacity:1}to{opacity:.18}}
-@keyframes mv{from{offset-distance:0%}to{offset-distance:100%}}
-@keyframes rn{from{transform:translateY(0);opacity:.9}to{transform:translateY(9px);opacity:0}}
-@keyframes sweep{from{transform:translateX(-34px)}to{transform:translateX(30px)}}
-@keyframes dp{0%{transform:translateY(-46px);opacity:1}88%{transform:none;opacity:1}100%{transform:none;opacity:0}}
-.anim.off *{animation:none!important}
-@media (prefers-reduced-motion:reduce){.anim{aspect-ratio:auto}.anim .s{position:static;opacity:1;animation:none;padding:18px 20px;border-bottom:1px solid var(--line)}.anim .bar,.anim .rp,.anim .d{display:none}.anim .v{position:static;width:min(100%,360px);margin-top:.6em}.anim .v *{animation:none!important}}
-svg{overflow:visible}
-.anim .bar{padding:0;gap:0;height:4px}
-/* polish: text column, source line, logo, QA freeze */
-.anim .s{padding:7% 50% 12% 7%}
-.anim .s.last{padding-right:8%}
-.anim .k{font-size:clamp(.6rem,1.9vw,.78rem)}
-.anim .t{font-size:clamp(.85rem,3.1vw,1.6rem);line-height:1.28;font-weight:600;max-width:none}
-.anim .t+.t{margin-top:.5em}
-.anim .src{position:absolute;left:7%;bottom:calc(4px + 2.4%);margin:0;max-width:72%;font-size:clamp(.5rem,1.45vw,.72rem);line-height:1.3;color:var(--muted);z-index:2}
-.anim .logo{position:absolute;right:2.6%;bottom:calc(4px + 2%);height:9%;width:auto;aspect-ratio:387/248;z-index:2;opacity:.95}
-.anim .acts{align-items:center}.anim .acts .btn{font-family:inherit;line-height:1.4}
-@media (max-width:460px){.anim .acts{gap:6px;flex-wrap:nowrap;margin-top:.7em}.anim .acts .btn{font-size:.74rem;padding:4px 11px;white-space:nowrap}}
-.anim.qa *{animation:none!important}.anim.qa .s{opacity:0}.anim.qa .s.on{opacity:1}.anim.qa .l{stroke-dashoffset:0}.anim.qa .tv{offset-distance:100%}
-@media (prefers-reduced-motion:reduce){.anim .s{padding:18px 20px}.anim .src,.anim .logo{position:static;display:block;margin:10px 20px}}
+.anim .site{margin-top:2.4cqw;font-size:1.6cqw;color:var(--muted)}
+/* frame */
+.anim .bar{position:absolute;left:0;bottom:0;height:.45cqw;min-height:3px;width:100%;padding:0;background:var(--navy);transform-origin:left;animation:grow 120s linear 1 both;z-index:2}
+.anim .src{position:absolute;left:6cqw;bottom:2.3cqw;margin:0;max-width:72%;font-size:1.2cqw;line-height:1.3;color:var(--muted);z-index:2}
+.anim .logo{position:absolute;right:2.6cqw;bottom:1.6cqw;height:4.6cqw;width:auto;aspect-ratio:387/248;z-index:2;opacity:.95}
+.anim.off,.anim.off *{animation:none!important}
+@keyframes show{0%{opacity:0;transform:translateY(.6cqw)}5%,95%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes show-last{from{opacity:0;transform:translateY(.6cqw)}to{opacity:1;transform:none}}
+@keyframes bin{from{opacity:0;transform:translateY(.8cqw)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes dr{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.anim{aspect-ratio:auto}.anim .s{position:relative;opacity:1;min-height:56.25cqw;border-bottom:1px solid var(--line)}.anim *{animation:none!important}.anim .dr{stroke-dashoffset:0}.anim .bar{display:none}.anim .src,.anim .logo{position:static;display:block;margin:2cqw 6cqw}}
 </style>
 </head>
 <body>
-<figure class="anim" id="a" aria-label="One-minute preview of Uncertainty, Intangible Capital and Productivity Dynamics">
-<svg class="d" aria-hidden="true"><defs>
-<clipPath id="pc"><rect width="160" height="100" rx="8"/></clipPath>
-<g id="pn"><rect width="160" height="100" rx="8" style="fill:var(--ink);stroke:var(--line);stroke-width:1"/></g>
-<g id="cl"><ellipse cx="30" cy="20" rx="26" ry="9"/><ellipse cx="50" cy="14" rx="18" ry="10"/><ellipse cx="14" cy="16" rx="14" ry="8"/><ellipse cx="42" cy="24" rx="30" ry="7"/></g>
-<g id="cb"><ellipse cx="50" cy="30" rx="48" ry="10"/><ellipse cx="30" cy="20" rx="24" ry="13"/><ellipse cx="62" cy="15" rx="26" ry="15"/><ellipse cx="84" cy="25" rx="16" ry="9"/><ellipse cx="14" cy="27" rx="13" ry="8"/></g>
-<g id="cs"><ellipse cx="18" cy="12" rx="17" ry="5"/><ellipse cx="12" cy="8" rx="8" ry="6"/><ellipse cx="23" cy="6" rx="8" ry="6"/></g>
-<g id="bu"><circle r="11"/><path d="M-5 9h10v6h-10z" style="fill:var(--muted);stroke:none"/><path d="M-3 18h6" style="stroke:var(--muted);stroke-width:2"/><path d="M-3 4v-6l3 3 3-3v6" style="fill:none;stroke:var(--ink);stroke-width:1.2"/></g>
-<g id="ge"><circle r="9.5" style="fill:none;stroke-width:4;stroke-dasharray:2.5 2.475;stroke-linecap:butt"/><circle r="8" style="stroke:none"/><circle r="3" style="fill:var(--ink);stroke:none"/></g>
-<g id="fk"><path d="M-13 -1h26l3 4a2 2 0 0 1-2.2 4h-27.6a2 2 0 0 1-2.2-4z" style="stroke:none;fill-opacity:.85"/><path d="M-5 -26h10v10l11 19a2.5 2.5 0 0 1-2.2 4h-27.6a2.5 2.5 0 0 1-2.2-4l11-19z" style="fill:none;stroke:var(--muted);stroke-width:1.3"/></g>
-<g id="sb"><path d="M10 52h18v36H10zM30 44h14v44H30zM46 58h20v30H46zM70 40h16v48H70zM90 54h18v34H90zM110 46h14v42h-14zM128 56h20v32h-20z"/></g>
-<g id="sf"><path d="M4 66h20v22H4zM26 60h16v28H26zM46 70h22v18H46zM72 62h18v26H72zM94 68h20v20H94zM116 60h16v28h-16zM136 66h20v22h-20z"/></g>
-<g id="w1"><path d="M9 72h2.5v3H9zM15 72h2.5v3H15zM9 79h2.5v3H9zM31 66h2.5v3H31zM36 66h2.5v3H36zM31 74h2.5v3H31zM52 76h2.5v3H52zM60 76h2.5v3H60zM78 68h2.5v3H78zM84 68h2.5v3H84zM78 76h2.5v3H78z"/></g>
-<g id="w2"><path d="M100 74h2.5v3H100zM108 74h2.5v3H108zM121 66h2.5v3H121zM126 74h2.5v3H126zM141 72h2.5v3H141zM148 72h2.5v3H148zM141 80h2.5v3H141zM15 79h2.5v3H15zM36 74h2.5v3H36z"/></g>
-</defs></svg>
+<figure class="anim" id="a" aria-label="Two-minute video summary of Uncertainty, Intangible Capital and Productivity Dynamics, by Edoardo Palombo">
 
-<div class="s" style="--i:0"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
-<circle class="c6 gw" cx="128" cy="22" r="19" style="fill-opacity:.16"/><circle class="c3 r" cx="128" cy="22" r="8"/>
-<use class="c4 r" href="#sb"/><use class="c5 r" style="--d:.25s" href="#sf"/><path class="c4" d="M0 88h160v12H0z"/>
-<use class="c6 gw" style="--d:.8s" href="#w1"/><use class="c6 gw" style="--d:1.6s;animation-duration:3.1s" href="#w2"/>
-<use class="fg c7" style="--d:.9s" href="#cb" x="-12" y="36"/><use class="fg c3" style="--d:1.4s;animation-duration:1.6s,7.5s" href="#cb" x="56" y="48"/><use class="fg c7" style="--d:1.9s" href="#cl" x="84" y="30"/>
-<g class="po" style="--d:1.4s"><text class="fl" x="76" y="40" text-anchor="middle" style="font:700 30px sans-serif;fill:var(--navy)">?</text></g>
-<g class="po" style="--d:2s"><text class="fl" x="100" y="28" text-anchor="middle" style="font:700 16px sans-serif;fill:var(--teal);animation-delay:-1s">?</text></g></g></svg><p class="k">Motivation</p><p class="t">When the outlook is uncertain, do firms keep investing in new ideas?</p></div>
+<!-- 1 Title -->
+<div class="s" style="--s:0s;--len:7s;justify-content:center">
+<svg class="deco b" style="--d:.2s;top:auto;bottom:9cqw;width:30cqw" viewBox="0 0 300 160" aria-hidden="true"><path d="M0 70 L60 62 L120 54 L160 48" class="ln" stroke="var(--line)" stroke-width="2"/><path class="ln" stroke="var(--grey)" stroke-dasharray="4 5" stroke-width="2" d="M160 48 L300 28"/><path class="ln dr" pathLength="1" style="--d:.8s" stroke="var(--navy)" d="M160 48 C175 62 185 72 200 70 S260 54 300 48"/><line x1="160" y1="10" x2="160" y2="150" stroke="var(--line)" stroke-dasharray="3 4"/></svg>
+<p class="k b" style="--d:.2s">QMUL Working Paper · 2020</p>
+<p class="ttl b" style="--d:.5s">Uncertainty, Intangible Capital and Productivity Dynamics</p>
+<hr class="rule b" style="--d:1s">
+<p class="au b" style="--d:1.2s">Edoardo Palombo</p>
+<p class="cite b" style="--d:1.4s">Queen Mary University of London</p>
+</div>
 
-<div class="s" style="--i:1"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
-<circle class="c6 pl" style="--d:.6s" cx="60" cy="42" r="18"/><circle class="c6 pl" style="--d:1.8s" cx="60" cy="42" r="18"/>
-<g class="r" style="--d:.2s"><g class="dm" style="--d:2s"><path class="dw e6" style="--d:.8s;--t:1.2s" pathLength="1" d="M60 12V4M79.8 20.2l5.7-5.7M88 40h8M32 40h-8M40.2 20.2l-5.7-5.7"/><g transform="translate(60 40) scale(1.9)"><use class="c6" href="#bu"/></g></g></g>
-<use class="fg c7 sw" style="--d:1.4s;fill-opacity:.3" href="#cb" x="10" y="26"/>
-<g class="r" style="--d:.5s"><path class="c4" d="M96 82h36v4H96z"/><g class="dm" style="--d:3.4s"><path class="c3 e8" d="M104 55h20a3 3 0 0 1 3 3v0a3 3 0 0 1-3 3h-20a3 3 0 0 1-3-3v0a3 3 0 0 1 3-3z" style="stroke-width:.8"/></g><g class="dm" style="--d:2.8s"><path class="c3 e8" d="M104 62h20a3 3 0 0 1 3 3v0a3 3 0 0 1-3 3h-20a3 3 0 0 1-3-3v0a3 3 0 0 1 3-3z" style="stroke-width:.8"/></g><g class="dm" style="--d:2.2s"><path class="c3 e8" d="M104 69h20a3 3 0 0 1 3 3v0a3 3 0 0 1-3 3h-20a3 3 0 0 1-3-3v0a3 3 0 0 1 3-3z" style="stroke-width:.8"/></g><path class="c3 e8" d="M104 76h20a3 3 0 0 1 3 3v0a3 3 0 0 1-3 3h-20a3 3 0 0 1-3-3v0a3 3 0 0 1 3-3z" style="stroke-width:.8"/></g></g></svg><p class="k">Research question</p><p class="t">Does higher uncertainty reduce firms' investment in intangible capital?</p></div>
+<!-- 2 Why it matters -->
+<div class="s" style="--s:7s;--len:11s">
+<p class="k">Why it matters</p>
+<p class="h">Uncertainty spiked, and productivity never recovered</p>
+<div class="row" style="grid-template-columns:.8fr 1.2fr">
+<div>
+<p class="p b" style="--d:.6s">From 2007 to 2010 the US saw an unprecedented rise in uncertainty.</p>
+<p class="p b" style="--d:3.4s"><strong>Since then,</strong> productivity growth has stayed weak, and intangible investment collapsed by over 60%. <span class="cite">(McGrattan 2017)</span></p>
+</div>
+<div class="b" style="--d:2s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:25cqw;--r:1.7278"><div class="im"><img src="img/intang-fig1.png?v=1" width="1111" height="643" alt="Figure 1: the Jurado et al. uncertainty index spikes in 2008 while five-year average TFP growth stays low afterwards"></div></div>
+<p class="cap">Uncertainty index (blue) and TFP growth, 5-year average (red), US · Figure 1</p>
+</div>
+</div>
+</div>
 
-<div class="s" style="--i:2"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
-<g class="r"><rect class="c8 e2" x="10" y="10" width="66" height="50" rx="3" style="stroke-width:1"/><path class="e2" style="stroke-width:.5;stroke-opacity:.3" d="M10 22h66M10 34h66M10 46h66M26 10v50M42 10v50M58 10v50"/></g>
-<path class="dw e3" style="--d:.5s;--t:1.6s" pathLength="1" d="M40 34a10 10 0 1 0-20 0a10 10 0 1 0 20 0M40 34h22M62 28h10v12H62z"/>
-<path class="dw e3" style="--d:2s;--t:1.4s;stroke-width:1" pathLength="1" d="M16 52h22M44 52h12M20 17h14"/>
-<circle class="c6 pl" style="--d:1s" cx="116" cy="24" r="16"/><g class="r" style="--d:.9s"><g transform="translate(116 24)"><use class="c6 gw" href="#bu"/></g></g>
-<path class="c4" d="M0 78h160v22H0z"/><path class="e3" style="stroke-width:1;stroke-opacity:.5" d="M0 78h160"/>
-<g class="r" style="--d:.6s"><g transform="translate(100 71)"><use class="c2" href="#fk"/></g></g>
-<g class="r" style="--d:1s"><g transform="translate(134 72.4) scale(.8)"><use class="c1" href="#fk"/></g></g>
-<g class="c7"><circle class="bb" style="--d:1.2s" cx="97" cy="71" r="1.3"/><circle class="bb" style="--d:1.9s" cx="103" cy="73" r="1"/><circle class="bb" style="--d:2.4s" cx="100" cy="72" r="1.5"/><circle class="bb" style="--d:1.6s" cx="132" cy="74" r="1.2"/><circle class="bb" style="--d:2.6s" cx="136" cy="75" r="1"/></g></g></svg><p class="k">Definition</p><p class="t">Intangible capital: R&amp;D and know-how, as distinct from machinery.</p></div>
+<!-- 3 The question -->
+<div class="s ctr" style="--s:18s;--len:12s">
+<p class="k">The question</p>
+<p class="h" style="margin-bottom:.8cqw">Can a temporary rise in uncertainty slow growth <em>for good?</em></p>
+<p class="cite b" style="--d:1.2s;margin-bottom:2cqw">Theory points to two very different paths</p>
+<div class="cards" style="width:84%;text-align:left">
+<div class="card b" style="--d:2.2s"><h3>Standard view</h3><p>Firms wait, then catch up: a short bust followed by a rebound (Bloom 2009).</p><svg viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="ln dr" pathLength="1" style="--d:2.8s" stroke="var(--grey)" d="M4 14 L60 14 L85 34 L120 6 L150 12 L196 14"/></svg></div>
+<div class="card b" style="--d:3.6s"><h3 style="color:var(--navy)">This paper</h3><p>Waiting cuts investment in intangibles, the engine of growth, so output never makes up the lost ground.</p><svg viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="ln" stroke="var(--line)" stroke-dasharray="4 5" stroke-width="2" d="M60 14 L196 14"/><path class="ln dr" pathLength="1" style="--d:4.2s" stroke="var(--navy)" d="M4 14 L60 14 C80 30 100 32 130 30 L196 30"/></svg></div>
+</div>
+<p class="it b" style="--d:6.4s;margin-top:2.4cqw">Did uncertainty hold back the recovery from the Great Recession?</p>
+</div>
 
-<div class="s" style="--i:3"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
-<g class="r"><path class="c5" d="M8 48h14v28H8zM24 38h16v38H24zM42 44h14v32H42z"/><path class="c4" d="M4 76h56v3H4z"/></g>
-<path class="c6 gw" style="--d:.6s" d="M11 52h2.5v3H11zM16 52h2.5v3H16zM11 59h2.5v3H11zM16 59h2.5v3H16zM28 42h2.5v3H28zM34 42h2.5v3H34zM28 49h2.5v3H28zM34 49h2.5v3H34zM28 56h2.5v3H28zM34 56h2.5v3H34zM45 48h2.5v3H45zM51 48h2.5v3H51zM45 55h2.5v3H45zM51 55h2.5v3H51z"/>
-<g class="c3"><circle class="bb" style="--d:1s" cx="15" cy="46" r="1.6"/><circle class="bb" style="--d:1.5s" cx="32" cy="36" r="1.6"/><circle class="bb" style="--d:2s" cx="49" cy="42" r="1.6"/></g>
-<path class="dw e7" style="--d:1.2s;--t:1s;stroke-width:1.2" pathLength="1" d="M64 52H92"/><path class="fi e7" style="--d:2s;stroke-width:1.2" d="M89 47l6 5-6 5"/>
-<circle class="c6 dt" style="--d:1.6s;offset-path:path('M64 52H92')" r="2.2"/>
-<g class="po" style="--d:1s"><rect class="c5 e2" x="98" y="26" width="54" height="52" rx="5" style="stroke-width:1.2"/></g>
-<path class="dw e2" style="--d:1.8s;--t:1s;stroke-width:1" pathLength="1" d="M108 31L124 31L142 33"/>
-<g class="c3"><circle class="po" style="--d:2.2s" cx="108" cy="31" r="2.2"/><circle class="po" style="--d:2.4s" cx="124" cy="31" r="2.2"/><circle class="po" style="--d:2.6s" cx="142" cy="33" r="2.2"/></g>
-<use class="c1 e1 sq" style="--d:1.2s" href="#ge" x="115" y="48"/><use class="c2 e2 sr" style="--d:1.4s;animation-delay:-.5s" href="#ge" x="137" y="58"/></g></svg><p class="k">Approach</p><p class="t">We document evidence from US firm-level data and build a model of firms and productivity growth.</p></div>
+<!-- 4 Why intangibles -->
+<div class="s" style="--s:30s;--len:10s">
+<p class="k">Why intangibles</p>
+<p class="h">Intangible capital now drives growth</p>
+<p class="p b" style="--d:.6s;max-width:80%">Over the past two decades, US net investment in intangible capital has overtaken net investment in tangible capital.</p>
+<div class="stats" style="margin-top:3.4cqw">
+<div class="stat b" style="--d:2.4s"><p class="big">1/3</p><p>of US productivity growth from 1973 to 2003 came from intangible investment <span class="cite">(Corrado et al.)</span></p></div>
+<div class="stat b" style="--d:4.2s"><p class="big">&gt;60%</p><p>collapse in US intangible investment during the Great Recession <span class="cite">(McGrattan 2017)</span></p></div>
+</div>
+</div>
 
-<div class="s" style="--i:4"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
-<g class="r"><path class="c4" d="M0 88h160v12H0z"/><path class="c5" d="M14 50h34v38H14zM62 40h34v48H62zM110 46h34v42h-34z"/></g>
-<path class="e6 gw" style="stroke-width:3.5;stroke-linecap:butt;stroke-dasharray:3 4;--d:.9s" d="M19 60h28M19 68h28M19 76h28M67 50h28M67 58h28M67 66h28M67 74h28M115 56h28M115 64h28M115 72h28"/>
-<g class="r" style="--d:.4s"><g class="dm" style="--d:1.2s"><circle class="c6" style="fill-opacity:.15" cx="31" cy="26" r="17"/><g transform="translate(31 26)"><use class="c6" href="#bu"/></g></g></g>
-<g class="r" style="--d:.6s"><g class="dm" style="--d:1.7s"><circle class="c6" style="fill-opacity:.15" cx="79" cy="16" r="17"/><g transform="translate(79 16)"><use class="c6" href="#bu"/></g></g></g>
-<g class="r" style="--d:.8s"><g class="dm" style="--d:2.2s"><circle class="c6" style="fill-opacity:.15" cx="127" cy="22" r="17"/><g transform="translate(127 22)"><use class="c6" href="#bu"/></g></g></g>
-<use class="fg c7" style="--d:1s" href="#cb" x="-8" y="-4"/><use class="fg c3" style="--d:1.6s;animation-duration:1.6s,7s" href="#cb" x="58" y="4"/><use class="fg c7" style="--d:2.2s" href="#cl" x="92" y="-6"/></g></svg><p class="k">Finding</p><p class="t">Higher uncertainty lowers intangible investment. In the 2008 crisis it explains about half the decline.</p></div>
+<!-- 5 Evidence -->
+<div class="s" style="--s:40s;--len:10s">
+<p class="k">The evidence</p>
+<p class="h">Firms cut intangibles when uncertainty rises</p>
+<div class="row" style="grid-template-columns:1.25fr 1fr">
+<div>
+<div class="bars b" style="--d:.4s">
+<span class="lb">Intangible capital</span><span class="tr"><span class="br c" style="--d:.8s;width:100%"></span><span class="v">−1.6%</span></span>
+<span class="lb">R&amp;D intensity</span><span class="tr"><span class="br" style="--d:1.1s;width:75%"></span><span class="v">−1.2%</span></span>
+<span class="lb">R&amp;D spending</span><span class="tr"><span class="br" style="--d:1.4s;width:56%"></span><span class="v">−0.9%</span></span>
+</div>
+<p class="cap" style="text-align:left;margin-top:1.4cqw">Effect of a one-standard-deviation rise in uncertainty, US listed firms, COMPUSTAT 1990–2017 · Tables 2–3</p>
+</div>
+<div>
+<p class="big b" style="--d:2.8s">−7.6%</p>
+<p class="p b" style="--d:2.8s">fall in firms' intangible capital implied by the rise in uncertainty in the Great Recession</p>
+<p class="big sm b" style="--d:4.8s;margin-top:2cqw">≈ half</p>
+<p class="p b mu" style="--d:4.8s">of the aggregate drop in intangible capital</p>
+</div>
+</div>
+</div>
 
-<div class="s" style="--i:5"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
-<path class="e7" style="stroke-width:.8;stroke-dasharray:2 3;stroke-opacity:.5" d="M86 8V80"/>
-<circle class="c6 pl" style="--d:.8s" cx="140" cy="28" r="12"/><circle class="c6 r" style="--d:.5s" cx="140" cy="28" r="8"/>
-<g class="r" style="--d:.7s"><use class="c3" style="fill-opacity:.85" href="#cs" x="112" y="30"/></g>
-<g class="po" style="--d:.2s"><use class="c9" href="#cb" x="2" y="8"/></g>
-<g class="c6 gw" style="--d:1.4s;animation-duration:.9s"><path d="M54 46l-6 12h5l-3 12 10-16h-5l4-8z"/></g>
-<g class="e5" style="stroke-width:1.3"><path class="rn" style="--d:1.2s" d="M14 50v6"/><path class="rn" style="--d:1.5s" d="M26 52v6"/><path class="rn" style="--d:1.3s" d="M38 50v6"/><path class="rn" style="--d:1.8s" d="M66 52v6"/><path class="rn" style="--d:1.6s" d="M78 50v6"/></g>
-<text x="44" y="92" text-anchor="middle">perceived</text><text x="124" y="92" text-anchor="middle">realised</text></g></svg><p class="k">Finding</p><p class="t">The uncertainty firms perceived was far larger than the uncertainty that materialised.</p></div>
+<!-- 6 Research design -->
+<div class="s" style="--s:50s;--len:12s">
+<p class="k">Research design</p>
+<p class="h" style="margin-bottom:1.2cqw">How waiting turns into lost growth</p>
+<svg class="dg" viewBox="0 0 640 230" role="img" aria-label="Model mechanism: uncertainty rises, firms wait, intangible investment falls, patents and R and D fall, productivity growth slows, and output and TFP end up permanently lower">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker><marker id="ahc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--navy)"/></marker></defs>
+<g class="b" style="--d:.4s"><rect class="bx" x="10" y="14" width="170" height="64" rx="10"/><text x="95" y="42">Uncertainty rises</text><text class="sm" x="95" y="62">a temporary shock</text></g>
+<g class="b" style="--d:1.4s"><path class="ar" d="M182 46 H228" marker-end="url(#ah)"/><rect class="bx" x="232" y="14" width="170" height="64" rx="10"/><text x="317" y="42">Firms wait</text><text class="sm" x="317" y="62">option value of waiting</text></g>
+<g class="b" style="--d:2.4s"><path class="ar" d="M404 46 H450" marker-end="url(#ah)"/><rect class="bx" x="454" y="14" width="176" height="64" rx="10"/><text x="542" y="42">Intangibles</text><text class="sm" x="542" y="62">investment falls</text></g>
+<g class="b" style="--d:3.6s"><path class="ar" d="M542 80 V136" marker-end="url(#ah)"/><rect class="bx" x="454" y="140" width="176" height="64" rx="10"/><text x="542" y="168">Innovation</text><text class="sm" x="542" y="188">patents and R&amp;D fall</text></g>
+<g class="b" style="--d:4.8s"><path class="ar" d="M452 172 H406" marker-end="url(#ah)"/><rect class="bx" x="232" y="140" width="170" height="64" rx="10"/><text x="317" y="168">Productivity</text><text class="sm" x="317" y="188">growth slows</text></g>
+<g class="b" style="--d:6s"><path class="ar c" d="M230 172 H184" marker-end="url(#ahc)"/><rect class="bx c" x="10" y="140" width="170" height="64" rx="10"/><text x="95" y="168" class="cl">Output and TFP</text><text class="sm" x="95" y="188">permanently lower</text></g>
+</svg>
+<p class="it b" style="--d:7.6s">An endogenous growth model with heterogeneous firms that make lumpy intangible investments with fixed adjustment costs.</p>
+</div>
 
-<div class="s" style="--i:6"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
-<path class="e4" style="stroke-width:.6" d="M14 30H150M14 50H150M14 70H150"/>
-<path class="e7" style="stroke-width:1.2" d="M14 10V82H150"/>
-<path class="c3 fi" style="--d:4s;fill-opacity:.2" d="M70 70C92 64 116 64 150 64V24C120 30 92 64 70 70z"/>
-<path class="e7 fi" style="--d:.6s;stroke-width:1.2;stroke-dasharray:3 3" d="M14 34C34 34 44 78 70 70C92 64 120 30 150 24"/>
-<path class="dw e1" style="--d:.6s;--t:3.8s;stroke-width:2.2" pathLength="1" d="M14 34C34 34 44 78 70 70C92 64 116 64 150 64"/>
-<circle class="c1 pl" style="--d:4.2s" cx="150" cy="64" r="6"/>
-<circle class="c7 dt" style="--d:.6s;--t:3.8s;offset-path:path('M14 34C34 34 44 78 70 70C92 64 116 64 150 64');animation-iteration-count:1;animation-fill-mode:both" r="3.2"/>
-<text x="20" y="18">Illustrative</text><text x="150" y="94" text-anchor="end">perceived &gt; realised</text></g></svg><p class="k">Finding</p><p class="t">The recovery is slow: in the model, output stays about 1% lower permanently.</p></div>
+<!-- 7 The puzzle -->
+<div class="s" style="--s:62s;--len:10s">
+<p class="k">The puzzle</p>
+<p class="h">The standard shock gives a bust, then a boom</p>
+<div class="row fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:22cqw;--r:2.1424"><div class="im"><img src="img/intang-fig3-y-tfp.png?v=1" width="707" height="330" alt="Figure 3: after a standard uncertainty shock, output and TFP dip and then rise above their path, ending about 0.6 percent higher"><span class="gap b" style="--d:3s;left:99%;top:34.5%;height:42.1%;width:2.6%"></span></div></div>
+<p class="cap">Output and TFP, % deviation, red: baseline model · Figure 3</p>
+</div>
+<div>
+<p class="big b" style="--d:2s">+0.6%</p>
+<p class="p b" style="--d:2s">permanent gain in output and productivity, as investment overshoots after the shock</p>
+<p class="it b" style="--d:5s;margin-top:2cqw">Yet the data show no such overshoot (Jurado et al. 2015).</p>
+</div>
+</div>
+</div>
 
-<div class="s" style="--i:7"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
-<use class="c3 e3 sp" style="--d:.4s;stroke-opacity:.9" href="#ge" x="30" y="30"/>
-<path class="c4" d="M0 80h160v20H0z"/>
-<g class="r"><path class="c4" d="M82 22h44v58H82z"/></g>
-<path class="c6 gw" style="fill-opacity:.4" d="M86 26h36v54H86z"/>
-<path class="c6 gw" style="fill-opacity:.14;--d:.4s" d="M86 80h36l26 18H62z"/>
-<path class="c5 e4" style="stroke-width:1" d="M86 26l18 5v44l-18 5z"/>
-<g class="hs" style="--d:.6s"><circle class="c3" cx="58" cy="43" r="5.5"/><rect class="c1" x="53" y="50" width="10" height="19" rx="4.5"/><path class="e5" style="stroke-width:3" d="M56 69v11M60 69v11"/><path class="e1" style="stroke-width:3" d="M62 55l9 3"/></g>
-<g class="c7"><circle class="gw" style="--d:1s;animation-duration:1.2s" cx="66" cy="33" r="1.5"/><circle class="gw" style="--d:1.3s;animation-duration:1.2s" cx="71" cy="29" r="1.9"/><circle class="gw" style="--d:1.6s;animation-duration:1.2s" cx="77" cy="25" r="2.3"/></g>
-<use class="fg c7" style="--d:1.2s" href="#cb" x="-22" y="66"/><use class="fg c7" style="--d:1.8s" href="#cb" x="70" y="72"/></g></svg><p class="k">Mechanism</p><p class="t">Intangible investment is hard to reverse, so firms wait for uncertainty to resolve.</p></div>
+<!-- 8 New evidence -->
+<div class="s" style="--s:72s;--len:11s">
+<p class="k">New evidence</p>
+<p class="h">Firms expected far more risk than they faced</p>
+<div class="row fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:26cqw;--r:1.4338"><div class="im"><img src="img/intang-fig5.png?v=1" width="1180" height="823" alt="Figure 5: from 2007 to 2009 the dispersion of analysts' earnings forecasts more than triples while the dispersion of realised earnings rises by about a third"><span class="gap b" style="--d:3.4s;left:98.3%;top:3.3%;height:65.4%;width:2.4%"></span></div></div>
+<p class="cap">Dispersion of earnings forecasts (solid) and realised earnings (dashed), 2007 = 100 · Figure 5</p>
+</div>
+<div>
+<p class="big b" style="--d:2s">×3.17</p>
+<p class="p b" style="--d:2s">rise in the dispersion of analysts' earnings forecasts in the Great Recession</p>
+<p class="big sm b" style="--d:4.2s;margin-top:2cqw">×1.37</p>
+<p class="p b mu" style="--d:4.2s">rise in the dispersion of realised earnings</p>
+<p class="cite b" style="--d:4.2s;margin-top:1.4cqw">I/B/E/S data on US listed firms</p>
+</div>
+</div>
+</div>
 
-<div class="s" style="--i:8"><svg class="v" viewBox="0 0 160 100" aria-hidden="true"><use href="#pn"/><g clip-path="url(#pc)">
-<g class="c7"><circle class="gw" cx="20" cy="14" r="1.2"/><circle class="gw" style="animation-delay:-1s" cx="52" cy="24" r="1"/><circle class="gw" style="animation-delay:-.5s" cx="118" cy="12" r="1.3"/><circle class="gw" style="animation-delay:-1.5s" cx="142" cy="30" r="1"/></g>
-<ellipse class="c2 r" style="fill-opacity:.14" cx="80" cy="74" rx="66" ry="15"/>
-<ellipse class="e3 pl" style="--d:1.3s;stroke-width:1.2" cx="80" cy="74" rx="16" ry="4"/><ellipse class="e2 pl" style="--d:2.4s;stroke-width:1.2" cx="80" cy="74" rx="16" ry="4"/><ellipse class="e1 pl" style="--d:3.5s;stroke-width:1.2" cx="80" cy="74" rx="16" ry="4"/>
-<circle class="c3 dp" style="--d:.4s" cx="80" cy="72" r="3.2"/></g></svg><p class="k">Implications</p><p class="t">Temporary uncertainty can have persistent effects.</p><p class="t">Expectations matter, not only realised outcomes.</p></div>
+<!-- 9 Main result -->
+<div class="s" style="--s:83s;--len:13s">
+<p class="k">Main result</p>
+<p class="h">Uncertainty leaves a permanent scar</p>
+<div class="row fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:23cqw;--r:2"><div class="im"><img src="img/intang-fig6-y-ix.png?v=1" width="910" height="455" alt="Figure 6: when firms expect more risk than they face, intangible investment falls about 30 percent on impact and output settles about 1 percent below its path"><span class="gap b" style="--d:3.4s;left:47.9%;top:48.6%;height:12.5%;width:1.8%"></span></div></div>
+<p class="cap">Output (Y) and intangible investment (I<sub>X</sub>), % deviation, red: baseline · Figure 6</p>
+</div>
+<div>
+<p class="big b" style="--d:2s">−1%</p>
+<p class="p b" style="--d:2s">permanent fall in output and productivity</p>
+<p class="big sm b" style="--d:4.6s;margin-top:2.2cqw">−30%</p>
+<p class="p b mu" style="--d:4.6s">intangible investment on impact</p>
+<p class="it b" style="--d:6.6s;margin-top:2cqw">No rebound: the overshoot disappears.</p>
+</div>
+</div>
+</div>
 
-<div class="s last" style="--i:9"><p class="k">QMUL Working Paper · 2020</p><p class="t">Uncertainty, Intangible Capital and Productivity Dynamics</p><div class="acts"><a class="btn p" href="https://drive.google.com/file/d/1QJbSVegn2MKRMbyvImba9ObAGUld5Qqw/view">Read the paper</a><a class="btn" href="https://drive.google.com/file/d/1_vaczSAVhkZYystFh3Pgm4KeiQs5zRrA/view">Listen</a><button class="btn" type="button" onclick="var a=document.getElementById('a');a.classList.add('off');void a.offsetWidth;a.classList.remove('off')">Replay</button></div></div>
+<!-- 10 Mechanism -->
+<div class="s" style="--s:96s;--len:12s">
+<p class="k">Mechanism</p>
+<p class="h">More firms freeze investment, and growth slows</p>
+<div class="row fr">
+<div class="b" style="--d:.6s;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div class="fig" style="--h:22cqw;--r:2.1213"><div class="im"><img src="img/intang-fig6-g-inact.png?v=1" width="927" height="437" alt="Figure 6: the share of inactive firms jumps about 4 percentage points and productivity growth dips before slowly recovering"></div></div>
+<p class="cap">Productivity growth (g) and share of inactive firms, p.p. deviation · Figure 6</p>
+</div>
+<div>
+<p class="big b" style="--d:2s">+4 pp</p>
+<p class="p b" style="--d:2s">firms that stop investing, back to normal only after about 40 quarters</p>
+<p class="big sm b" style="--d:4.6s;margin-top:2.2cqw">−50 bp</p>
+<p class="p b mu" style="--d:4.6s">productivity growth a year</p>
+</div>
+</div>
+</div>
+
+<!-- 11 Implications -->
+<div class="s" style="--s:108s;--len:10s">
+<p class="k">Implications</p>
+<p class="h">What the Great Recession teaches about uncertainty</p>
+<div class="cards c3">
+<div class="card b" style="--d:.6s"><span class="n">1</span><h3>Lasting scars</h3><p>A temporary rise in uncertainty can lower output and productivity for good, through intangible investment.</p></div>
+<div class="card b" style="--d:2s"><span class="n">2</span><h3>Expectations matter</h3><p>Firms expected more risk than they faced. Modelling that gap matches the data, with no overshoot.</p></div>
+<div class="card b" style="--d:3.4s"><span class="n">3</span><h3>The slow recovery</h3><p>Uncertainty explains a fifth of the GDP and a quarter of the TFP lost after the Great Recession.</p></div>
+</div>
+</div>
+
+<!-- 12 End -->
+<div class="s last" style="--s:118s;justify-content:center">
+<p class="k">QMUL Working Paper · 2020</p>
+<p class="ttl" style="font-size:4.4cqw;max-width:80%">Uncertainty, Intangible Capital and Productivity Dynamics</p>
+<p class="au">Edoardo Palombo</p>
+<div class="acts"><a class="btn p" href="https://drive.google.com/file/d/1QJbSVegn2MKRMbyvImba9ObAGUld5Qqw/view" target="_blank" rel="noopener">Read the paper</a><a class="btn" href="https://drive.google.com/file/d/1_vaczSAVhkZYystFh3Pgm4KeiQs5zRrA/view" target="_blank" rel="noopener">Listen</a><button class="btn" type="button" onclick="var a=document.getElementById('a');a.classList.add('off');void a.offsetWidth;a.classList.remove('off')">Replay</button></div>
+<p class="site">edoardopalombo.com</p>
+</div>
+
 <div class="bar"></div>
-<p class="src">Source: Uncertainty, Intangible Capital and Productivity Dynamics, QMUL Working Paper (2020)</p>
+<p class="src">Palombo (2020) · Uncertainty, Intangible Capital and Productivity Dynamics · QMUL Working Paper</p>
 <img class="logo" src="../sig.svg?v=6" alt="EP">
 </figure>
-<script>(function(){var m=location.hash.match(/t=(\d+)/);if(!m)return;var t=+m[1];function seek(){document.getAnimations().forEach(function(x){x.pause();x.currentTime=t})}seek();addEventListener("load",seek)})()</script>
-
+<script>(function(){var m=location.hash.match(/t=(\d+)/);if(!m)return;var t=+m[1];function seek(){document.getAnimations().forEach(function(x){x.pause();x.currentTime=t})}seek();addEventListener("load",seek);if(document.fonts)document.fonts.ready.then(seek)})()</script>
 </body>
 </html>
